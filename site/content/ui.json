@@ -102,6 +102,7 @@
   "fact_feast": "Sărbătoare",
   "fact_availability": "Disponibilitate",
   "availability": {
+   "Disponibilă": "Disponibilă",
    "Nu este disponibilă — se poate picta din nou, la comandă": "Nu este disponibilă — se poate picta din nou, la comandă",
    "Realizată la comandă": "Realizată la comandă"
   },
@@ -277,6 +278,7 @@
   "fact_feast": "Feast day",
   "fact_availability": "Availability",
   "availability": {
+   "Disponibilă": "Available",
    "Nu este disponibilă — se poate picta din nou, la comandă": "Not available — it can be painted again to order",
    "Realizată la comandă": "Made to order"
   },
@@ -452,6 +454,7 @@
   "fact_feast": "Fête",
   "fact_availability": "Disponibilité",
   "availability": {
+   "Disponibilă": "Disponible",
    "Nu este disponibilă — se poate picta din nou, la comandă": "Non disponible — elle peut être peinte de nouveau sur commande",
    "Realizată la comandă": "Réalisée sur commande"
   },

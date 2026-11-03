@@ -16,6 +16,8 @@ SITE = os.path.dirname(HERE)
 # The private Facebook export lives in ../facebook-export (never published).
 EXPORT = os.path.join(os.path.dirname(SITE), 'facebook-export')
 POSTS = os.path.join(EXPORT, "this_profile's_activity_across_facebook", "posts")
+# Posts published after the export was made, added by hand (see site/README.md).
+NEW_POSTS = os.path.join(SITE, 'new-posts')
 
 
 def fix(o):
@@ -256,6 +258,9 @@ def details(text):
     low = text.lower()
     if re.search(r'nu (este|va fi|mai este) disponibil', low):
         d['disponibilitate'] = 'Nu este disponibilă — se poate picta din nou, la comandă'
+    # "este disponibilă" = ready now; "disponibilă la comandă" = can be painted to order.
+    elif re.search(r'(?<!nu )\b(este|e) disponibil\w*\b(?!\s+la comand)', low):
+        d['disponibilitate'] = 'Disponibilă'
     elif re.search(r'comand', low):
         d['disponibilitate'] = 'Realizată la comandă'
     return d
@@ -462,7 +467,7 @@ def main():
         for n, m in enumerate(media_list):
             src = m['uri'].split('posts/media/', 1)[1]
             name = f'{eid}-{n + 1}.jpg'
-            images.append((src, name))
+            images.append((os.path.join(POSTS, 'media', *src.split('/')), name))
             out.append(name)
         return out
 
@@ -520,6 +525,35 @@ def main():
             'images': add_images([ph], eid),
         })
 
+    # Posts newer than the Facebook export, added by hand to site/new-posts/posts.json
+    # (photos in the same folder). Each has its own id: n1, n2, ...
+    new_file = os.path.join(NEW_POSTS, 'posts.json')
+    if os.path.exists(new_file):
+        with open(new_file, encoding='utf-8') as f:
+            new_posts = json.load(f)
+        for p in new_posts:
+            eid, text = p['id'], p['text'].strip()
+            subject, theme = subject_of(p.get('title') or text)
+            e = {
+                'id': eid,
+                'date': p['date'],
+                'title': p.get('title') or subject or extract_title(text) or 'Icoană pe sticlă',
+                'kind': 'icoana',
+                'theme': theme,
+                'text': clean_customers(text),
+                'images': [],
+            }
+            for n, photo in enumerate(p['photos']):
+                name = f'{eid}-{n + 1}.jpg'
+                images.append((os.path.join(NEW_POSTS, photo), name))
+                e['images'].append(name)
+            e.update(details(text))
+            # Facts set by hand win over the ones read from the caption.
+            for key in ('izvod', 'dimensiuni', 'sarbatoare', 'disponibilitate'):
+                if p.get(key):
+                    e[key] = p[key]
+            entries.append(e)
+
     entries.sort(key=lambda e: (e['date'], e['id']), reverse=True)
 
     # Work-in-progress posts are not shown on their own: each ink drawing is attached
@@ -562,7 +596,7 @@ def main():
     # all; the third column marks the ones make_images.ps1 puts on the site.
     with open(os.path.join(HERE, 'images.txt'), 'w', encoding='utf-8-sig') as f:
         for src, name in images:
-            f.write(os.path.join(POSTS, 'media', *src.split('/')) + '\t' + name + '\t' + str(int(name in used)) + '\n')
+            f.write(src + '\t' + name + '\t' + str(int(name in used)) + '\n')
 
     print(len(entries), 'entries,', len(used), 'of', len(images), 'photos used')
 
