@@ -1,0 +1,14 @@
+# Private: the Facebook export (Messenger, friends, followers, devices...).
+# It must never be committed or published.
+facebook-export/
+
+# Local notes and settings
+CLAUDE.md
+.claude/
+backups/
+
+# Machine-specific paths into the export
+site/tools/images.txt
+
+# Python cache
+__pycache__/

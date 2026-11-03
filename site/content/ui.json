@@ -1,0 +1,527 @@
+{
+ "ro": {
+  "lang_name": "Română",
+  "pages": {
+   "home": "index.html",
+   "gallery": "galerie.html",
+   "about": "despre.html",
+   "technique": "tehnica.html",
+   "orders": "comenzi.html",
+   "icons": "icoane"
+  },
+  "months": [
+   "ianuarie",
+   "februarie",
+   "martie",
+   "aprilie",
+   "mai",
+   "iunie",
+   "iulie",
+   "august",
+   "septembrie",
+   "octombrie",
+   "noiembrie",
+   "decembrie"
+  ],
+  "site_name": "Atelierul Bizantin de Icoane pe Sticlă",
+  "brand_1": "Atelierul Bizantin",
+  "brand_2": "de Icoane pe Sticlă",
+  "menu": "Meniu",
+  "language": "Limba",
+  "nav_home": "Acasă",
+  "nav_gallery": "Galerie",
+  "nav_about": "Despre",
+  "nav_technique": "Tehnica",
+  "nav_orders": "Comenzi",
+  "meta_description": "Icoane ortodoxe pictate în ulei pe sticlă, după izvoade transilvănene din secolele XVIII–XIX. Lucrări la comandă.",
+  "hero_eyebrow": "Icoane ortodoxe pictate în ulei pe sticlă",
+  "hero_h1": "Atelierul Bizantin <em>de Icoane pe Sticlă</em>",
+  "tagline": "Pictor iconar inspirat de icoanele celebrilor pictori ardeleni.",
+  "cta_gallery": "Vezi galeria",
+  "cta_order": "Comandă o icoană",
+  "facts": [
+   [
+    "2019",
+    "primele icoane, de Buna Vestire"
+   ],
+   [
+    "~250",
+    "icoane pictate"
+   ],
+   [
+    "5",
+    "tradiții ardelene de izvoade"
+   ]
+  ],
+  "recent_eyebrow": "Din atelier",
+  "recent_title": "Lucrări recente",
+  "all_works": "Toată galeria · {n} icoane",
+  "teasers": {
+   "about": [
+    "Povestea atelierului",
+    "În ziua Bunei Vestiri din 2019, fără să fi pictat vreodată, a început să picteze icoane pe sticlă."
+   ],
+   "technique": [
+    "Cum se naște o icoană",
+    "De la desenul în tuș cu penița până la foița de aur: patru etape, toate pe „dosul” sticlei."
+   ],
+   "orders": [
+    "Icoane la comandă",
+    "Orice temă iconografică, ca dar de suflet sau pentru o sfântă biserică."
+   ]
+  },
+  "read_more": "Mai departe",
+  "gallery_eyebrow": "Lucrările atelierului",
+  "gallery_title": "Galerie",
+  "gallery_intro": "Fiecare icoană este însoțită de textul cu care a fost prezentată pe pagina atelierului.",
+  "search_placeholder": "Caută: sfânt, sărbătoare, izvod…",
+  "sort_label": "Ordonare",
+  "sort_new": "Cele mai noi",
+  "sort_old": "Cele mai vechi",
+  "sort_az": "Alfabetic",
+  "theme_label": "Temă",
+  "themes": {
+   "maica": "Maica Domnului",
+   "praznice": "Iisus Hristos și praznice",
+   "sfinti": "Sfinți și arhangheli",
+   "masa": "Masa Raiului",
+   "eroi": "Martiri și eroi",
+   "altele": "Alte lucrări"
+  },
+  "all_themes": "Toate temele",
+  "show_more": "Arată mai multe",
+  "no_results": "Nicio lucrare nu corespunde căutării. Încercați alt cuvânt sau altă temă.",
+  "count_one": "1 lucrare",
+  "count_many": "{n} lucrări",
+  "count_shown": " · se afișează {n}",
+  "photos": "{n} foto",
+  "izvod_prefix": "Izvod: ",
+  "fact_theme": "Temă",
+  "fact_izvod": "Izvod",
+  "fact_size": "Dimensiuni",
+  "fact_feast": "Sărbătoare",
+  "fact_availability": "Disponibilitate",
+  "availability": {
+   "Nu este disponibilă — se poate picta din nou, la comandă": "Nu este disponibilă — se poate picta din nou, la comandă",
+   "Realizată la comandă": "Realizată la comandă"
+  },
+  "published_on": "Publicată pe {d}",
+  "from_portfolio": "Din portofoliul atelierului · {d}",
+  "first_shown": "Prezentată prima dată pe {d}",
+  "caption_label": "Prezentarea atelierului",
+  "machine_note": "",
+  "history_label": "Alte prezentări ale acestei icoane",
+  "stages_label": "Etapele lucrării",
+  "stage_date": "Desenul în tuș · {d}",
+  "stage_caption": "Urzeala — desenul în tuș cu penița, {d}",
+  "see_drawing": "Vezi desenul",
+  "related_label": "Alte lucrări cu aceeași temă ({n})",
+  "cta_text": "Vă doriți o icoană pe sticlă cu această temă (sau orice altă temă iconografică)? Contactați-mă și vom stabili detaliile.",
+  "send_message": "Trimite un mesaj",
+  "prev": "Lucrarea anterioară",
+  "next": "Lucrarea următoare",
+  "back_gallery": "Înapoi la galerie",
+  "photo_n": "Fotografia {n}",
+  "open_full": "Deschide imaginea la rezoluție maximă",
+  "default_title": "Icoană pe sticlă",
+  "about_eyebrow": "Povestea atelierului",
+  "about_title": "Despre",
+  "about_caption": "{t} — icoană pe sticlă",
+  "technique_eyebrow": "Tehnica",
+  "technique_title": "Cum se naște o icoană pe sticlă",
+  "technique_intro": "Icoanele atelierului sunt pictate în ulei, pe „dosul” sticlei, în ordine inversă: ce se pictează primul se vede în față.",
+  "steps": [
+   [
+    "I",
+    "Urzeala",
+    "„Prima etapă (și cea mai dificilă) în realizarea unei icoane pe sticlă este desenul în tuș pe spatele sticlei. Pentru a păstra tradiția folosesc în această etapă doar penița sau pensula.”",
+    "Desenul este „scheletul imaginii”: orice greșeală din această fază e aproape imposibil de remediat ulterior."
+   ],
+   [
+    "II",
+    "Pictura",
+    "„Urmează pictarea scenei” — în culori de ulei, vii, cu decorurile bogate ale icoanelor țărănești ardelene, tot pe „dosul” sticlei.",
+    ""
+   ],
+   [
+    "III",
+    "Aurul",
+    "„…aplicarea foiței de aur sau argint (desigur, tot pe «spatele» sticlei)” — pe aureole și pe detaliile care trebuie să strălucească.",
+    ""
+   ],
+   [
+    "IV",
+    "Înrămarea",
+    "„Apoi pictura se protejează cu un placaj, se înrămează și se privește (cu admirație) pe «fața sticlei».”",
+    ""
+   ]
+  ],
+  "before_label": "Urzeala — desenul în tuș cu penița",
+  "after_label": "{t}, pictată și înrămată",
+  "orders_eyebrow": "La comandă",
+  "orders_title": "Comenzi",
+  "orders_quote": "„Dacă vă doriți o icoană pe sticlă, cu o anumită temă (sau orice altă temă iconografică), contactați-mă și vom stabili detaliile.”",
+  "orders_ticks": [
+   "<strong>Orice temă iconografică</strong> — praznice, Maica Domnului, sfinți ocrotitori, după izvoade din Nicula, Șcheii Brașovului, Țara Oltului, Laz sau Mărginimea Sibiului.",
+   "<strong>Icoane personalizate</strong> — de exemplu «Masa Raiului», în care sfinții din romburi se aleg la cerere.",
+   "<strong>Cadouri cu suflet</strong> — pentru botez, onomastică sau aniversări, cu sfântul ocrotitor al celui care o primește.",
+   "<strong>Pentru biserici și mănăstiri</strong> — multe dintre lucrări se află deja în sfinte biserici din țară.",
+   "<strong>Dimensiuni uzuale</strong> — de la iconițe de 13 × 18 cm până la icoane de 30 × 42 cm sau mai mari."
+  ],
+  "orders_note": "Lucrările din galerie au fost, de cele mai multe ori, realizate la comandă și nu mai sunt disponibile, dar orice temă se poate picta din nou. Comenzile se programează în ordinea sosirii.",
+  "contact_title": "Contact",
+  "contact_text": "Scrieți-ne pe pagina atelierului:",
+  "facebook_btn": "Pagina de Facebook",
+  "footer": "Textele și fotografiile provin de pe pagina de Facebook a atelierului."
+ },
+ "en": {
+  "lang_name": "English",
+  "pages": {
+   "home": "index.html",
+   "gallery": "gallery.html",
+   "about": "about.html",
+   "technique": "technique.html",
+   "orders": "orders.html",
+   "icons": "icons"
+  },
+  "months": [
+   "January",
+   "February",
+   "March",
+   "April",
+   "May",
+   "June",
+   "July",
+   "August",
+   "September",
+   "October",
+   "November",
+   "December"
+  ],
+  "site_name": "The Byzantine Workshop of Icons on Glass",
+  "brand_1": "Byzantine Workshop",
+  "brand_2": "of Icons on Glass",
+  "menu": "Menu",
+  "language": "Language",
+  "nav_home": "Home",
+  "nav_gallery": "Gallery",
+  "nav_about": "About",
+  "nav_technique": "Technique",
+  "nav_orders": "Orders",
+  "meta_description": "Orthodox icons painted in oil on glass, after Transylvanian models from the 18th and 19th centuries. Made to order.",
+  "hero_eyebrow": "Orthodox icons painted in oil on glass",
+  "hero_h1": "The Byzantine Workshop <em>of Icons on Glass</em>",
+  "tagline": "An icon painter inspired by the icons of the great Transylvanian painters.",
+  "cta_gallery": "See the gallery",
+  "cta_order": "Order an icon",
+  "facts": [
+   [
+    "2019",
+    "the first icons, on the Annunciation"
+   ],
+   [
+    "~250",
+    "icons painted"
+   ],
+   [
+    "5",
+    "Transylvanian traditions of models"
+   ]
+  ],
+  "recent_eyebrow": "From the workshop",
+  "recent_title": "Recent works",
+  "all_works": "The whole gallery · {n} icons",
+  "teasers": {
+   "about": [
+    "The workshop's story",
+    "On the feast of the Annunciation in 2019, without ever having painted before, she began painting icons on glass."
+   ],
+   "technique": [
+    "How an icon is made",
+    "From the pen-and-ink drawing to the gold leaf: four stages, all on the back of the glass."
+   ],
+   "orders": [
+    "Icons to order",
+    "Any iconographic theme, as a heartfelt gift or for a church."
+   ]
+  },
+  "read_more": "Read more",
+  "gallery_eyebrow": "The workshop's works",
+  "gallery_title": "Gallery",
+  "gallery_intro": "Each icon comes with the text it was presented with on the workshop's page, machine-translated from Romanian.",
+  "search_placeholder": "Search: saint, feast, model…",
+  "sort_label": "Sort",
+  "sort_new": "Newest first",
+  "sort_old": "Oldest first",
+  "sort_az": "A–Z",
+  "theme_label": "Theme",
+  "themes": {
+   "maica": "The Mother of God",
+   "praznice": "Jesus Christ and the great feasts",
+   "sfinti": "Saints and archangels",
+   "masa": "The Table of Paradise",
+   "eroi": "Martyrs and heroes",
+   "altele": "Other works"
+  },
+  "all_themes": "All themes",
+  "show_more": "Show more",
+  "no_results": "No works match your search. Try another word or theme.",
+  "count_one": "1 work",
+  "count_many": "{n} works",
+  "count_shown": " · showing {n}",
+  "photos": "{n} photos",
+  "izvod_prefix": "Model: ",
+  "fact_theme": "Theme",
+  "fact_izvod": "Model (izvod)",
+  "fact_size": "Size",
+  "fact_feast": "Feast day",
+  "fact_availability": "Availability",
+  "availability": {
+   "Nu este disponibilă — se poate picta din nou, la comandă": "Not available — it can be painted again to order",
+   "Realizată la comandă": "Made to order"
+  },
+  "published_on": "Published on {d}",
+  "from_portfolio": "From the workshop's portfolio · {d}",
+  "first_shown": "First shown on {d}",
+  "caption_label": "The workshop's description",
+  "machine_note": "Machine-translated from Romanian.",
+  "history_label": "Other presentations of this icon",
+  "stages_label": "Stages of the work",
+  "stage_date": "Ink drawing · {d}",
+  "stage_caption": "The underdrawing — pen and ink, {d}",
+  "see_drawing": "See the drawing",
+  "related_label": "Other works on the same theme ({n})",
+  "cta_text": "Would you like an icon on glass with this theme (or any other iconographic theme)? Contact me and we will settle the details.",
+  "send_message": "Send a message",
+  "prev": "Previous work",
+  "next": "Next work",
+  "back_gallery": "Back to the gallery",
+  "photo_n": "Photo {n}",
+  "open_full": "Open the full-size image",
+  "default_title": "Icon on glass",
+  "about_eyebrow": "The workshop's story",
+  "about_title": "About",
+  "about_caption": "{t} — icon on glass",
+  "technique_eyebrow": "Technique",
+  "technique_title": "How an icon on glass is made",
+  "technique_intro": "The workshop's icons are painted in oil on the back of the glass, in reverse order: what is painted first is what you see in front.",
+  "steps": [
+   [
+    "I",
+    "The underdrawing",
+    "“The first stage (and the most difficult) in making an icon on glass is the ink drawing on the back of the glass. To keep to the tradition, at this stage I use only a nib or a brush.”",
+    "The drawing is “the skeleton of the image”: any mistake at this stage is almost impossible to correct later."
+   ],
+   [
+    "II",
+    "Painting",
+    "“Next comes painting the scene” — in vivid oil colours, with the rich decoration of Transylvanian peasant icons, still on the back of the glass.",
+    ""
+   ],
+   [
+    "III",
+    "Gold",
+    "“…applying the gold or silver leaf (on the back of the glass, of course)” — on the halos and on the details that must shine.",
+    ""
+   ],
+   [
+    "IV",
+    "Framing",
+    "“Then the painting is protected with a plywood backing, framed, and looked at (with admiration) from the front of the glass.”",
+    ""
+   ]
+  ],
+  "before_label": "The underdrawing — pen and ink",
+  "after_label": "{t}, painted and framed",
+  "orders_eyebrow": "To order",
+  "orders_title": "Orders",
+  "orders_quote": "“If you would like an icon on glass with a particular theme (or any other iconographic theme), contact me and we will settle the details.”",
+  "orders_ticks": [
+   "<strong>Any iconographic theme</strong> — the great feasts, the Mother of God, patron saints, after models (izvoade) from Nicula, Șcheii Brașovului, Țara Oltului, Laz or Mărginimea Sibiului.",
+   "<strong>Personalised icons</strong> — for example “The Table of Paradise”, where the saints in the diamonds are chosen on request.",
+   "<strong>Gifts with a soul</strong> — for a baptism, a name day or an anniversary, with the patron saint of the person receiving it.",
+   "<strong>For churches and monasteries</strong> — many of the works are already in churches across Romania.",
+   "<strong>Usual sizes</strong> — from small 13 × 18 cm icons up to 30 × 42 cm or larger."
+  ],
+  "orders_note": "Most of the works in the gallery were made to order and are no longer available, but any theme can be painted again. Orders are scheduled in the order they arrive.",
+  "contact_title": "Contact",
+  "contact_text": "Write to us on the workshop's page:",
+  "facebook_btn": "Facebook page",
+  "footer": "The texts and photographs come from the workshop's Facebook page."
+ },
+ "fr": {
+  "lang_name": "Français",
+  "pages": {
+   "home": "index.html",
+   "gallery": "galerie.html",
+   "about": "a-propos.html",
+   "technique": "technique.html",
+   "orders": "commandes.html",
+   "icons": "icones"
+  },
+  "months": [
+   "janvier",
+   "février",
+   "mars",
+   "avril",
+   "mai",
+   "juin",
+   "juillet",
+   "août",
+   "septembre",
+   "octobre",
+   "novembre",
+   "décembre"
+  ],
+  "site_name": "L'Atelier byzantin d'icônes sur verre",
+  "brand_1": "Atelier byzantin",
+  "brand_2": "d'icônes sur verre",
+  "menu": "Menu",
+  "language": "Langue",
+  "nav_home": "Accueil",
+  "nav_gallery": "Galerie",
+  "nav_about": "À propos",
+  "nav_technique": "Technique",
+  "nav_orders": "Commandes",
+  "meta_description": "Icônes orthodoxes peintes à l'huile sur verre, d'après des modèles transylvains des XVIIIe et XIXe siècles. Sur commande.",
+  "hero_eyebrow": "Icônes orthodoxes peintes à l'huile sur verre",
+  "hero_h1": "L'Atelier byzantin <em>d'icônes sur verre</em>",
+  "tagline": "Peintre d'icônes inspirée par les icônes des célèbres peintres transylvains.",
+  "cta_gallery": "Voir la galerie",
+  "cta_order": "Commander une icône",
+  "facts": [
+   [
+    "2019",
+    "les premières icônes, à l'Annonciation"
+   ],
+   [
+    "~250",
+    "icônes peintes"
+   ],
+   [
+    "5",
+    "traditions transylvaines de modèles"
+   ]
+  ],
+  "recent_eyebrow": "De l'atelier",
+  "recent_title": "Œuvres récentes",
+  "all_works": "Toute la galerie · {n} icônes",
+  "teasers": {
+   "about": [
+    "L'histoire de l'atelier",
+    "Le jour de l'Annonciation 2019, sans avoir jamais peint auparavant, elle a commencé à peindre des icônes sur verre."
+   ],
+   "technique": [
+    "La naissance d'une icône",
+    "Du dessin à l'encre et à la plume jusqu'à la feuille d'or : quatre étapes, toutes au revers du verre."
+   ],
+   "orders": [
+    "Icônes sur commande",
+    "Tout thème iconographique, comme cadeau qui a une âme ou pour une église."
+   ]
+  },
+  "read_more": "En savoir plus",
+  "gallery_eyebrow": "Les œuvres de l'atelier",
+  "gallery_title": "Galerie",
+  "gallery_intro": "Chaque icône est accompagnée du texte avec lequel elle a été présentée sur la page de l'atelier, traduit automatiquement du roumain.",
+  "search_placeholder": "Rechercher : saint, fête, modèle…",
+  "sort_label": "Trier",
+  "sort_new": "Les plus récentes",
+  "sort_old": "Les plus anciennes",
+  "sort_az": "A–Z",
+  "theme_label": "Thème",
+  "themes": {
+   "maica": "La Mère de Dieu",
+   "praznice": "Jésus-Christ et les grandes fêtes",
+   "sfinti": "Saints et archanges",
+   "masa": "La Table du Paradis",
+   "eroi": "Martyrs et héros",
+   "altele": "Autres œuvres"
+  },
+  "all_themes": "Tous les thèmes",
+  "show_more": "Afficher plus",
+  "no_results": "Aucune œuvre ne correspond à votre recherche. Essayez un autre mot ou un autre thème.",
+  "count_one": "1 œuvre",
+  "count_many": "{n} œuvres",
+  "count_shown": " · {n} affichées",
+  "photos": "{n} photos",
+  "izvod_prefix": "Modèle : ",
+  "fact_theme": "Thème",
+  "fact_izvod": "Modèle (izvod)",
+  "fact_size": "Dimensions",
+  "fact_feast": "Fête",
+  "fact_availability": "Disponibilité",
+  "availability": {
+   "Nu este disponibilă — se poate picta din nou, la comandă": "Non disponible — elle peut être peinte de nouveau sur commande",
+   "Realizată la comandă": "Réalisée sur commande"
+  },
+  "published_on": "Publiée le {d}",
+  "from_portfolio": "Du portfolio de l'atelier · {d}",
+  "first_shown": "Présentée pour la première fois le {d}",
+  "caption_label": "La présentation de l'atelier",
+  "machine_note": "Traduit automatiquement du roumain.",
+  "history_label": "Autres présentations de cette icône",
+  "stages_label": "Les étapes du travail",
+  "stage_date": "Dessin à l'encre · {d}",
+  "stage_caption": "Le dessin préparatoire — encre et plume, {d}",
+  "see_drawing": "Voir le dessin",
+  "related_label": "Autres œuvres sur le même thème ({n})",
+  "cta_text": "Vous souhaitez une icône sur verre sur ce thème (ou sur tout autre thème iconographique) ? Contactez-moi et nous en définirons les détails.",
+  "send_message": "Envoyer un message",
+  "prev": "Œuvre précédente",
+  "next": "Œuvre suivante",
+  "back_gallery": "Retour à la galerie",
+  "photo_n": "Photo {n}",
+  "open_full": "Ouvrir l'image en pleine résolution",
+  "default_title": "Icône sur verre",
+  "about_eyebrow": "L'histoire de l'atelier",
+  "about_title": "À propos",
+  "about_caption": "{t} — icône sur verre",
+  "technique_eyebrow": "Technique",
+  "technique_title": "La naissance d'une icône sur verre",
+  "technique_intro": "Les icônes de l'atelier sont peintes à l'huile au revers du verre, dans l'ordre inverse : ce qui est peint en premier apparaît au premier plan.",
+  "steps": [
+   [
+    "I",
+    "Le dessin",
+    "« La première étape (et la plus difficile) dans la réalisation d'une icône sur verre est le dessin à l'encre au dos du verre. Pour rester fidèle à la tradition, je n'utilise à cette étape que la plume ou le pinceau. »",
+    "Le dessin est « le squelette de l'image » : toute erreur à ce stade est presque impossible à corriger par la suite."
+   ],
+   [
+    "II",
+    "La peinture",
+    "« Vient ensuite la peinture de la scène » — en couleurs à l'huile vives, avec les riches décors des icônes paysannes de Transylvanie, toujours au revers du verre.",
+    ""
+   ],
+   [
+    "III",
+    "L'or",
+    "« …la pose de la feuille d'or ou d'argent (bien sûr, toujours au dos du verre) » — sur les auréoles et les détails qui doivent briller.",
+    ""
+   ],
+   [
+    "IV",
+    "L'encadrement",
+    "« Puis la peinture est protégée par un contreplaqué, encadrée, et on la contemple (avec admiration) côté face du verre. »",
+    ""
+   ]
+  ],
+  "before_label": "Le dessin préparatoire — encre et plume",
+  "after_label": "{t}, peinte et encadrée",
+  "orders_eyebrow": "Sur commande",
+  "orders_title": "Commandes",
+  "orders_quote": "« Si vous souhaitez une icône sur verre sur un thème particulier (ou sur tout autre thème iconographique), contactez-moi et nous en définirons les détails. »",
+  "orders_ticks": [
+   "<strong>Tout thème iconographique</strong> — les grandes fêtes, la Mère de Dieu, les saints patrons, d'après des modèles (izvoade) de Nicula, Șcheii Brașovului, Țara Oltului, Laz ou Mărginimea Sibiului.",
+   "<strong>Icônes personnalisées</strong> — par exemple « La Table du Paradis », dont les saints des losanges sont choisis à la demande.",
+   "<strong>Des cadeaux qui ont une âme</strong> — pour un baptême, une fête patronale ou un anniversaire, avec le saint patron de la personne qui la reçoit.",
+   "<strong>Pour les églises et les monastères</strong> — de nombreuses œuvres se trouvent déjà dans des églises de Roumanie.",
+   "<strong>Formats courants</strong> — des petites icônes de 13 × 18 cm jusqu'à 30 × 42 cm ou plus."
+  ],
+  "orders_note": "La plupart des œuvres de la galerie ont été réalisées sur commande et ne sont plus disponibles, mais chaque thème peut être peint de nouveau. Les commandes sont planifiées par ordre d'arrivée.",
+  "contact_title": "Contact",
+  "contact_text": "Écrivez-nous sur la page de l'atelier :",
+  "facebook_btn": "Page Facebook",
+  "footer": "Les textes et les photographies proviennent de la page Facebook de l'atelier."
+ }
+}
