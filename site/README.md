@@ -51,6 +51,14 @@ Posts published after the export go in `new-posts/`:
 3. Run the full chain above. Only the new photos are created; the existing ones stay as they are.
 4. A new `izvod` also needs a line in `translations/en/terms.json` and `translations/fr/terms.json`.
 
+**Available icons.** An icon whose caption says it is available ("această icoană este disponibilă") gets the status "Disponibilă". It appears on the "Available" page (`ro/disponibile.html`, `en/available.html`, `fr/disponibles.html`) and gets a badge in the gallery. **When it is sold,** add this to its entry in `posts.json` and rebuild:
+
+```
+"disponibilitate": "Nu este disponibilă — se poate picta din nou, la comandă"
+```
+
+It then leaves the Available page. Its caption still says "disponibilă", because the caption is kept as she wrote it.
+
 The caption is cleaned of customer references and its facts are read the same way as for exported posts. If a later Facebook export includes these posts, remove them from `posts.json`, or they will be merged with their exported copy (same photo) and their page address will change from `…-n1` to `…-p<number>`.
 
 ## Curation (lists at the top of `tools/build_data.py`)

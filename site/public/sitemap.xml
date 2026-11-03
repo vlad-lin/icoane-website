@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://icoane.biz/ro/index.html</loc></url>
 <url><loc>https://icoane.biz/ro/galerie.html</loc></url>
+<url><loc>https://icoane.biz/ro/disponibile.html</loc></url>
 <url><loc>https://icoane.biz/ro/despre.html</loc></url>
 <url><loc>https://icoane.biz/ro/tehnica.html</loc></url>
 <url><loc>https://icoane.biz/ro/comenzi.html</loc></url>
@@ -270,6 +271,7 @@
 <url><loc>https://icoane.biz/ro/icoane/buna-vestire-a0.html</loc></url>
 <url><loc>https://icoane.biz/en/index.html</loc></url>
 <url><loc>https://icoane.biz/en/gallery.html</loc></url>
+<url><loc>https://icoane.biz/en/available.html</loc></url>
 <url><loc>https://icoane.biz/en/about.html</loc></url>
 <url><loc>https://icoane.biz/en/technique.html</loc></url>
 <url><loc>https://icoane.biz/en/orders.html</loc></url>
@@ -538,6 +540,7 @@
 <url><loc>https://icoane.biz/en/icons/the-annunciation-a0.html</loc></url>
 <url><loc>https://icoane.biz/fr/index.html</loc></url>
 <url><loc>https://icoane.biz/fr/galerie.html</loc></url>
+<url><loc>https://icoane.biz/fr/disponibles.html</loc></url>
 <url><loc>https://icoane.biz/fr/a-propos.html</loc></url>
 <url><loc>https://icoane.biz/fr/technique.html</loc></url>
 <url><loc>https://icoane.biz/fr/commandes.html</loc></url>

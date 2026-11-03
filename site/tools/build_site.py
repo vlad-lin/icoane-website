@@ -35,6 +35,9 @@ ABOUT = 'p700'
 BEFORE_AFTER = 'p922'  # finished icon whose ink drawing is attached as a stage
 ORDERS_ART = 'p755'
 RECENT = 8
+# The availability value (set by build_data.py) of icons that are for sale now;
+# they are listed on the "available" page.
+AVAILABLE = 'Disponibilă'
 
 
 def esc(s):
@@ -144,7 +147,7 @@ def layout(L, path, alternates, title, description, body, active='', image=''):
     def link(p):
         return esc(rel(p, path))
     nav = ''
-    for key in ('gallery', 'about', 'technique', 'orders'):
+    for key in ('gallery', 'available', 'about', 'technique', 'orders'):
         cls = ' class="nav-cta"' if key == 'orders' else ''
         cur = ' aria-current="page"' if key == active else ''
         nav += f'<a href="{link(L.page(key))}"{cls}{cur}>{esc(L.t("nav_" + key))}</a>'
@@ -209,6 +212,8 @@ def thumb(e, path, i=0):
 def card(L, e, path):
     title = L.title(e)
     multi = f'<span class="badge multi">{esc(L.t("photos", n=len(e["images"])))}</span>' if len(e['images']) > 1 else ''
+    if e.get('disponibilitate') == AVAILABLE:
+        multi += f'<span class="badge available">{esc(L.t("badge_available"))}</span>'
     meta = L.date(e['date']) + (' · ' + e['dimensiuni'] if e.get('dimensiuni') else '')
     izvod = f'<p class="card-izvod">{esc(L.t("izvod_prefix") + L.tr.term(e["izvod"]))}</p>' if e.get('izvod') else ''
     return (f'<a class="card" href="{esc(rel(L.work(e), path))}" data-id="{e["id"]}" data-theme="{e["theme"]}" '
@@ -307,6 +312,31 @@ def gallery_page(L, works, path):
 <script src="{esc(rel(f'assets/search-{L.code}.js', path))}"></script>'''
 
 
+def available_page(L, works, path):
+    """The icons for sale now, with a message box; a friendly note when there are none."""
+    available = [e for e in works if e.get('disponibilitate') == AVAILABLE]
+    messenger = SITE_DATA['facebook'].replace('www.facebook.com', 'm.me')
+    if available:
+        count = L.t('count_one') if len(available) == 1 else L.t('count_many', n=len(available))
+        content = (f'<p class="result-count">{esc(count)}</p>'
+                   f'<div class="grid">{"".join(card(L, e, path) for e in available)}</div>'
+                   f'<div class="v-cta available-cta"><p>{esc(L.t("available_cta"))}</p>'
+                   f'<a class="btn btn-primary" href="{esc(messenger)}" target="_blank" rel="noopener">{esc(L.t("send_message"))}</a></div>')
+    else:
+        content = (f'<div class="v-cta available-cta"><p>{esc(L.t("available_empty"))}</p>'
+                   f'<a class="btn btn-primary" href="{esc(rel(L.page("orders"), path))}">{esc(L.t("cta_order"))}</a></div>')
+    return f'''<section class="section gallery available-page">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{esc(L.t('available_eyebrow'))}</p>
+      <h1 class="h2">{esc(L.t('available_title'))}</h1>
+      <p>{esc(L.t('available_intro'))}</p>
+    </div>
+    {content}
+  </div>
+</section>'''
+
+
 def work_page(L, e, works, by_title, path, prev, nxt):
     title = L.title(e)
     full = lambda name: esc(rel('img/full/' + name, path))
@@ -321,16 +351,19 @@ def work_page(L, e, works, by_title, path, prev, nxt):
             + (' aria-current="true"' if i == 0 else '') + f'><img loading="lazy" src="{small(n)}" alt=""></a>'
             for i, (n, c) in enumerate(media)) + '</div>'
 
-    rows = [(L.t('fact_theme'), L.ui['themes'].get(e['theme'], ''))]
+    rows = [(L.t('fact_theme'), esc(L.ui['themes'].get(e['theme'], '')))]
     if e.get('izvod'):
-        rows.append((L.t('fact_izvod'), L.tr.term(e['izvod'])))
+        rows.append((L.t('fact_izvod'), esc(L.tr.term(e['izvod']))))
     if e.get('dimensiuni'):
-        rows.append((L.t('fact_size'), e['dimensiuni']))
+        rows.append((L.t('fact_size'), esc(e['dimensiuni'])))
     if e.get('sarbatoare'):
-        rows.append((L.t('fact_feast'), L.feast(e['sarbatoare'])))
+        rows.append((L.t('fact_feast'), esc(L.feast(e['sarbatoare']))))
     if e.get('disponibilitate'):
-        rows.append((L.t('fact_availability'), L.ui['availability'].get(e['disponibilitate'], e['disponibilitate'])))
-    facts = ''.join(f'<tr><th scope="row">{esc(a)}</th><td>{esc(b)}</td></tr>' for a, b in rows)
+        value = esc(L.ui['availability'].get(e['disponibilitate'], e['disponibilitate']))
+        if e['disponibilitate'] == AVAILABLE:
+            value = f'<a href="{esc(rel(L.page("available"), path))}">{value}</a>'
+        rows.append((L.t('fact_availability'), value))
+    facts = ''.join(f'<tr><th scope="row">{esc(a)}</th><td>{b}</td></tr>' for a, b in rows)
 
     if e.get('portfolio'):
         when = L.t('from_portfolio', d=L.date(e['date']))
@@ -562,6 +595,7 @@ def main():
         pages = [
             ('home', site_name, home_page(L, works, by_id, L.page('home'))),
             ('gallery', f'{L.t("gallery_title")} · {site_name}', gallery_page(L, works, L.page('gallery'))),
+            ('available', f'{L.t("available_title")} · {site_name}', available_page(L, works, L.page('available'))),
             ('about', f'{L.t("about_title")} · {site_name}', about_page(L, by_id, L.page('about'))),
             ('technique', f'{L.t("technique_title")} · {site_name}', technique_page(L, by_id, L.page('technique'))),
             ('orders', f'{L.t("orders_title")} · {site_name}', orders_page(L, L.page('orders'))),

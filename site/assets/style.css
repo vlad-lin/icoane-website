@@ -61,7 +61,7 @@ h3, .h3 { font-size: 1.2rem; }
 .brand small { display: block; font-size: .78rem; font-weight: 400; color: var(--gold); letter-spacing: .04em; }
 .brand-mark { width: 32px; height: 32px; padding: 5px; border-radius: 6px; background: var(--vermilion); fill: #f0cf7a; flex: none; box-shadow: 0 0 0 1px rgba(240, 207, 122, .4); }
 .nav { display: flex; gap: 4px; font-family: var(--sans); font-size: .95rem; }
-.nav a { padding: 8px 14px; border-radius: 999px; color: var(--ivory-soft); text-decoration: none; }
+.nav a { padding: 8px 14px; border-radius: 999px; color: var(--ivory-soft); text-decoration: none; white-space: nowrap; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--gold); }
 .nav a.nav-cta { background: var(--vermilion); color: #fff; }
 .nav a.nav-cta:hover { background: var(--vermilion-dark); color: #fff; }
@@ -155,6 +155,9 @@ html:not(.js) .controls, html:not(.js) .result-count { display: none; }
   padding: 4px 8px; border-radius: 3px; background: var(--night); color: var(--gold); border: 1px solid var(--line);
 }
 .badge.multi { left: auto; right: 10px; }
+.badge.available { background: var(--gold); color: var(--night); border-color: var(--gold); }
+.available-cta { max-width: 46em; margin-top: 48px; }
+.facts-table td a { color: var(--gold); }
 .card-body { padding: 14px 2px 0; display: flex; flex-direction: column; gap: 3px; }
 .card-body h3 { font-size: 1.08rem; margin: 0; transition: color .2s; }
 .card:hover h3 { color: var(--gold); }
@@ -290,14 +293,15 @@ details.history .post-text { font-size: .95rem; }
   .work { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .work-media { position: static; height: 70vh; min-height: 360px; }
   .teasers { grid-template-columns: 1fr; }
-}
-@media (max-width: 720px) {
-  body { font-size: 16px; }
-  .wrap { padding: 0 16px; }
+  /* Five menu items don't fit beside the name below ~980 px: use the menu button. */
   .nav-toggle { display: block; }
   .nav { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; background: var(--night); border-bottom: 1px solid var(--line); padding: 8px 16px 16px; }
   .langs { margin: 8px 0 0; padding: 10px 0 0; border-left: 0; border-top: 1px solid var(--line); }
   .nav.open { display: flex; }
+}
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .wrap { padding: 0 16px; }
   .hero-inner { padding-top: 32px; padding-bottom: 56px; gap: 28px; }
   .hero-art { height: 300px; }
   .section { padding: 64px 0; }
