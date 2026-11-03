@@ -229,6 +229,29 @@ html:not(.js) .controls, html:not(.js) .result-count { display: none; }
 
 .footer { padding: 32px 0; font: .85rem var(--sans); color: var(--muted); border-top: 1px solid var(--line); background: var(--night); }
 .footer p { margin: 0; }
+.footer a, .linklike { color: var(--ivory-soft); }
+.footer-links { margin-top: 8px !important; }
+.linklike { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; text-decoration: underline; }
+html:not(.js) #cookie-settings { display: none; }
+/* Cookie banner (statistics): both choices look the same, so neither is pushed. */
+.consent {
+  position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 50; max-width: 760px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; padding: 16px 20px;
+  background: var(--night); border: 1px solid rgba(224, 184, 92, .45); border-radius: 10px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .6); font: .92rem/1.5 var(--sans); color: var(--ivory-soft);
+}
+.consent[hidden] { display: none; }
+.consent p { margin: 0; flex: 1 1 320px; }
+.consent a { color: var(--gold); }
+.consent-actions { display: flex; gap: 10px; margin-left: auto; }
+.consent-actions .btn { padding-top: 8px; padding-bottom: 8px; }
+.contact-email { margin: 6px 0 0; text-align: center; font: .9rem var(--sans); }
+.contact-email a { color: var(--gold); }
+.cta-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.privacy-text { max-width: 46em; color: var(--ivory-soft); }
+.privacy-text h2 { margin: 1.6em 0 .5em; }
+.privacy-text h2:first-child { margin-top: 0; }
+.privacy-text a { color: var(--gold); overflow-wrap: anywhere; }
 
 /* ---------- Icon page ---------- */
 .work-page { padding: 28px 0 88px; background-color: var(--night); }

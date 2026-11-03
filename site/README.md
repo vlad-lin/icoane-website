@@ -78,7 +78,14 @@ Keys are the post's position in `profile_posts_1.json`, the number after `p` in 
 - The site's address is `SITE_URL = 'https://icoane.biz'` at the top of `tools/build_site.py`.
   - It produces canonical links, language alternates, social previews, `public/sitemap.xml` and `public/robots.txt`.
   - If the site ends up at `www.icoane.biz` instead, change it and rebuild.
-- There is no e-mail address yet. When there is one, add it where the comment in the orders page says so (`orders_page` in `tools/build_site.py`), with its text in `content/ui.json` in all three languages.
+- **E-mail:** `EMAIL = 'contact@icoane.biz'` at the top of `tools/build_site.py`. It forwards to the painter's own inbox. It is shown in the footer, on the orders and Available pages, and in the privacy page.
+
+## Statistics and privacy
+
+- **Google Analytics 4:** `GA_ID` at the top of `tools/build_site.py`. Set it to `''` to switch statistics off; the cookie banner then disappears too.
+- **When Analytics loads:** `assets/site.js` adds it only after a visitor presses "Accept" on the cookie banner. It never loads when the site is opened from disk. "Setări cookie" in the footer reopens the banner.
+- **Privacy page:** its texts are `privacy_sections` in `content/ui.json` (ro/en/fr). When you change them, also update `PRIVACY_UPDATED` in `build_site.py`.
+- The page promises 2 months of data retention and no advertising features. Keep the Google Analytics settings matching.
 
 ## Publishing
 

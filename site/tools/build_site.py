@@ -29,6 +29,15 @@ LANGS = ['ro', 'en', 'fr']
 # set up on Railway (with or without "www.").
 SITE_URL = 'https://icoane.biz'
 
+# Contact address shown on the site (forwards to the painter's own inbox).
+EMAIL = 'contact@icoane.biz'
+# Google Analytics 4 measurement ID. site.js loads it only after the visitor accepts
+# the cookie banner, and never when the site is opened from disk (file://).
+# Set to '' to switch statistics off (the banner then disappears too).
+GA_ID = 'G-1WBC279E6L'
+# Date shown on the privacy page; change it whenever that text changes.
+PRIVACY_UPDATED = '2026-11-03'
+
 # Showcase choices (post ids; a merged icon can be named by any of its posts).
 HERO = ['p705', 'p808', 'p906']
 ABOUT = 'p700'
@@ -165,6 +174,16 @@ def layout(L, path, alternates, title, description, body, active='', image=''):
                        f'<meta property="og:description" content="{esc(description)}">\n')
         if image:
             head_extra += f'<meta property="og:image" content="{SITE_URL}/{esc(image)}">\n'
+    # Cookie banner for the statistics; hidden until site.js decides to show it.
+    cookie_link, banner = '', ''
+    if GA_ID:
+        cookie_link = f' · <button type="button" class="linklike" id="cookie-settings">{esc(L.t("footer_cookies"))}</button>'
+        banner = (f'<div class="consent" id="consent" role="region" aria-label="{esc(L.t("consent_label"))}" hidden>'
+                  f'<p>{esc(L.t("consent_text"))} <a href="{link(L.page("privacy"))}">{esc(L.t("consent_more"))}</a></p>'
+                  f'<div class="consent-actions">'
+                  f'<button type="button" class="btn btn-ghost" data-consent="denied">{esc(L.t("consent_decline"))}</button>'
+                  f'<button type="button" class="btn btn-ghost" data-consent="granted">{esc(L.t("consent_accept"))}</button>'
+                  f'</div></div>\n')
     return f'''<!doctype html>
 <html lang="{L.code}">
 <head>
@@ -176,7 +195,7 @@ def layout(L, path, alternates, title, description, body, active='', image=''):
 <link rel="stylesheet" href="{link('assets/style.css')}">
 <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
+<body{f' data-ga="{esc(GA_ID)}"' if GA_ID else ''}>
 
 <header class="topbar">
   <div class="wrap topbar-inner">
@@ -196,9 +215,10 @@ def layout(L, path, alternates, title, description, body, active='', image=''):
 <footer class="footer">
   <div class="wrap">
     <p>© {datetime.date.today().year} {esc(L.t('site_name'))} · {esc(L.t('footer'))}</p>
+    <p class="footer-links"><a href="mailto:{EMAIL}">{EMAIL}</a> · <a href="{link(L.page('privacy'))}">{esc(L.t('footer_privacy'))}</a>{cookie_link}</p>
   </div>
 </footer>
-<script src="{link('assets/site.js')}"></script>
+{banner}<script src="{link('assets/site.js')}"></script>
 </body>
 </html>
 '''
@@ -321,7 +341,8 @@ def available_page(L, works, path):
         content = (f'<p class="result-count">{esc(count)}</p>'
                    f'<div class="grid">{"".join(card(L, e, path) for e in available)}</div>'
                    f'<div class="v-cta available-cta"><p>{esc(L.t("available_cta"))}</p>'
-                   f'<a class="btn btn-primary" href="{esc(messenger)}" target="_blank" rel="noopener">{esc(L.t("send_message"))}</a></div>')
+                   f'<div class="cta-buttons"><a class="btn btn-primary" href="{esc(messenger)}" target="_blank" rel="noopener">{esc(L.t("send_message"))}</a>'
+                   f'<a class="btn btn-ghost" href="mailto:{EMAIL}">{esc(L.t("email_btn"))}</a></div></div>')
     else:
         content = (f'<div class="v-cta available-cta"><p>{esc(L.t("available_empty"))}</p>'
                    f'<a class="btn btn-primary" href="{esc(rel(L.page("orders"), path))}">{esc(L.t("cta_order"))}</a></div>')
@@ -505,8 +526,27 @@ def orders_page(L, path):
       <p>{esc(L.t('contact_text'))}</p>
       <a class="btn btn-primary btn-block" href="{esc(SITE_DATA['facebook'])}" target="_blank" rel="noopener">{esc(L.t('facebook_btn'))}</a>
       <a class="btn btn-ghost btn-block" href="{esc(messenger)}" target="_blank" rel="noopener">{esc(L.t('send_message'))}</a>
-      <!-- Contact details (e-mail, form) will be added here once the domain is bought. -->
+      <a class="btn btn-ghost btn-block" href="mailto:{EMAIL}">{esc(L.t('email_btn'))}</a>
+      <p class="contact-email"><a href="mailto:{EMAIL}">{EMAIL}</a></p>
     </aside>
+  </div>
+</section>'''
+
+
+def privacy_page(L, path):
+    def para(s):
+        h = text_html(s.replace('{ga_cookie}', '_ga_' + GA_ID.split('-', 1)[-1]))
+        return h.replace('{email}', f'<a href="mailto:{EMAIL}">{EMAIL}</a>')
+    sections = ''.join(f'<h2 class="h3">{esc(head)}</h2>' + para('\n\n'.join(paras))
+                       for head, paras in L.ui['privacy_sections'])
+    return f'''<section class="section privacy">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{esc(L.t('privacy_eyebrow'))}</p>
+      <h1 class="h2">{esc(L.t('privacy_title'))}</h1>
+      <p>{esc(L.t('privacy_updated', d=L.date(PRIVACY_UPDATED)))}</p>
+    </div>
+    <div class="prose privacy-text">{sections}</div>
   </div>
 </section>'''
 
@@ -599,6 +639,7 @@ def main():
             ('about', f'{L.t("about_title")} · {site_name}', about_page(L, by_id, L.page('about'))),
             ('technique', f'{L.t("technique_title")} · {site_name}', technique_page(L, by_id, L.page('technique'))),
             ('orders', f'{L.t("orders_title")} · {site_name}', orders_page(L, L.page('orders'))),
+            ('privacy', f'{L.t("privacy_title")} · {site_name}', privacy_page(L, L.page('privacy'))),
         ]
         for key, title, body in pages:
             path = L.page(key)

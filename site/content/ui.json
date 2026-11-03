@@ -8,6 +8,7 @@
    "about": "despre.html",
    "technique": "tehnica.html",
    "orders": "comenzi.html",
+   "privacy": "confidentialitate.html",
    "icons": "icoane"
   },
   "months": [
@@ -179,9 +180,63 @@
   ],
   "orders_note": "Lucrările din galerie au fost, de cele mai multe ori, realizate la comandă și nu mai sunt disponibile, dar orice temă se poate picta din nou. Comenzile se programează în ordinea sosirii.",
   "contact_title": "Contact",
-  "contact_text": "Scrieți-ne pe pagina atelierului:",
+  "contact_text": "Scrieți-ne pe pagina atelierului sau pe e-mail:",
   "facebook_btn": "Pagina de Facebook",
-  "footer": "Textele și fotografiile provin de pe pagina de Facebook a atelierului."
+  "email_btn": "Scrieți un e-mail",
+  "footer": "Textele și fotografiile provin de pe pagina de Facebook a atelierului.",
+  "footer_privacy": "Confidențialitate",
+  "footer_cookies": "Setări cookie",
+  "consent_label": "Cookie-uri de statistică",
+  "consent_text": "Folosim Google Analytics ca să aflăm câți vizitatori are site-ul și ce pagini îi interesează. Aceste date se colectează doar cu acordul dumneavoastră.",
+  "consent_accept": "Accept",
+  "consent_decline": "Refuz",
+  "consent_more": "Detalii",
+  "privacy_eyebrow": "Datele dumneavoastră",
+  "privacy_title": "Politica de confidențialitate",
+  "privacy_updated": "Ultima actualizare: {d}",
+  "privacy_sections": [
+   [
+    "Cine suntem",
+    [
+     "Acest site, icoane.biz, aparține Atelierului Bizantin de Icoane pe Sticlă. Pentru orice întrebare despre datele dumneavoastră, ne puteți scrie la {email}."
+    ]
+   ],
+   [
+    "Ce date colectăm",
+    [
+     "Site-ul nu are conturi de utilizator, formulare sau newsletter și nu vă cere date personale.",
+     "Dacă acceptați cookie-urile de statistică, folosim Google Analytics 4 ca să aflăm, în mod agregat, câte persoane vizitează site-ul, ce pagini citesc, din ce țară și oraș aproximativ, de pe ce tip de dispozitiv și browser și de pe ce site au ajuns aici. Google Analytics 4 nu stochează adresele IP. Nu folosim aceste date pentru publicitate și nu le combinăm cu alte date.",
+     "Dacă ne scrieți pe e-mail sau pe Messenger, folosim mesajul doar ca să vă răspundem și pentru comanda dumneavoastră."
+    ]
+   ],
+   [
+    "Cookie-uri",
+    [
+     "Doar după ce apăsați „Accept”, Google Analytics salvează în browser cookie-urile _ga și {ga_cookie}, care deosebesc vizitele noi de cele repetate. Ele expiră după cel mult 2 ani. Dacă refuzați, nu se salvează niciun cookie de statistică.",
+     "Alegerea dumneavoastră se păstrează în browser, ca să nu vă întrebăm la fiecare pagină."
+    ]
+   ],
+   [
+    "Temeiul legal și retragerea acordului",
+    [
+     "Statisticile se bazează pe consimțământul dumneavoastră (art. 6 alin. (1) lit. a din Regulamentul (UE) 2016/679, GDPR). Îl puteți retrage oricând, din linkul „Setări cookie” din subsolul fiecărei pagini."
+    ]
+   ],
+   [
+    "Cine prelucrează datele",
+    [
+     "Google Analytics este oferit de Google Ireland Limited. Datele pot fi transferate în Statele Unite, în baza Cadrului UE-SUA privind confidențialitatea datelor. Datele detaliate de statistică se păstrează 2 luni. Politica de confidențialitate Google: https://policies.google.com/privacy",
+     "Site-ul este găzduit pe GitHub Pages (GitHub, Inc.), care, ca orice server web, poate înregistra temporar adresa IP a vizitatorilor, din motive de securitate: https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement",
+     "Butoanele către pagina de Facebook și Messenger deschid site-urile Meta, unde se aplică politica de confidențialitate Meta. Site-ul nostru nu încarcă nimic de la Facebook."
+    ]
+   ],
+   [
+    "Drepturile dumneavoastră",
+    [
+     "Aveți dreptul de acces, rectificare, ștergere, restricționare, opoziție și portabilitate a datelor. Pentru acestea, scrieți-ne la {email}. Aveți și dreptul să depuneți o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP): https://www.dataprotection.ro"
+    ]
+   ]
+  ]
  },
  "en": {
   "lang_name": "English",
@@ -192,6 +247,7 @@
    "about": "about.html",
    "technique": "technique.html",
    "orders": "orders.html",
+   "privacy": "privacy.html",
    "icons": "icons"
   },
   "months": [
@@ -363,9 +419,63 @@
   ],
   "orders_note": "Most of the works in the gallery were made to order and are no longer available, but any theme can be painted again. Orders are scheduled in the order they arrive.",
   "contact_title": "Contact",
-  "contact_text": "Write to us on the workshop's page:",
+  "contact_text": "Write to us on the workshop's page or by e-mail:",
   "facebook_btn": "Facebook page",
-  "footer": "The texts and photographs come from the workshop's Facebook page."
+  "email_btn": "Send an e-mail",
+  "footer": "The texts and photographs come from the workshop's Facebook page.",
+  "footer_privacy": "Privacy",
+  "footer_cookies": "Cookie settings",
+  "consent_label": "Statistics cookies",
+  "consent_text": "We use Google Analytics to learn how many people visit the site and which pages interest them. This data is collected only with your consent.",
+  "consent_accept": "Accept",
+  "consent_decline": "Decline",
+  "consent_more": "Details",
+  "privacy_eyebrow": "Your data",
+  "privacy_title": "Privacy policy",
+  "privacy_updated": "Last updated: {d}",
+  "privacy_sections": [
+   [
+    "Who we are",
+    [
+     "This website, icoane.biz, belongs to the Byzantine Workshop of Icons on Glass (Atelierul Bizantin de Icoane pe Sticlă). For any question about your data, write to us at {email}."
+    ]
+   ],
+   [
+    "What data we collect",
+    [
+     "The site has no user accounts, forms or newsletter, and does not ask for personal data.",
+     "If you accept statistics cookies, we use Google Analytics 4 to learn, in aggregate, how many people visit the site, which pages they read, their country and approximate city, their type of device and browser, and which site brought them here. Google Analytics 4 does not store IP addresses. We do not use this data for advertising and do not combine it with other data.",
+     "If you write to us by e-mail or Messenger, we use your message only to reply to you and for your order."
+    ]
+   ],
+   [
+    "Cookies",
+    [
+     "Only after you press “Accept” does Google Analytics store the cookies _ga and {ga_cookie} in your browser, to tell new visits from returning ones. They expire after at most 2 years. If you decline, no statistics cookie is stored.",
+     "Your choice is kept in your browser so that we do not ask on every page."
+    ]
+   ],
+   [
+    "Legal basis and withdrawing consent",
+    [
+     "Statistics are based on your consent (Art. 6(1)(a) of Regulation (EU) 2016/679, the GDPR). You can withdraw it at any time with the “Cookie settings” link at the bottom of every page."
+    ]
+   ],
+   [
+    "Who processes the data",
+    [
+     "Google Analytics is provided by Google Ireland Limited. Data may be transferred to the United States under the EU-US Data Privacy Framework. Detailed statistics data is kept for 2 months. Google’s privacy policy: https://policies.google.com/privacy",
+     "The site is hosted on GitHub Pages (GitHub, Inc.), which, like any web server, may briefly log visitors’ IP addresses for security: https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement",
+     "The buttons to the Facebook page and Messenger open Meta’s websites, where Meta’s privacy policy applies. Our site does not load anything from Facebook."
+    ]
+   ],
+   [
+    "Your rights",
+    [
+     "You have the right to access, rectify, erase, restrict, object to and port your data. To exercise them, write to us at {email}. You may also lodge a complaint with the Romanian data protection authority (ANSPDCP): https://www.dataprotection.ro"
+    ]
+   ]
+  ]
  },
  "fr": {
   "lang_name": "Français",
@@ -376,6 +486,7 @@
    "about": "a-propos.html",
    "technique": "technique.html",
    "orders": "commandes.html",
+   "privacy": "confidentialite.html",
    "icons": "icones"
   },
   "months": [
@@ -547,8 +658,62 @@
   ],
   "orders_note": "La plupart des œuvres de la galerie ont été réalisées sur commande et ne sont plus disponibles, mais chaque thème peut être peint de nouveau. Les commandes sont planifiées par ordre d'arrivée.",
   "contact_title": "Contact",
-  "contact_text": "Écrivez-nous sur la page de l'atelier :",
+  "contact_text": "Écrivez-nous sur la page de l’atelier ou par e-mail :",
   "facebook_btn": "Page Facebook",
-  "footer": "Les textes et les photographies proviennent de la page Facebook de l'atelier."
+  "email_btn": "Envoyer un e-mail",
+  "footer": "Les textes et les photographies proviennent de la page Facebook de l'atelier.",
+  "footer_privacy": "Confidentialité",
+  "footer_cookies": "Paramètres des cookies",
+  "consent_label": "Cookies de statistiques",
+  "consent_text": "Nous utilisons Google Analytics pour savoir combien de personnes visitent le site et quelles pages les intéressent. Ces données ne sont collectées qu’avec votre accord.",
+  "consent_accept": "Accepter",
+  "consent_decline": "Refuser",
+  "consent_more": "En savoir plus",
+  "privacy_eyebrow": "Vos données",
+  "privacy_title": "Politique de confidentialité",
+  "privacy_updated": "Dernière mise à jour : {d}",
+  "privacy_sections": [
+   [
+    "Qui sommes-nous",
+    [
+     "Ce site, icoane.biz, appartient à l’Atelier byzantin d’icônes sur verre (Atelierul Bizantin de Icoane pe Sticlă). Pour toute question sur vos données, écrivez-nous à {email}."
+    ]
+   ],
+   [
+    "Quelles données nous collectons",
+    [
+     "Le site n’a ni comptes utilisateurs, ni formulaires, ni newsletter, et ne vous demande aucune donnée personnelle.",
+     "Si vous acceptez les cookies de statistiques, nous utilisons Google Analytics 4 pour savoir, de façon agrégée, combien de personnes visitent le site, quelles pages elles lisent, leur pays et leur ville approximative, leur type d’appareil et de navigateur, et le site qui les a amenées ici. Google Analytics 4 ne conserve pas les adresses IP. Nous n’utilisons pas ces données à des fins publicitaires et ne les combinons pas avec d’autres données.",
+     "Si vous nous écrivez par e-mail ou sur Messenger, nous utilisons votre message uniquement pour vous répondre et pour votre commande."
+    ]
+   ],
+   [
+    "Cookies",
+    [
+     "Ce n’est qu’après avoir cliqué sur « Accepter » que Google Analytics enregistre dans votre navigateur les cookies _ga et {ga_cookie}, qui distinguent les nouvelles visites des visites répétées. Ils expirent au bout de 2 ans au maximum. Si vous refusez, aucun cookie de statistiques n’est enregistré.",
+     "Votre choix est conservé dans votre navigateur, afin de ne pas vous le demander à chaque page."
+    ]
+   ],
+   [
+    "Base légale et retrait du consentement",
+    [
+     "Les statistiques reposent sur votre consentement (art. 6, paragraphe 1, point a du règlement (UE) 2016/679, RGPD). Vous pouvez le retirer à tout moment grâce au lien « Paramètres des cookies » en bas de chaque page."
+    ]
+   ],
+   [
+    "Qui traite les données",
+    [
+     "Google Analytics est fourni par Google Ireland Limited. Les données peuvent être transférées aux États-Unis dans le cadre de protection des données UE-États-Unis (Data Privacy Framework). Les données statistiques détaillées sont conservées 2 mois. Politique de confidentialité de Google : https://policies.google.com/privacy",
+     "Le site est hébergé sur GitHub Pages (GitHub, Inc.), qui, comme tout serveur web, peut enregistrer temporairement l’adresse IP des visiteurs pour des raisons de sécurité : https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement",
+     "Les boutons vers la page Facebook et Messenger ouvrent les sites de Meta, où s’applique la politique de confidentialité de Meta. Notre site ne charge rien depuis Facebook."
+    ]
+   ],
+   [
+    "Vos droits",
+    [
+     "Vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation, d’opposition et de portabilité de vos données. Pour les exercer, écrivez-nous à {email}. Vous pouvez également introduire une réclamation auprès de l’autorité roumaine de protection des données (ANSPDCP) : https://www.dataprotection.ro"
+    ]
+   ]
+  ]
  }
 }

@@ -26,7 +26,7 @@
     var state = { theme: 'all', q: '', sort: 'new', shown: PAGE };
 
     var fold = function (s) {
-      return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+      return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     };
     var fmt = function (s, n) { return s.replace('{n}', n); };
     var matches = function (card) {
@@ -140,5 +140,63 @@
       var link = document.querySelector(ev.key === 'ArrowLeft' ? '.pager-prev' : ev.key === 'ArrowRight' ? '.pager-next' : null);
       if (link) location.href = link.href;
     });
+  }
+
+  // ---------- statistics: Google Analytics, only after the visitor accepts ----------
+  // Nothing is loaded from Google until "Accept" is pressed. The choice is remembered
+  // in this browser; "Cookie settings" in the footer reopens the banner. Opened from
+  // disk (file://), the banner works but Analytics is never loaded.
+  var GA = document.body.dataset.ga;
+  var banner = $('consent');
+  if (GA && banner) {
+    var KEY = 'icoane-consent';
+    var loaded = false;
+    var getChoice = function () { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
+    var setChoice = function (v) { try { localStorage.setItem(KEY, v); } catch (e) { /* private mode */ } };
+    var loadAnalytics = function () {
+      if (loaded || location.protocol === 'file:') return;
+      loaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      // Consent Mode: statistics allowed, everything advertising-related refused.
+      window.gtag('consent', 'default', {
+        analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+      });
+      window.gtag('js', new Date());
+      window.gtag('config', GA);
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA);
+      document.head.appendChild(s);
+    };
+    var removeCookies = function () {
+      var host = location.hostname;
+      document.cookie.split(';').forEach(function (c) {
+        var name = c.split('=')[0].trim();
+        if (name.indexOf('_ga') !== 0) return;
+        ['', host, '.' + host, '.' + host.split('.').slice(-2).join('.')].forEach(function (d) {
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + (d ? '; domain=' + d : '');
+        });
+      });
+    };
+    var choose = function (v) {
+      setChoice(v);
+      banner.hidden = true;
+      if (v === 'granted') {
+        loadAnalytics();
+      } else {
+        if (loaded) window.gtag('consent', 'update', { analytics_storage: 'denied' });
+        removeCookies();
+      }
+    };
+    banner.addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-consent]');
+      if (b) choose(b.dataset.consent);
+    });
+    var settings = $('cookie-settings');
+    if (settings) settings.addEventListener('click', function () { banner.hidden = false; });
+    var choice = getChoice();
+    if (choice === 'granted') loadAnalytics();
+    else if (choice !== 'denied') banner.hidden = false;
   }
 })();
