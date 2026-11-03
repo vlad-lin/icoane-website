@@ -5,7 +5,7 @@ Open `public/index.html` in any browser (double-click). No server, internet conn
 ## Folders
 
 - `public/`: **the website itself**, and the only folder to publish. Everything in it is generated, so don't edit it by hand.
-  - `ro/`, `en/`, `fr/`: one folder per language, each with home, gallery, about, technique, orders and one page per icon (`ro/icoane/masa-raiului-p922.html`).
+  - `ro/`, `en/`, `fr/`: one folder per language, each with home, gallery, available, about, technique, orders, privacy and one page per icon (`ro/icoane/masa-raiului-p922.html`).
   - `img/full` (photos up to 1600 px) and `img/thumb` (560 px), shared by all languages.
 - `assets/`: `style.css` and `site.js`, copied into `public/assets/` by the build.
 - `content/ui.json`: all interface and page text (menus, technique, orders…) in ro/en/fr, side by side.
@@ -13,7 +13,8 @@ Open `public/index.html` in any browser (double-click). No server, internet conn
   - `terms.json` holds titles and izvod.
   - The other files hold captions, keyed by a code computed from the Romanian text.
   - `todo-en.json` / `todo-fr.json` list what is still untranslated. Romanian is shown meanwhile.
-- `data/lucrari.json`: the works, generated from the Facebook export.
+- `new-posts/`: posts published after the Facebook export (`posts.json` plus the original photos). See "Adding a new Facebook post" below.
+- `data/lucrari.json`: the works, generated from the Facebook export (a one-time import) and `new-posts/`.
 - `tools/`: the scripts below.
 
 ## Rebuilding
@@ -24,7 +25,7 @@ After changing text in `content/` or `translations/`, or the showcase choices at
 python site\tools\build_site.py
 ```
 
-After a new Facebook export (put it in `..\facebook-export\`), run everything:
+After adding a post to `new-posts/` (or changing the curation lists in `tools/build_data.py`), run everything. The Facebook export in `..\facebook-export\` stays on this PC only and is still read as the main source:
 
 ```
 python site\tools\build_data.py
@@ -89,6 +90,12 @@ Keys are the post's position in `profile_posts_1.json`, the number after `p` in 
 
 ## Publishing
 
-- Only `public/` is served: static HTML with no build step.
-- The plan is the same as evochain: GitHub Pages hosts the site, and the `icoane.biz` DNS records are added in Railway, where the domain was bought. See "Next steps" in `../CLAUDE.md` for the options and the exact DNS records.
+- The site is live at https://icoane.biz, hosted on GitHub Pages.
+- Every push to `main` runs `.github/workflows/pages.yml`, which publishes only `public/`. It takes about 3–5 minutes; most of that is downloading the repository with its photos.
 - Rebuild with the commands above before each commit, so `public/` is up to date.
+- **DNS** is managed in Railway, where the domain was bought (it uses Name.com's servers). Keep all its records:
+  - four A records and the `www` CNAME (GitHub Pages)
+  - the `_github-pages-challenge` TXT (GitHub)
+  - the `google-site-verification` TXT (Search Console)
+  - the e-mail forwarding records that Railway manages itself (MX and SPF)
+- **Google Search Console** (domain property `icoane.biz`) has the sitemap `https://icoane.biz/sitemap.xml`. Google Analytics and Search Console are under the site owner's Google account.
