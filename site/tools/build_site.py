@@ -18,6 +18,7 @@ import re
 import shutil
 import sys
 import unicodedata
+import urllib.parse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.dirname(HERE)
@@ -31,6 +32,8 @@ SITE_URL = 'https://icoane.biz'
 
 # Contact address shown on the site (forwards to the painter's own inbox).
 EMAIL = 'contact@icoane.biz'
+# Her WhatsApp number, international form without "+" (public on her Facebook page: 0756 390 461).
+WHATSAPP = '40756390461'
 # Google Analytics 4 measurement ID. site.js loads it only after the visitor accepts
 # the cookie banner, and never when the site is opened from disk (file://).
 # Set to '' to switch statistics off (the banner then disappears too).
@@ -68,6 +71,21 @@ def fold(s):
 def slugify(s):
     s = fold(s.replace('œ', 'oe').replace('Œ', 'oe').replace('æ', 'ae'))
     return re.sub(r'[^a-z0-9]+', '-', s).strip('-')[:60].rstrip('-')
+
+
+def messenger_btn(L, cls):
+    """Messenger: on computers the chat inside facebook.com (where people are already logged
+    in; m.me would send them to messenger.com, which asks for a separate login). site.js
+    switches phones to m.me, which opens the Messenger app."""
+    user = SITE_DATA['facebook'].rstrip('/').rsplit('/', 1)[-1]
+    return (f'<a class="btn {cls} js-messenger" href="https://www.facebook.com/messages/t/{esc(user)}" '
+            f'data-mobile="https://m.me/{esc(user)}" target="_blank" rel="noopener">{esc(L.t("send_message"))}</a>')
+
+
+def whatsapp_btn(L, cls, text):
+    """WhatsApp chat with her number, with a first message already written (the visitor can edit it)."""
+    url = f'https://wa.me/{WHATSAPP}?text=' + urllib.parse.quote(text)
+    return f'<a class="btn {cls}" href="{esc(url)}" target="_blank" rel="noopener">{esc(L.t("whatsapp_btn"))}</a>'
 
 
 def text_key(s):
@@ -384,13 +402,13 @@ def gallery_page(L, works, path):
 def available_page(L, works, path):
     """The icons for sale now, with a message box; a friendly note when there are none."""
     available = [e for e in works if e.get('disponibilitate') == AVAILABLE]
-    messenger = SITE_DATA['facebook'].replace('www.facebook.com', 'm.me')
     if available:
         count = L.t('count_one') if len(available) == 1 else L.t('count_many', n=len(available))
         content = (f'<p class="result-count">{esc(count)}</p>'
                    f'<div class="grid">{"".join(card(L, e, path) for e in available)}</div>'
                    f'<div class="v-cta available-cta"><p>{esc(L.t("available_cta"))}</p>'
-                   f'<div class="cta-buttons"><a class="btn btn-primary" href="{esc(messenger)}" target="_blank" rel="noopener">{esc(L.t("send_message"))}</a>'
+                   f'<div class="cta-buttons">{messenger_btn(L, "btn-primary")}'
+                   f'{whatsapp_btn(L, "btn-ghost", L.t("whatsapp_text"))}'
                    f'<a class="btn btn-ghost" href="mailto:{EMAIL}">{esc(L.t("email_btn"))}</a></div></div>')
     else:
         content = (f'<div class="v-cta available-cta"><p>{esc(L.t("available_empty"))}</p>'
@@ -481,9 +499,10 @@ def work_page(L, e, works, by_title, path, prev, nxt):
                            f'<img loading="lazy" src="{thumb(o, path)}" alt=""></a>' for o in related[:12])
                  + '</div>')
 
-    messenger = SITE_DATA['facebook'].replace('www.facebook.com', 'm.me')
-    info += (f'<div class="v-cta"><p>{esc(L.t("cta_text"))}</p>'
-             f'<a class="btn btn-primary" href="{esc(messenger)}" target="_blank" rel="noopener">{esc(L.t("send_message"))}</a></div>')
+    page_url = f'{SITE_URL}/{L.work(e)}' if SITE_URL else ''
+    info += (f'<div class="v-cta"><p>{esc(L.t("cta_text"))}</p><div class="cta-buttons">'
+             f'{messenger_btn(L, "btn-primary")}'
+             f'{whatsapp_btn(L, "btn-ghost", L.t("whatsapp_text_icon", t=title, url=page_url).strip(" :"))}</div></div>')
 
     pager = '<nav class="pager">'
     pager += (f'<a class="pager-prev" rel="prev" href="{esc(rel(L.work(prev), path))}"><span>‹ {esc(L.t("prev"))}</span>{esc(L.title(prev))}</a>'
@@ -562,7 +581,6 @@ def technique_page(L, by_id, path):
 
 def orders_page(L, path):
     ticks = ''.join(f'<li>{t}</li>' for t in L.ui['orders_ticks'])
-    messenger = SITE_DATA['facebook'].replace('www.facebook.com', 'm.me')
     return f'''<section class="section orders">
   <div class="wrap orders-inner">
     <div>
@@ -578,7 +596,8 @@ def orders_page(L, path):
       <h2 class="h3">{esc(L.t('contact_title'))}</h2>
       <p>{esc(L.t('contact_text'))}</p>
       <a class="btn btn-primary btn-block" href="{esc(SITE_DATA['facebook'])}" target="_blank" rel="noopener">{esc(L.t('facebook_btn'))}</a>
-      <a class="btn btn-ghost btn-block" href="{esc(messenger)}" target="_blank" rel="noopener">{esc(L.t('send_message'))}</a>
+      {messenger_btn(L, 'btn-ghost btn-block')}
+      {whatsapp_btn(L, 'btn-ghost btn-block', L.t('whatsapp_text'))}
       <a class="btn btn-ghost btn-block" href="mailto:{EMAIL}">{esc(L.t('email_btn'))}</a>
       <p class="contact-email"><a href="mailto:{EMAIL}">{EMAIL}</a></p>
     </aside>

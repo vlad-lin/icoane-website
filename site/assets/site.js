@@ -12,6 +12,15 @@
     });
   }
 
+  // ---------- Messenger: the app on phones ----------
+  // The links point to the chat inside facebook.com (computers are usually logged in there);
+  // on phones m.me opens the Messenger app instead.
+  if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    Array.prototype.forEach.call(document.querySelectorAll('a.js-messenger[data-mobile]'), function (a) {
+      a.href = a.dataset.mobile;
+    });
+  }
+
   // ---------- gallery: search, themes, sorting, paging ----------
   // All cards are in the page (so it works without JavaScript and for search engines);
   // this only hides, reorders and pages them. The state lives in the address (#theme=…)
