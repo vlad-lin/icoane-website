@@ -36,8 +36,8 @@
   "nav_about": "Despre",
   "nav_technique": "Tehnica",
   "nav_orders": "Comenzi",
-  "meta_description": "Icoane ortodoxe pictate în ulei pe sticlă, după izvoade transilvănene din secolele XVIII–XIX. Lucrări la comandă.",
-  "hero_eyebrow": "Icoane ortodoxe pictate în ulei pe sticlă",
+  "meta_description": "Icoane ortodoxe pictate în tempera pe sticlă, după izvoade transilvănene din secolele XVIII–XIX. Lucrări la comandă.",
+  "hero_eyebrow": "Icoane ortodoxe pictate în tempera pe sticlă",
   "hero_h1": "Atelierul Bizantin <em>de Icoane pe Sticlă</em>",
   "tagline": "Pictor iconar inspirat de icoanele celebrilor pictori ardeleni.",
   "cta_gallery": "Vezi galeria",
@@ -48,7 +48,7 @@
     "primele icoane, de Buna Vestire"
    ],
    [
-    "~250",
+    "~300",
     "icoane pictate"
    ],
    [
@@ -79,7 +79,7 @@
   "gallery_intro": "Fiecare icoană este însoțită de textul cu care a fost prezentată pe pagina atelierului.",
   "available_eyebrow": "Icoane disponibile",
   "available_title": "Disponibile acum",
-  "available_intro": "Icoane încheiate în atelier, care își caută casa. Fiecare este unicat, pictată de mână în ulei pe sticlă.",
+  "available_intro": "Icoane încheiate în atelier, care își caută casa. Fiecare este unicat, pictată de mână în tempera pe sticlă.",
   "available_cta": "Vă doriți una dintre aceste icoane în căminul dumneavoastră sau ca dar pentru cineva drag? Scrieți-mi un mesaj pentru preț și alte detalii.",
   "available_empty": "Momentan toate icoanele și-au găsit casa. Puteți oricând comanda o icoană cu tema dorită.",
   "badge_available": "Disponibilă",
@@ -118,6 +118,21 @@
   "published_on": "Publicată pe {d}",
   "from_portfolio": "Din portofoliul atelierului · {d}",
   "first_shown": "Prezentată prima dată pe {d}",
+  "before_2020": "înainte de 2020",
+  "from_archive": "Din arhiva atelierului · fotografiată pe {d}",
+  "from_archive_undated": "Din arhiva atelierului · pictată înainte de 2020",
+  "church_chip": "Pentru biserici",
+  "fact_church": "Destinație",
+  "church_value": "O sfântă biserică",
+  "church_eyebrow": "În sfintele biserici",
+  "church_title": "Icoane pentru sfintele biserici",
+  "church_text": [
+   "Multe dintre icoanele atelierului au fost pictate pentru sfinte biserici. Acolo stau la loc de închinare și sunt împodobite cu flori la sărbători.",
+   "„Una dintre cele mai fericite zile a fost aceea în care preotul bisericii mi-a trimis pozele!” Parohiile și mănăstirile pot comanda orice temă iconografică."
+  ],
+  "church_all": "Toate icoanele pentru biserici ({n})",
+  "church_photo_alt": "Icoane pictate în atelier, la loc de închinare într-o biserică",
+  "church_photo_caption": "Icoane ale atelierului la loc de închinare, în 2020",
   "caption_label": "Prezentarea atelierului",
   "machine_note": "",
   "history_label": "Alte prezentări ale acestei icoane",
@@ -139,18 +154,18 @@
   "about_caption": "{t} — icoană pe sticlă",
   "technique_eyebrow": "Tehnica",
   "technique_title": "Cum se naște o icoană pe sticlă",
-  "technique_intro": "Icoanele atelierului sunt pictate în ulei, pe „dosul” sticlei, în ordine inversă: ce se pictează primul se vede în față.",
+  "technique_intro": "Icoanele atelierului sunt pictate în tempera, pe „dosul” sticlei, în ordine inversă: ce se pictează primul se vede în față.",
   "steps": [
    [
     "I",
     "Urzeala",
     "„Prima etapă (și cea mai dificilă) în realizarea unei icoane pe sticlă este desenul în tuș pe spatele sticlei. Pentru a păstra tradiția folosesc în această etapă doar penița sau pensula.”",
-    "Desenul este „scheletul imaginii”: orice greșeală din această fază e aproape imposibil de remediat ulterior."
+    "Desenul este „scheletul imaginii”: orice greșeală din această fază e aproape imposibil de remediat ulterior. Odată încheiat, desenul este fixat și protejat cu vernis."
    ],
    [
     "II",
     "Pictura",
-    "„Urmează pictarea scenei” — în culori de ulei, vii, cu decorurile bogate ale icoanelor țărănești ardelene, tot pe „dosul” sticlei.",
+    "„Urmează pictarea scenei” — în culori tempera cu emulsie de ou, vii, cu decorurile bogate ale icoanelor țărănești ardelene, tot pe „dosul” sticlei.",
     ""
    ],
    [
@@ -163,7 +178,7 @@
     "IV",
     "Înrămarea",
     "„Apoi pictura se protejează cu un placaj, se înrămează și se privește (cu admirație) pe «fața sticlei».”",
-    ""
+    "Ramele, din lemn de brad băițuit, sunt lucrate tot manual."
    ]
   ],
   "before_label": "Urzeala — desenul în tuș cu penița",
@@ -183,7 +198,7 @@
   "contact_text": "Scrieți-ne pe pagina atelierului sau pe e-mail:",
   "facebook_btn": "Pagina de Facebook",
   "email_btn": "Scrieți un e-mail",
-  "footer": "Textele și fotografiile provin de pe pagina de Facebook a atelierului.",
+  "footer": "Textele și fotografiile provin de pe pagina de Facebook a atelierului și din arhiva sa.",
   "footer_privacy": "Confidențialitate",
   "footer_cookies": "Setări cookie",
   "consent_label": "Cookie-uri de statistică",
@@ -275,8 +290,8 @@
   "nav_about": "About",
   "nav_technique": "Technique",
   "nav_orders": "Orders",
-  "meta_description": "Orthodox icons painted in oil on glass, after Transylvanian models from the 18th and 19th centuries. Made to order.",
-  "hero_eyebrow": "Orthodox icons painted in oil on glass",
+  "meta_description": "Orthodox icons painted in tempera on glass, after Transylvanian models from the 18th and 19th centuries. Made to order.",
+  "hero_eyebrow": "Orthodox icons painted in tempera on glass",
   "hero_h1": "The Byzantine Workshop <em>of Icons on Glass</em>",
   "tagline": "An icon painter inspired by the icons of the great Transylvanian painters.",
   "cta_gallery": "See the gallery",
@@ -287,7 +302,7 @@
     "the first icons, on the Annunciation"
    ],
    [
-    "~250",
+    "~300",
     "icons painted"
    ],
    [
@@ -318,7 +333,7 @@
   "gallery_intro": "Each icon comes with the text it was presented with on the workshop's page, machine-translated from Romanian.",
   "available_eyebrow": "Available icons",
   "available_title": "Available now",
-  "available_intro": "Icons finished in the workshop, looking for a home. Each one is unique, hand-painted in oil on glass.",
+  "available_intro": "Icons finished in the workshop, looking for a home. Each one is unique, hand-painted in tempera on glass.",
   "available_cta": "Would you like one of these icons in your home, or as a gift for someone dear? Send me a message for the price and other details.",
   "available_empty": "At the moment, every icon has found its home. You can always order an icon with the theme of your choice.",
   "badge_available": "Available",
@@ -357,6 +372,21 @@
   "published_on": "Published on {d}",
   "from_portfolio": "From the workshop's portfolio · {d}",
   "first_shown": "First shown on {d}",
+  "before_2020": "before 2020",
+  "from_archive": "From the workshop's archive · photographed on {d}",
+  "from_archive_undated": "From the workshop's archive · painted before 2020",
+  "church_chip": "For churches",
+  "fact_church": "Painted for",
+  "church_value": "A church",
+  "church_eyebrow": "In churches",
+  "church_title": "Icons for churches",
+  "church_text": [
+   "Many of the workshop's icons were painted for churches, where they stand for veneration and are decorated with flowers on feast days.",
+   "“One of the happiest days was the one when the church's priest sent me the photos!” Parishes and monasteries can order any iconographic theme."
+  ],
+  "church_all": "All icons for churches ({n})",
+  "church_photo_alt": "Icons from the workshop, set out for veneration in a church",
+  "church_photo_caption": "Icons from the workshop set out for veneration, 2020",
   "caption_label": "The workshop's description",
   "machine_note": "Machine-translated from Romanian.",
   "history_label": "Other presentations of this icon",
@@ -378,18 +408,18 @@
   "about_caption": "{t} — icon on glass",
   "technique_eyebrow": "Technique",
   "technique_title": "How an icon on glass is made",
-  "technique_intro": "The workshop's icons are painted in oil on the back of the glass, in reverse order: what is painted first is what you see in front.",
+  "technique_intro": "The workshop's icons are painted in tempera on the back of the glass, in reverse order: what is painted first is what you see in front.",
   "steps": [
    [
     "I",
     "The underdrawing",
     "“The first stage (and the most difficult) in making an icon on glass is the ink drawing on the back of the glass. To keep to the tradition, at this stage I use only a nib or a brush.”",
-    "The drawing is “the skeleton of the image”: any mistake at this stage is almost impossible to correct later."
+    "The drawing is “the skeleton of the image”: any mistake at this stage is almost impossible to correct later. Once finished, the drawing is fixed and protected with varnish."
    ],
    [
     "II",
     "Painting",
-    "“Next comes painting the scene” — in vivid oil colours, with the rich decoration of Transylvanian peasant icons, still on the back of the glass.",
+    "“Next comes painting the scene” — in vivid egg tempera colours, with the rich decoration of Transylvanian peasant icons, still on the back of the glass.",
     ""
    ],
    [
@@ -402,7 +432,7 @@
     "IV",
     "Framing",
     "“Then the painting is protected with a plywood backing, framed, and looked at (with admiration) from the front of the glass.”",
-    ""
+    "The frames, of stained fir wood, are also made by hand."
    ]
   ],
   "before_label": "The underdrawing — pen and ink",
@@ -422,7 +452,7 @@
   "contact_text": "Write to us on the workshop's page or by e-mail:",
   "facebook_btn": "Facebook page",
   "email_btn": "Send an e-mail",
-  "footer": "The texts and photographs come from the workshop's Facebook page.",
+  "footer": "The texts and photographs come from the workshop's Facebook page and its archive.",
   "footer_privacy": "Privacy",
   "footer_cookies": "Cookie settings",
   "consent_label": "Statistics cookies",
@@ -514,8 +544,8 @@
   "nav_about": "À propos",
   "nav_technique": "Technique",
   "nav_orders": "Commandes",
-  "meta_description": "Icônes orthodoxes peintes à l'huile sur verre, d'après des modèles transylvains des XVIIIe et XIXe siècles. Sur commande.",
-  "hero_eyebrow": "Icônes orthodoxes peintes à l'huile sur verre",
+  "meta_description": "Icônes orthodoxes peintes à la tempera sur verre, d'après des modèles transylvains des XVIIIe et XIXe siècles. Sur commande.",
+  "hero_eyebrow": "Icônes orthodoxes peintes à la tempera sur verre",
   "hero_h1": "L'Atelier byzantin <em>d'icônes sur verre</em>",
   "tagline": "Peintre d'icônes inspirée par les icônes des célèbres peintres transylvains.",
   "cta_gallery": "Voir la galerie",
@@ -526,7 +556,7 @@
     "les premières icônes, à l'Annonciation"
    ],
    [
-    "~250",
+    "~300",
     "icônes peintes"
    ],
    [
@@ -557,7 +587,7 @@
   "gallery_intro": "Chaque icône est accompagnée du texte avec lequel elle a été présentée sur la page de l'atelier, traduit automatiquement du roumain.",
   "available_eyebrow": "Icônes disponibles",
   "available_title": "Disponibles maintenant",
-  "available_intro": "Des icônes terminées à l'atelier, qui cherchent leur foyer. Chacune est unique, peinte à la main à l'huile sur verre.",
+  "available_intro": "Des icônes terminées à l'atelier, qui cherchent leur foyer. Chacune est unique, peinte à la main à la tempera sur verre.",
   "available_cta": "Vous aimeriez accueillir l'une de ces icônes chez vous, ou l'offrir à un être cher ? Envoyez-moi un message pour le prix et les autres détails.",
   "available_empty": "Pour le moment, toutes les icônes ont trouvé leur foyer. Vous pouvez toujours commander une icône sur le thème de votre choix.",
   "badge_available": "Disponible",
@@ -596,6 +626,21 @@
   "published_on": "Publiée le {d}",
   "from_portfolio": "Du portfolio de l'atelier · {d}",
   "first_shown": "Présentée pour la première fois le {d}",
+  "before_2020": "avant 2020",
+  "from_archive": "Des archives de l'atelier · photographiée le {d}",
+  "from_archive_undated": "Des archives de l'atelier · peinte avant 2020",
+  "church_chip": "Pour les églises",
+  "fact_church": "Destination",
+  "church_value": "Une église",
+  "church_eyebrow": "Dans les églises",
+  "church_title": "Des icônes pour les églises",
+  "church_text": [
+   "Beaucoup d'icônes de l'atelier ont été peintes pour des églises, où elles sont exposées à la vénération et ornées de fleurs les jours de fête.",
+   "« L'un des jours les plus heureux a été celui où le prêtre de l'église m'a envoyé les photos ! » Paroisses et monastères peuvent commander tout thème iconographique."
+  ],
+  "church_all": "Toutes les icônes pour les églises ({n})",
+  "church_photo_alt": "Icônes de l'atelier exposées à la vénération dans une église",
+  "church_photo_caption": "Icônes de l'atelier exposées à la vénération, en 2020",
   "caption_label": "La présentation de l'atelier",
   "machine_note": "Traduit automatiquement du roumain.",
   "history_label": "Autres présentations de cette icône",
@@ -617,18 +662,18 @@
   "about_caption": "{t} — icône sur verre",
   "technique_eyebrow": "Technique",
   "technique_title": "La naissance d'une icône sur verre",
-  "technique_intro": "Les icônes de l'atelier sont peintes à l'huile au revers du verre, dans l'ordre inverse : ce qui est peint en premier apparaît au premier plan.",
+  "technique_intro": "Les icônes de l'atelier sont peintes à la tempera au revers du verre, dans l'ordre inverse : ce qui est peint en premier apparaît au premier plan.",
   "steps": [
    [
     "I",
     "Le dessin",
     "« La première étape (et la plus difficile) dans la réalisation d'une icône sur verre est le dessin à l'encre au dos du verre. Pour rester fidèle à la tradition, je n'utilise à cette étape que la plume ou le pinceau. »",
-    "Le dessin est « le squelette de l'image » : toute erreur à ce stade est presque impossible à corriger par la suite."
+    "Le dessin est « le squelette de l'image » : toute erreur à ce stade est presque impossible à corriger par la suite. Une fois terminé, le dessin est fixé et protégé par un vernis."
    ],
    [
     "II",
     "La peinture",
-    "« Vient ensuite la peinture de la scène » — en couleurs à l'huile vives, avec les riches décors des icônes paysannes de Transylvanie, toujours au revers du verre.",
+    "« Vient ensuite la peinture de la scène » — en couleurs vives à la tempera à l'œuf, avec les riches décors des icônes paysannes de Transylvanie, toujours au revers du verre.",
     ""
    ],
    [
@@ -641,7 +686,7 @@
     "IV",
     "L'encadrement",
     "« Puis la peinture est protégée par un contreplaqué, encadrée, et on la contemple (avec admiration) côté face du verre. »",
-    ""
+    "Les cadres, en bois de sapin teinté, sont eux aussi faits à la main."
    ]
   ],
   "before_label": "Le dessin préparatoire — encre et plume",
@@ -661,7 +706,7 @@
   "contact_text": "Écrivez-nous sur la page de l’atelier ou par e-mail :",
   "facebook_btn": "Page Facebook",
   "email_btn": "Envoyer un e-mail",
-  "footer": "Les textes et les photographies proviennent de la page Facebook de l'atelier.",
+  "footer": "Les textes et les photographies proviennent de la page Facebook de l'atelier et de ses archives.",
   "footer_privacy": "Confidentialité",
   "footer_cookies": "Paramètres des cookies",
   "consent_label": "Cookies de statistiques",

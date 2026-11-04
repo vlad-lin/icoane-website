@@ -43,6 +43,8 @@ HERO = ['p705', 'p808', 'p906']
 ABOUT = 'p700'
 BEFORE_AFTER = 'p922'  # finished icon whose ink drawing is attached as a stage
 ORDERS_ART = 'p755'
+# Icons shown in the home page's church section (the church photos come from old-works/works.json).
+CHURCH_ART = ['p1199', 'p1123', 'p1091', 'p786']
 RECENT = 8
 # The availability value (set by build_data.py) of icons that are for sale now;
 # they are listed on the "available" page.
@@ -122,6 +124,10 @@ class Lang:
     def date(self, iso):
         y, m, d = (int(x) for x in iso.split('-'))
         return f'{d} {self.ui["months"][m - 1]} {y}'
+
+    def work_date(self, e):
+        """The date shown for a work: archive icons without a known date show "before 2020"."""
+        return self.ui['before_2020'] if e.get('date_approx') else self.date(e['date'])
 
     def feast(self, s):
         d, month = s.split(' ', 1)
@@ -234,9 +240,10 @@ def card(L, e, path):
     multi = f'<span class="badge multi">{esc(L.t("photos", n=len(e["images"])))}</span>' if len(e['images']) > 1 else ''
     if e.get('disponibilitate') == AVAILABLE:
         multi += f'<span class="badge available">{esc(L.t("badge_available"))}</span>'
-    meta = L.date(e['date']) + (' · ' + e['dimensiuni'] if e.get('dimensiuni') else '')
+    meta = L.work_date(e) + (' · ' + e['dimensiuni'] if e.get('dimensiuni') else '')
     izvod = f'<p class="card-izvod">{esc(L.t("izvod_prefix") + L.tr.term(e["izvod"]))}</p>' if e.get('izvod') else ''
-    return (f'<a class="card" href="{esc(rel(L.work(e), path))}" data-id="{e["id"]}" data-theme="{e["theme"]}" '
+    church = ' data-church="1"' if e.get('biserica') else ''
+    return (f'<a class="card" href="{esc(rel(L.work(e), path))}" data-id="{e["id"]}" data-theme="{e["theme"]}"{church} '
             f'data-date="{e["date"]}" data-title="{esc(title)}">'
             f'<div class="card-img">{multi}<img loading="lazy" src="{thumb(e, path)}" alt="{esc(title)}"></div>'
             f'<div class="card-body"><h3>{esc(title)}</h3><p class="card-meta">{esc(meta)}</p>{izvod}</div></a>')
@@ -286,9 +293,42 @@ def home_page(L, works, by_id, path):
     <div class="more"><a class="btn btn-ghost" href="{esc(rel(L.page('gallery'), path))}">{esc(L.t('all_works', n=len(works)))}</a></div>
   </div>
 </section>
+{church_section(L, works, by_id, path)}
 <div class="band" aria-hidden="true"></div>
 <section class="section teasers-section starry">
   <div class="wrap teasers">{teasers}</div>
+</section>'''
+
+
+def church_section(L, works, by_id, path):
+    """Home page: her icons in churches (a church photo, a few icons, a link to all of them)."""
+    photos = SITE_DATA.get('church_photos', [])
+    icons = [e for e in (by_id.get(i) for i in CHURCH_ART) if e]
+    count = sum(1 for e in works if e.get('biserica'))
+    if not photos or not count:
+        return ''
+    title = L.t('church_title')
+    thumbs = ''.join(f'<a href="{esc(rel(L.work(e), path))}" title="{esc(L.title(e))}">'
+                     f'<img loading="lazy" src="{thumb(e, path)}" alt="{esc(L.title(e))}"></a>' for e in icons)
+    return f'''<div class="band" aria-hidden="true"></div>
+<section class="section church">
+  <div class="wrap church-inner">
+    <figure class="church-photo">
+      <img loading="lazy" src="{esc(rel('img/full/' + photos[0], path))}" alt="{esc(L.t('church_photo_alt'))}">
+      {f'<img class="church-inset" loading="lazy" src="{esc(rel("img/full/" + photos[1], path))}" alt="">' if len(photos) > 1 else ''}
+      <figcaption>{esc(L.t('church_photo_caption'))}</figcaption>
+    </figure>
+    <div class="church-text">
+      <p class="eyebrow">{esc(L.t('church_eyebrow'))}</p>
+      <h2>{esc(title)}</h2>
+      {''.join(f'<p>{esc(p)}</p>' for p in L.ui['church_text'])}
+      <div class="church-icons">{thumbs}</div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{esc(rel(L.page('gallery'), path))}#theme=biserici">{esc(L.t('church_all', n=count))}</a>
+        <a class="btn btn-ghost" href="{esc(rel(L.page('orders'), path))}">{esc(L.t('cta_order'))}</a>
+      </div>
+    </div>
+  </div>
 </section>'''
 
 
@@ -297,6 +337,10 @@ def gallery_page(L, works, path):
     for e in works:
         counts[e['theme']] = counts.get(e['theme'], 0) + 1
     chips = f'<button data-theme="all" aria-pressed="true">{esc(L.t("all_themes"))}<span class="count">{len(works)}</span></button>'
+    church = sum(1 for e in works if e.get('biserica'))
+    if church:
+        chips += (f'<button data-theme="biserici" aria-pressed="false">{esc(L.t("church_chip"))}'
+                  f'<span class="count">{church}</span></button>')
     for key, label in L.ui['themes'].items():
         if counts.get(key):
             chips += f'<button data-theme="{key}" aria-pressed="false">{esc(label)}<span class="count">{counts[key]}</span></button>'
@@ -384,9 +428,13 @@ def work_page(L, e, works, by_title, path, prev, nxt):
         if e['disponibilitate'] == AVAILABLE:
             value = f'<a href="{esc(rel(L.page("available"), path))}">{value}</a>'
         rows.append((L.t('fact_availability'), value))
+    if e.get('biserica'):
+        rows.append((L.t('fact_church'), f'<a href="{esc(rel(L.page("gallery"), path))}#theme=biserici">{esc(L.t("church_value"))}</a>'))
     facts = ''.join(f'<tr><th scope="row">{esc(a)}</th><td>{b}</td></tr>' for a, b in rows)
 
-    if e.get('portfolio'):
+    if e.get('archive'):
+        when = L.t('from_archive_undated') if e.get('date_approx') else L.t('from_archive', d=L.date(e['date']))
+    elif e.get('portfolio'):
         when = L.t('from_portfolio', d=L.date(e['date']))
     elif e.get('history') or e.get('text_date'):
         when = L.t('first_shown', d=L.date(e['date']))
@@ -424,7 +472,7 @@ def work_page(L, e, works, by_title, path, prev, nxt):
     related = [o for o in by_title.get(e['title'], []) if o is not e]
     if related:
         info += (f'<p class="post-label">{esc(L.t("related_label", n=len(related)))}</p><div class="related">'
-                 + ''.join(f'<a href="{esc(rel(L.work(o), path))}" title="{esc(L.title(o) + " · " + L.date(o["date"]))}">'
+                 + ''.join(f'<a href="{esc(rel(L.work(o), path))}" title="{esc(L.title(o) + " · " + L.work_date(o))}">'
                            f'<img loading="lazy" src="{thumb(o, path)}" alt=""></a>' for o in related[:12])
                  + '</div>')
 

@@ -14,6 +14,7 @@ Open `public/index.html` in any browser (double-click). No server, internet conn
   - The other files hold captions, keyed by a code computed from the Romanian text.
   - `todo-en.json` / `todo-fr.json` list what is still untranslated. Romanian is shown meanwhile.
 - `new-posts/`: posts published after the Facebook export (`posts.json` plus the original photos). See "Adding a new Facebook post" below.
+- `old-works/`: what the site takes from the private 2019–2020 archive (see below).
 - `data/lucrari.json`: the works, generated from the Facebook export (a one-time import) and `new-posts/`.
 - `tools/`: the scripts below.
 
@@ -28,6 +29,7 @@ python site\tools\build_site.py
 After adding a post to `new-posts/` (or changing the curation lists in `tools/build_data.py`), run everything. The Facebook export in `..\facebook-export\` stays on this PC only and is still read as the main source:
 
 ```
+powershell -ExecutionPolicy Bypass -File site\tools\prepare_old_photos.ps1
 python site\tools\build_data.py
 powershell -ExecutionPolicy Bypass -File site\tools\measure_colour.ps1
 powershell -ExecutionPolicy Bypass -File site\tools\hash_images.ps1
@@ -39,6 +41,23 @@ python site\tools\build_site.py
 - `measure_colour.ps1` recognises ink drawings (nearly colourless photos). Each drawing is attached to its finished icon under "Etapele lucrării".
 - `hash_images.ps1` fingerprints each photo. Reposts of the same icon (same photo) become one page, and the other captions are kept under "Alte prezentări ale acestei icoane".
 - `make_images.ps1` resizes the photos and deletes the ones no longer used.
+- `prepare_old_photos.ps1` (first line) is only needed when `old-works/` changes; see below.
+
+## The 2019–2020 archive (`old-works/`)
+
+Icons from before the Facebook page, taken from the folder `..\poze vechi\` (photos and Word documents from 2019–2020). That folder is **private and never published** (it is in `.gitignore`); only the resized photos end up in `public/img`.
+
+- `old-works/make_works.py` lists what the site takes from it, and writes `old-works/works.json`. Edit the script, then run `python site\old-works\make_works.py` and the full chain above.
+  - `WORKS`: icons not on Facebook, with ids `v1`, `v2`… (never renumber: the id is part of the page address). Each has its photo, an optional crop (`[left, top, width, height]` as fractions), the facts, and the description she wrote in 2019 (prices and weights left out).
+  - The date is the day the photo was taken. `date_approx` marks the three icons found only in `Portofoliu icoane.docx`; they show "înainte de 2020".
+  - `ADD_PHOTOS`: icons already on the site that were photographed earlier get one more photo (`first` makes it the main one).
+  - `CHURCH_PHOTOS`: the church photos for the home page.
+- `tools/prepare_old_photos.ps1` turns these photos upright, crops them and saves them in `..\poze vechi\_pentru-site\`.
+- The icons are matched to Facebook posts by eye, not by photo fingerprint (the 2019 studio photos are framed and lit differently).
+
+## Icons for churches
+
+`CHURCH` in `tools/build_data.py` lists the icons whose captions say they were painted for a church or stand in one. They get a "Pentru biserici" filter in the gallery, a "Destinație" line on their page, and the church section on the home page (its four icons: `CHURCH_ART` in `tools/build_site.py`).
 
 ## Adding a new Facebook post (without a new export)
 

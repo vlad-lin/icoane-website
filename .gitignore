@@ -12,3 +12,7 @@ site/tools/images.txt
 
 # Python cache
 __pycache__/
+
+# Old photos and documents from 2019-2020 (private originals; the site uses
+# resized copies made by site/tools/prepare_old_photos.ps1)
+poze vechi/

@@ -57,14 +57,21 @@
     var render = function () {
       var byQuery = cards.filter(matches);
       // Theme chips show how many works match the search in each theme.
-      var counts = { all: byQuery.length };
-      byQuery.forEach(function (c) { counts[c.dataset.theme] = (counts[c.dataset.theme] || 0) + 1; });
+      // "biserici" (icons for churches) is a filter across all themes.
+      var counts = { all: byQuery.length, biserici: 0 };
+      byQuery.forEach(function (c) {
+        counts[c.dataset.theme] = (counts[c.dataset.theme] || 0) + 1;
+        if (c.dataset.church) counts.biserici++;
+      });
       Array.prototype.forEach.call($('theme-filter').children, function (b) {
         b.setAttribute('aria-pressed', b.dataset.theme === state.theme);
         b.querySelector('.count').textContent = counts[b.dataset.theme] || 0;
       });
 
-      var list = byQuery.filter(function (c) { return state.theme === 'all' || c.dataset.theme === state.theme; });
+      var list = byQuery.filter(function (c) {
+        if (state.theme === 'biserici') return !!c.dataset.church;
+        return state.theme === 'all' || c.dataset.theme === state.theme;
+      });
       var order = cards.slice();
       if (state.sort === 'old') order.reverse();
       if (state.sort === 'az') order.sort(function (a, b) { return a.dataset.title.localeCompare(b.dataset.title, lang); });

@@ -18,6 +18,10 @@ EXPORT = os.path.join(os.path.dirname(SITE), 'facebook-export')
 POSTS = os.path.join(EXPORT, "this_profile's_activity_across_facebook", "posts")
 # Posts published after the export was made, added by hand (see site/README.md).
 NEW_POSTS = os.path.join(SITE, 'new-posts')
+# Icons from the 2019-2020 archive (old-works/works.json); their photos are prepared by
+# prepare_old_photos.ps1 from the private folder "poze vechi" (never published).
+OLD_WORKS = os.path.join(SITE, 'old-works', 'works.json')
+OLD_PHOTOS = os.path.join(os.path.dirname(SITE), 'poze vechi', '_pentru-site')
 
 
 def fix(o):
@@ -86,6 +90,13 @@ TITLES = {
 
 # Black-and-white works that are finished pieces, not drawings for a later icon.
 FINISHED_BW = {921}
+
+# Icons painted for a church, or shown standing in one (from their captions). They get the
+# "Pentru biserici" filter in the gallery and the church section on the home page.
+# A merged icon can be named by any of its posts.
+CHURCH = {'p744', 'p777', 'p779', 'p755', 'p883', 'p893', 'p937', 'p938', 'p870', 'p842', 'p1068',
+          'p1031', 'p786', 'p1091', 'p1105', 'p1110', 'p1129', 'p1130', 'p1123', 'p1164', 'p1165',
+          'p1179', 'p1199', 'p971'}
 
 MONTHS = ('ianuarie februarie martie aprilie mai iunie iulie august septembrie '
           'octombrie noiembrie decembrie').split()
@@ -572,22 +583,58 @@ def main():
     for e in entries:
         del e['kind']
 
+    # The 2019-2020 archive: icons not on Facebook become entries v1, v2, ...; icons that
+    # are (photographed earlier) get one more photo. Matched by eye, not by photo hash.
+    church_photos = []
+    if os.path.exists(OLD_WORKS):
+        with open(OLD_WORKS, encoding='utf-8') as f:
+            old = json.load(f)
+        by_post = {}
+        for e in entries:
+            for pid in [e['id']] + e.get('aliases', []):
+                by_post[pid] = e
+        for w in old['works']:
+            e = {'id': w['id'], 'date': w['date'], 'title': w['title'], 'theme': w['theme'],
+                 'text': w['text'], 'images': [w['id'] + '-1.jpg'], 'archive': True}
+            if w.get('date_approx'):
+                e['date_approx'] = True
+            for key in ('izvod', 'dimensiuni', 'sarbatoare', 'disponibilitate'):
+                if w.get(key):
+                    e[key] = w[key]
+            images.append((os.path.join(OLD_PHOTOS, w['id'] + '.jpg'), e['images'][0]))
+            entries.append(e)
+        for a in old['add_photos']:
+            e = by_post[a['to']]
+            name = f"{a['to']}-arhiva.jpg"
+            images.append((os.path.join(OLD_PHOTOS, f"add-{a['to']}.jpg"), name))
+            e['images'] = [name] + e['images'] if a.get('first') else e['images'] + [name]
+        for c in old['church_photos']:
+            images.append((os.path.join(OLD_PHOTOS, c['name']), c['name']))
+            church_photos.append(c['name'])
+        entries.sort(key=lambda e: (e['date'], e['id']), reverse=True)
+    for e in entries:
+        if CHURCH & set([e['id']] + e.get('aliases', [])):
+            e['biserica'] = True
+
     profile = load(os.path.join(EXPORT, 'profile_information', 'profile_information', 'profile_information.json'))['profile_v2']
     site = {
         'name': 'Atelierul Bizantin de Icoane pe Sticlă',
         # The Facebook bio says "(cu peste 300 lucrari în portofoliu)"; the real count is ~250.
         'tagline': 'Pictor iconar inspirat de icoanele celebrilor pictori ardeleni',
         # Her Facebook "about" text, with the figures brought up to date (approved by the user):
-        # it was written ~2022 ("acum aproape 3 ani", "aproape 80 icoane").
+        # it was written ~2022 ("acum aproape 3 ani", "aproape 80 icoane"). With the 2019-2020
+        # archive the site shows ~290 different icons; her bio says "peste 300 lucrari".
         'about': profile['about_me'].replace(' \nBunei', ' Bunei')
                  .replace('acum aproape 3 ani, în ziua', 'în 2019, în ziua')
-                 .replace('aproape 80 icoane', 'aproximativ 250 de icoane'),
+                 .replace('aproape 80 icoane', 'aproximativ 300 de icoane'),
         'facebook': profile['profile_uri'],
         'since': datetime.datetime.fromtimestamp(profile['registration_timestamp']).strftime('%Y-%m-%d'),
         'themes': [{'key': k, 'label': l} for k, l in THEMES],
+        'church_photos': church_photos,
     }
     # Photos still used on the site (unmatched drawings and merged duplicates are not).
     used = {n for e in entries for n in e['images'] + [m for s in e.get('stages', []) for m in s['images']]}
+    used.update(church_photos)
 
     os.makedirs(os.path.join(SITE, 'data'), exist_ok=True)
     with open(os.path.join(SITE, 'data', 'lucrari.json'), 'w', encoding='utf-8') as f:

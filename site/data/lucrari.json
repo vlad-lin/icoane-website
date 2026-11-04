@@ -2,7 +2,7 @@
  "site": {
   "name": "Atelierul Bizantin de Icoane pe Sticlă",
   "tagline": "Pictor iconar inspirat de icoanele celebrilor pictori ardeleni",
-  "about": "Uneori suntem binecuvântați cu minuni venite-n viața noastră brusc, venite ca daruri din partea Divinității care ne zâmbește cu îngăduință privind la uimirea noastră...\n\nNu foarte multe minuni s-au întâmplat în viața mea, au fost puține dar năucitoare! Cea mai recentă s-a întâmplat în 2019, în ziua Bunei Vestiri, o zi sfânta în care am început să pictez icoane pe sticlă.\n\nNu știam foarte multe despre icoanele pictate pe sticlă de minunații noștri țărani ardeleni, despre sufletul lor, despre tehnica lor unică în lume de-a picta scene religioase în culori vii, cu decoruri supradimensionate și în reprezentări care îmbinau viața lor reală cu scenele biblice...Iar eu nu pictasem niciodată până în acea zi!\n\nA fost începutul! Am pictat de atunci aproximativ 250 de icoane care acum se află în mare parte în colecții particulare ale unor persoane publice sau persoane obișnuite (cu toții - oameni deosebiți), în câteva biserici și câteva mănăstiri din România.\n\nMulțumesc Domnului pentru această minune din viața mea și pentru că mi-a dăruit un sens extraordinar restului vieții mele!",
+  "about": "Uneori suntem binecuvântați cu minuni venite-n viața noastră brusc, venite ca daruri din partea Divinității care ne zâmbește cu îngăduință privind la uimirea noastră...\n\nNu foarte multe minuni s-au întâmplat în viața mea, au fost puține dar năucitoare! Cea mai recentă s-a întâmplat în 2019, în ziua Bunei Vestiri, o zi sfânta în care am început să pictez icoane pe sticlă.\n\nNu știam foarte multe despre icoanele pictate pe sticlă de minunații noștri țărani ardeleni, despre sufletul lor, despre tehnica lor unică în lume de-a picta scene religioase în culori vii, cu decoruri supradimensionate și în reprezentări care îmbinau viața lor reală cu scenele biblice...Iar eu nu pictasem niciodată până în acea zi!\n\nA fost începutul! Am pictat de atunci aproximativ 300 de icoane care acum se află în mare parte în colecții particulare ale unor persoane publice sau persoane obișnuite (cu toții - oameni deosebiți), în câteva biserici și câteva mănăstiri din România.\n\nMulțumesc Domnului pentru această minune din viața mea și pentru că mi-a dăruit un sens extraordinar restului vieții mele!",
   "facebook": "https://www.facebook.com/IcoaneOrtodoxeBizantine",
   "since": "2021-12-30",
   "themes": [
@@ -30,6 +30,10 @@
     "key": "altele",
     "label": "Alte lucrări"
    }
+  ],
+  "church_photos": [
+   "biserica-1.jpg",
+   "biserica-2.jpg"
   ]
  },
  "lucrari": [
@@ -395,7 +399,8 @@
     "p744-1.jpg"
    ],
    "sarbatoare": "3 februarie",
-   "disponibilitate": "Realizată la comandă"
+   "disponibilitate": "Realizată la comandă",
+   "biserica": true
   },
   {
    "id": "p747",
@@ -603,7 +608,8 @@
       "p778-1.jpg"
      ]
     }
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p779",
@@ -623,7 +629,8 @@
       "p784-1.jpg"
      ]
     }
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p780",
@@ -682,7 +689,8 @@
    "aliases": [
     "p787",
     "p732"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p790",
@@ -1121,7 +1129,8 @@
    "theme": "praznice",
    "text": "2 februarie - Întâmpinarea Domnului\n\n“Unde este Dumnezeu? Acolo unde este lăsat să intre...” (Părintele Nicolae Steinhardt)\n\nÎn această zi de mare sărbătoare vă prezint o icoană, cu o temă rară în iconografia românească.\nMă refer la  scena întâmpinării Domnului la Templu.\nIcoana (desigur, acum indisponibilă) a fost pictată în atelierul nostru, în urmă cu cinci ani (izvod Nicula, a doua jumătate a secolului XVIII).\n\nPe 2 februarie (la 40  zile de la naștere) părinții Mântuitorului au îndeplinit ritualul aducerii Lui la Templu, pentru a-L răscumpăra, așa cum cerea Legea mozaică. Potrivit prescripțiilor Legii, israeliților li se cerea ca fiecare întâi născut de partea bărbătească, să fie adus la templu și închinat Domnului, această practică fiind justificată de cruțarea celor întâi născuți dintre israeliți, în noaptea când au ieșit din Egipt.",
    "images": [
-    "p832-1.jpg"
+    "p832-1.jpg",
+    "p832-arhiva.jpg"
    ],
    "izvod": "Nicula, a doua jumătate a secolului XVIII",
    "sarbatoare": "2 februarie",
@@ -1491,7 +1500,8 @@
    ],
    "izvod": "Icoană din ultimul sfert al secolului al XIX- lea, dintr-un atelier transilvănean",
    "sarbatoare": "20 iulie",
-   "disponibilitate": "Realizată la comandă"
+   "disponibilitate": "Realizată la comandă",
+   "biserica": true
   },
   {
    "id": "p856",
@@ -1655,7 +1665,8 @@
     "p893-1.jpg",
     "p893-2.jpg"
    ],
-   "sarbatoare": "13 iunie"
+   "sarbatoare": "13 iunie",
+   "biserica": true
   },
   {
    "id": "p895",
@@ -1977,7 +1988,8 @@
    ],
    "aliases": [
     "p840"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p938",
@@ -1990,7 +2002,8 @@
     "p938-2.jpg"
    ],
    "izvod": "Arpaşu de Sus,1877",
-   "disponibilitate": "Realizată la comandă"
+   "disponibilitate": "Realizată la comandă",
+   "biserica": true
   },
   {
    "id": "p939",
@@ -2216,7 +2229,8 @@
    ],
    "aliases": [
     "p967"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p968",
@@ -2252,7 +2266,8 @@
       "p972-2.jpg"
      ]
     }
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p876",
@@ -2722,7 +2737,8 @@
     "p1035",
     "p953",
     "p857"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p1038",
@@ -3043,7 +3059,8 @@
    "images": [
     "p1068-1.jpg"
    ],
-   "izvod": "Nicula , prima jumătate a sec. XIX"
+   "izvod": "Nicula , prima jumătate a sec. XIX",
+   "biserica": true
   },
   {
    "id": "p774",
@@ -3104,7 +3121,8 @@
    ],
    "aliases": [
     "p1071"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p786",
@@ -3135,7 +3153,8 @@
     "p1072",
     "p974",
     "p877"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p1074",
@@ -3326,9 +3345,11 @@
    "theme": "praznice",
    "text": "'' Înălțarea Domnului '' (izvod : Nicula - sec. XVIII ) -  una dintre primele icoane pictate în atelierul nostru - așteptând marea Sărbătoare  într-o  Sfântă Biserică !❤️",
    "images": [
+    "p1091-arhiva.jpg",
     "p1091-1.jpg"
    ],
-   "izvod": "Nicula - sec. XVIII"
+   "izvod": "Nicula - sec. XVIII",
+   "biserica": true
   },
   {
    "id": "p999",
@@ -3440,7 +3461,8 @@
    "images": [
     "p1105-1.jpg"
    ],
-   "izvod": "Arpaşul de Sus ,1877"
+   "izvod": "Arpaşul de Sus ,1877",
+   "biserica": true
   },
   {
    "id": "p1106",
@@ -3537,7 +3559,8 @@
     "p1110-1.jpg"
    ],
    "izvod": "Nicula, începutul sec. XIX",
-   "disponibilitate": "Nu este disponibilă — se poate picta din nou, la comandă"
+   "disponibilitate": "Nu este disponibilă — se poate picta din nou, la comandă",
+   "biserica": true
   },
   {
    "id": "p1111",
@@ -3709,7 +3732,8 @@
    ],
    "aliases": [
     "p996"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p1130",
@@ -3719,7 +3743,8 @@
    "text": "~ Părintele Cleopa : \"... să crezi deşi nu eşti deplin lămurit…\" ~\n\nIcoana Mântuitorului Iisus Hristos ( pictată de mine ) se află într-o sfântă Biserică de doi ani...Nu mi-aș fi imaginat vreodată că voi trăi un asemenea miracol...",
    "images": [
     "p1130-1.jpg"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p1133",
@@ -3898,6 +3923,7 @@
    "theme": "sfinti",
    "text": "Sfinţii Arhangheli Mihail şi Gavriil - icoană pictată pe sticlă\nSfinților Arhangheli, rugați-vă pentru noi!\nV-am pictat cu sfială în această icoană, vă rog tot cu sfială să ne ocrotiți...Pe noi, pe vecinii noștri ucraineni, pe toți cei care sunt în apropierea zonei în care istoria s-a oprit uluită în loc... Mulţi stareţi şi duhovnici  le recomandă credincioşilor să rostească în această perioadă întunecată a istoriei rugăciunea către Sfântul Arhanghel Mihail:  \"Apară-mă de cutremure, de potop, de războaie, de orice rău ...\"\nÎl rugăm și noi să ne apere...",
    "images": [
+    "p1123-arhiva.jpg",
     "p1123-1.jpg"
    ],
    "disponibilitate": "Realizată la comandă",
@@ -3911,7 +3937,8 @@
    ],
    "aliases": [
     "p1161"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p1162",
@@ -3931,7 +3958,8 @@
    "theme": "maica",
    "text": "Una dintre primele icoane pictate de mine (2019) a fost icoana pe care v-o prezint astăzi. Tema acestei icoane (Izvod: Nicula, prima jumătate a sec.XIX) este chipul îndurerat al Fecioarei Maria în prim plan, având în planul secund imaginea Răstignirii lui Iisus.\n\nEvenimentul a avut loc în secolul I, interpretat de creștini drept crucificarea lui Mesia - în persoana lui Iisus din Nazaret. Arestarea, procesul și condamnarea sa de către pretorul roman Pilat din Pont sunt descrise de cele patru evanghelii.\n\nIcoana nu este disponibilă. În urma unei comenzi o voi picta din nou.",
    "images": [
-    "p1163-1.jpg"
+    "p1163-1.jpg",
+    "p1163-arhiva.jpg"
    ],
    "izvod": "Nicula, prima jumătate a sec.XIX",
    "disponibilitate": "Nu este disponibilă — se poate picta din nou, la comandă"
@@ -3946,7 +3974,8 @@
     "p1164-1.jpg"
    ],
    "dimensiuni": "21 × 29 cm",
-   "disponibilitate": "Nu este disponibilă — se poate picta din nou, la comandă"
+   "disponibilitate": "Nu este disponibilă — se poate picta din nou, la comandă",
+   "biserica": true
   },
   {
    "id": "p1166",
@@ -3968,7 +3997,8 @@
    "text": "Sfantul Nectarie din\n nou...Intr-o Sfanta Biserica",
    "images": [
     "p1165-1.jpg"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p1168",
@@ -4143,7 +4173,8 @@
    "text": "La loc de cinste-la \"loc de închinare\"-se află câteva icoane pictate de mine!Două dintre ele(pictate în 2020)sunt acestea:Maica Domnului și Mântuitorul!Una dintre cele mai fericite zile a fost aceea în care Preotul Bisericii mi-a trimis pozele!Apoi au urmat doar zile luminoase...",
    "images": [
     "p1179-1.jpg"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p1180",
@@ -4234,8 +4265,10 @@
    "theme": "sfinti",
    "text": "Uneori suntem binecuvântați cu minuni venite-n viață noastră brusc, venite ca daruri din partea Divinității care ne zâmbește cu îngăduință privind la uimirea noastră...\n\nNu foarte multe minuni s-au întâmplat în viața mea, au fost puține dar năucitoare! Cea mai recentă s-a întâmplat acum aproape 3 ani, în ziua Bunei Vestiri, o zi sfânta în care am început să pictez icoane pe sticlă.\n\nNu știam foarte multe despre icoanele pictate pe sticlă de minuna\nții noștri țărani ardeleni, despre sufletul lor, despre tehnica lor unică în lume de-a picta scene religioase în culori vii, cu decoruri supradimensionate și în reprezentări care îmbinau viață lor reală cu scenele biblice...Iar eu nu pictasem niciodată până în acea zi!\n\nA fost începutul! Am pictat de atunci aproape 80 icoane care acum se află în mare parte în colecții particulare ale unor persoane publice sau persoane obișnuite (cu toții - oameni deosebiți), în câteva biserici și câteva mănăstiri din România.\n\nMulțumesc Domnului pentru această minune din viața mea și pentru că mi-a dăruit un sens extraordinar restului vieții mele!",
    "images": [
+    "p1199-arhiva.jpg",
     "p1199-1.jpg"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p1197",
@@ -4504,6 +4537,334 @@
    "images": [
     "a0-1.jpg"
    ]
+  },
+  {
+   "id": "v25",
+   "date": "2020-11-26",
+   "title": "Sfântul Ciprian și Sfântul Ștefan",
+   "theme": "sfinti",
+   "text": "",
+   "images": [
+    "v25-1.jpg"
+   ],
+   "archive": true
+  },
+  {
+   "id": "v24",
+   "date": "2020-11-01",
+   "title": "Iisus Hristos – Vița de vie",
+   "theme": "praznice",
+   "text": "",
+   "images": [
+    "v24-1.jpg"
+   ],
+   "archive": true
+  },
+  {
+   "id": "v23",
+   "date": "2020-08-19",
+   "title": "Înălțarea Sfintei Cruci",
+   "theme": "praznice",
+   "text": "",
+   "images": [
+    "v23-1.jpg"
+   ],
+   "archive": true,
+   "sarbatoare": "14 septembrie"
+  },
+  {
+   "id": "v22",
+   "date": "2020-05-16",
+   "title": "Învierea Domnului",
+   "theme": "praznice",
+   "text": "",
+   "images": [
+    "v22-1.jpg"
+   ],
+   "archive": true
+  },
+  {
+   "id": "v17",
+   "date": "2019-12-11",
+   "title": "Iisus Hristos – Vița de vie",
+   "theme": "praznice",
+   "text": "Iisus – Vița de vie este o temă care se regăsește în icoanele țărănești transilvănene, evocând taina Sfintei Împărtășanii. Icoana ilustrează pilda viței de vie: „Eu sunt vița, voi sunteți mlădițele”. Iisus S-a înfățișat pe Sine ca vița cea adevărată, pe Tatăl Său ca viticultorul care a sădit-o, iar pe ucenicii Săi ca mlădițele acestei vițe. Este vorba despre un arhetip potrivit căruia din jertfa primordială au crescut elementele esențiale ale vieții: hrana, vindecarea și cultul.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v17-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Nicula, începutul sec. XIX",
+   "dimensiuni": "17 × 25 cm"
+  },
+  {
+   "id": "v16",
+   "date": "2019-12-11",
+   "title": "Iisus Hristos – Vița de vie",
+   "theme": "praznice",
+   "text": "Iisus – Vița de vie este o temă care se regăsește în icoanele țărănești transilvănene, evocând taina Sfintei Împărtășanii. Icoana ilustrează pilda viței de vie: „Eu sunt vița, voi sunteți mlădițele”. Iisus S-a înfățișat pe Sine ca vița cea adevărată, pe Tatăl Său ca viticultorul care a sădit-o, iar pe ucenicii Săi ca mlădițele acestei vițe. Este vorba despre un arhetip potrivit căruia din jertfa primordială au crescut elementele esențiale ale vieții: hrana, vindecarea și cultul.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v16-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Nicula, începutul sec. XIX",
+   "dimensiuni": "17 × 25 cm"
+  },
+  {
+   "id": "v15",
+   "date": "2019-12-11",
+   "title": "Sfântul Ierarh Nicolae",
+   "theme": "sfinti",
+   "text": "Tema acestei icoane (Nicula, 1867) este Sfântul Nicolae, sărbătorit atât de Biserica Ortodoxă, cât și de cea Romano-Catolică, pe 6 decembrie. Sfântul Nicolae este socotit ocrotitorul copiilor, mai ales al celor săraci, dar și al marinarilor, al brutarilor, al fetelor nemăritate și al celor acuzați pe nedrept. De la el a pornit tradiția oferirii de daruri.\n\nS-a născut în a doua jumătate a secolului al III-lea, într-o familie bogată, în localitatea Patara, în provincia Licia, în partea asiatică a Turciei de astăzi. Încă din tinerețe a avut o chemare spre viața duhovnicească. Rămas fără părinți, a folosit averea moștenită pentru a-i ajuta pe cei săraci și pentru a ridica o biserică. Moaștele Sfântului Nicolae sunt păstrate la Bari, în Italia, într-o criptă din care izvorăște un lichid incolor, numit „Mana”. Potrivit tradiției, episcopul locului amestecă acest lichid cu apă, îl binecuvântează și îl împarte credincioșilor.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v15-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Nicula, 1867",
+   "dimensiuni": "17 × 25 cm",
+   "sarbatoare": "6 decembrie"
+  },
+  {
+   "id": "v18",
+   "date": "2019-12-09",
+   "title": "Maica Domnului cu Pruncul",
+   "theme": "maica",
+   "text": "Modelul obișnuit al icoanei Fecioara cu Pruncul, întâlnit și în Răsărit, și în Apus, este Fecioara ținându-L pe Prunc. Ea cuprinde mai multe lucruri, nu doar pe Maica lui Dumnezeu ca persoană: este o imagine și o afirmare a întrupării și a realității ei, o afirmare a maternității adevărate și reale a Fecioarei.\n\nDacă te uiți cu atenție la icoană, vei vedea că Maica lui Dumnezeu, ținându-L pe Prunc, nu privește niciodată la El. Nu privește nici la tine, nici în depărtare: ochii îi sunt întotdeauna ațintiți înlăuntrul ei, în contemplare. Tandrețea îi este exprimată de sfiiciunea mâinilor. Ea îl ține pe Prunc fără a-L îmbrățișa, așa cum cineva ar ține ceva sfânt pe care îl aduce ca ofrandă, iar toată tandrețea, toată iubirea omenească sunt exprimate de Prunc, nu de mamă. Ea rămâne Maica lui Dumnezeu și se poartă cu Pruncul nu ca și cum ar fi un copil oarecare, ci ca față de Fiul lui Dumnezeu întrupat, Care S-a făcut fiu al Fecioarei; iar El, fiind om adevărat și Dumnezeu adevărat, își arată față de ea toată iubirea și tandrețea omului și a lui Dumnezeu.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v18-1.jpg"
+   ],
+   "archive": true,
+   "dimensiuni": "17 × 25 cm"
+  },
+  {
+   "id": "v14",
+   "date": "2019-12-09",
+   "title": "Sfinții Apostoli Petru și Pavel",
+   "theme": "sfinti",
+   "text": "În iconografia ortodoxă, Sfinții Petru și Pavel (primul și ultimul între Apostoli) reprezintă Biserica, sau comuniunea lui Israel (Petru) cu toate popoarele lumii (Pavel). Modelul Bisericii susținut de cei doi sfinți ilustrează cuvintele lui Iisus: „Tu ești Petru și pe această piatră voi construi Biserica Mea”.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v14-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Nicula, începutul sec. XIX",
+   "dimensiuni": "15 × 21 cm",
+   "sarbatoare": "29 iunie"
+  },
+  {
+   "id": "v13",
+   "date": "2019-12-09",
+   "title": "Adam și Eva în Rai",
+   "theme": "praznice",
+   "text": "Adam și Eva au fost, după Cartea Facerii (prima carte a Vechiului Testament și a Bibliei), primul bărbat și prima femeie create de Dumnezeu. Momentul în care cei doi încalcă porunca divină și gustă din Pomul Cunoașterii este o temă frecventă în iconografie. Această temă i-a atras și pe iconarii transilvăneni, care au pictat pe sticlă faimoasa scenă din Vechiul Testament.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v13-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Nicula, a doua jumătate a sec. XIX",
+   "dimensiuni": "15 × 21 cm"
+  },
+  {
+   "id": "v12",
+   "date": "2019-12-09",
+   "title": "Sfântul Mare Mucenic Gheorghe",
+   "theme": "sfinti",
+   "text": "Tema acestei icoane este Sfântul Mare Mucenic Gheorghe. A fost un soldat roman de origine greacă, ofițer în garda împăratului Dioclețian, condamnat la moarte pentru că nu a renunțat la credința creștină. Ca martir, a devenit mai târziu unul dintre cei mai venerați sfinți ai creștinătății. Este pomenit de aproape toate Bisericile tradiționale, de obicei pe 23 aprilie, și este socotit ocrotitorul multor țări, regiuni și orașe din întreaga lume.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v12-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Nicula, începutul sec. XIX",
+   "dimensiuni": "15 × 21 cm",
+   "sarbatoare": "23 aprilie"
+  },
+  {
+   "id": "v11",
+   "date": "2019-12-09",
+   "title": "Sfânta Cuvioasă Parascheva",
+   "theme": "sfinti",
+   "text": "Tema acestei icoane este Sfânta Cuvioasă Parascheva cea Nouă, sau Parascheva de la Iași, o sfântă cinstită în întreaga Biserică Ortodoxă, îndeosebi în România, Serbia, Grecia și Bulgaria. În România este considerată ocrotitoarea Moldovei și este cea mai populară dintre toți sfinții ale căror moaște se află pe teritoriul țării. Sute de biserici de parohie îi sunt închinate. În popor mai este cunoscută și ca Sfânta Vineri. Prăznuirea ei se face la 14 octombrie, când zeci de mii de oameni vin în fiecare an la Iași pentru a se închina la sfintele sale moaște.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v11-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Nicula, prima jumătate a sec. XIX",
+   "dimensiuni": "15 × 21 cm",
+   "sarbatoare": "14 octombrie"
+  },
+  {
+   "id": "v9",
+   "date": "2019-08-09",
+   "title": "Maica Domnului Împărățită",
+   "theme": "maica",
+   "text": "Icoana Maicii Domnului (Șcheii Brașovului, 1780) o reprezintă pe prima ființă umană care a împlinit scopul Întrupării: îndumnezeirea omului. Este una dintre imaginile cu coroană ale Împărătesei îngerilor, cu Pruncul Sfânt la piept și îngerii așezându-i coroana pe cap.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v9-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Șcheii Brașovului, 1780",
+   "dimensiuni": "21 × 29 cm"
+  },
+  {
+   "id": "v8",
+   "date": "2019-08-09",
+   "title": "Maica Domnului cu Pruncul",
+   "theme": "maica",
+   "text": "Specialiștii afirmă că această icoană pictată pe sticlă (a cărei proveniență ar fi mijlocul secolului al XIX-lea, nordul Transilvaniei) este o combinație de elemente ortodoxe și catolice.\n\nIconarii din toate timpurile au încercat să o înfățișeze pe Maica Domnului cât mai frumoasă, blândă, demnă și slăvită. Uneori au pictat-o mâhnită, alteori îndurerată, dar întotdeauna plină de tărie spirituală și de înțelepciune. Preacurata este înfățișată întotdeauna cu capul acoperit de o năframă care îi cade pe umeri, după tradiția iudaică a acelor vremuri. În cele mai multe icoane, Maica Domnului ține Pruncul pe mâna stângă și arată spre El cu mâna dreaptă; această icoană, pictată pe sticlă antireflex, este una dintre variantele în care Pruncul este ținut în mâna dreaptă.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v8-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Transilvania de Nord, mijlocul sec. XIX",
+   "dimensiuni": "15 × 21 cm"
+  },
+  {
+   "id": "v7",
+   "date": "2019-08-09",
+   "title": "Sfinții Împărați Constantin și Elena",
+   "theme": "sfinti",
+   "text": "Tema acestei icoane îi reprezintă pe Sfinții Împărați Constantin și Elena.\n\nGaius Flavius Valerius Aurelius Constantinus (n. 272/274 – d. mai 337), cunoscut și ca Constantin I sau Constantin cel Mare, a fost împărat roman între 306 și 337, devenind conducătorul întregului Imperiu Roman după înfrângerea lui Maxențiu și a lui Liciniu. Flavia Iulia Helena (248–329), soția generalului roman Constantius Chlorus, a fost mama Sfântului Împărat Constantin cel Mare. A fost o femeie deosebit de credincioasă, cunoscută pentru evlavia ei. A făcut pelerinaj în Palestina și în provinciile răsăritene, iar tradiția îi atribuie găsirea Sfintei Cruci a lui Hristos și aflarea rămășițelor celor trei magi.\n\nSărbătoarea Sfinților Constantin și Elena este una dintre cele mai însemnate pentru creștini, întrucât împăratul Constantin i-a eliberat de sub prigoana păgână (prin Edictul de la Mediolanum, din 313), iar toată activitatea sa, sub sfatul mamei sale, Elena, a fost una de ocrotire a noii religii.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v7-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Nicula, mijlocul secolului XIX",
+   "dimensiuni": "21 × 29 cm",
+   "sarbatoare": "21 mai"
+  },
+  {
+   "id": "v6",
+   "date": "2019-08-09",
+   "title": "Masa Raiului",
+   "theme": "masa",
+   "text": "Caracteristică zonei Nicula este icoana „Mesei Raiului”, înfățișând o masă în formă de romb în care sunt reprezentați Fecioara Maria, Mântuitorul Iisus Hristos și doi sfinți. În această icoană (după un izvod din prima jumătate a secolului al XIX-lea), cei doi sfinți sunt Sfântul Nicolae și Sfânta Parascheva.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v6-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Nicula, prima jumătate a sec. XIX",
+   "dimensiuni": "21 × 29 cm"
+  },
+  {
+   "id": "v5",
+   "date": "2019-08-09",
+   "title": "Buna Vestire",
+   "theme": "maica",
+   "text": "Tema acestei icoane este Buna Vestire, sărbătorită de Biserica Ortodoxă în fiecare an pe 25 martie: ziua în care Sfântul Arhanghel Gavriil aduce pe Pământ vestea Nașterii Fiului lui Dumnezeu. El poposește într-o cetate din Galileea, numită Nazaret, la o fecioară logodită cu un bărbat pe nume Iosif, și o vestește că va naște pe Mesia. Numele fecioarei era Maria – Sfânta Fecioară Maria. Vestea cea bună dată neamului omenesc despre întruparea Fiului lui Dumnezeu completează, de fapt, sărbătoarea noastră personală, adică propria noastră bunăvestire.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v5-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Nicula, mijlocul secolului XIX",
+   "dimensiuni": "21 × 29 cm",
+   "sarbatoare": "25 martie"
+  },
+  {
+   "id": "v4",
+   "date": "2019-08-09",
+   "title": "Sfântul Ierarh Nicolae",
+   "theme": "sfinti",
+   "text": "În fiecare an, pe 6 decembrie, credincioșii îl sărbătoresc pe unul dintre cei mai iubiți sfinți, Sfântul Nicolae. Este numit și „făcătorul de minuni” pentru mulțimea minunilor săvârșite încă din timpul vieții. Despre Sfântul Nicolae există numeroase legende, iar de ziua lui sunt legate mai multe obiceiuri și tradiții. Cel mai cunoscut rămâne cel al oferirii de daruri: copiii (dar și adulții, de ce nu?) își așază încă din ajunul sărbătorii, pe 5 decembrie, ghetuțele la geam sau la ușă, iar Moș Nicolae le pune în ele daruri. Celor mai năstrușnici le aduce însă câte o nuielușă.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v4-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Cârțișoara, 1894",
+   "dimensiuni": "21 × 29 cm",
+   "sarbatoare": "6 decembrie"
+  },
+  {
+   "id": "v3",
+   "date": "2019-08-09",
+   "title": "Sfânta Cuvioasă Parascheva",
+   "theme": "sfinti",
+   "text": "Tema acestei icoane este Sfânta Cuvioasă Parascheva cea Nouă, sau Parascheva de la Iași, o sfântă cinstită în întreaga Biserică Ortodoxă, îndeosebi în România, Serbia, Grecia și Bulgaria. În România este considerată ocrotitoarea Moldovei și este cea mai populară dintre toți sfinții ale căror moaște se află pe teritoriul țării. Sute de biserici de parohie îi sunt închinate. În popor mai este cunoscută și ca Sfânta Vineri. Prăznuirea ei se face la 14 octombrie, când zeci de mii de oameni vin în fiecare an la Iași pentru a se închina la sfintele sale moaște.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v3-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Nicula, sec. XIX",
+   "dimensiuni": "21 × 29 cm",
+   "sarbatoare": "14 octombrie"
+  },
+  {
+   "id": "v2",
+   "date": "2019-08-09",
+   "title": "Sfântul Proroc Ilie",
+   "theme": "sfinti",
+   "text": "La 20 iulie Biserica Ortodoxă Română sărbătorește ridicarea la cer a Sfântului Mare Proroc Ilie Tesviteanul (era de origine din Tesvi). Unul dintre cei mai importanți proroci din Vechiul Testament, Sfântul Ilie este celebrat ca un mare făcător de minuni și aducător de ploi în vreme de secetă.\n\nReprezentat iconografic fie în gura peșterii sale, hrănit de corb, fie în carul de foc în care a fost răpit la cer, Sfântul Mare Proroc Ilie este, în calendarul bisericesc și în tradiția populară, personajul din Vechiul Testament cel mai familiar conștiinței creștine, iar Noul Testament sugerează că el va fi Înaintemergătorul celei de a doua veniri a lui Iisus.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v2-1.jpg"
+   ],
+   "archive": true,
+   "dimensiuni": "11 × 14 cm",
+   "sarbatoare": "20 iulie"
+  },
+  {
+   "id": "v10",
+   "date": "2019-08-09",
+   "title": "Sfinții Arhangheli Mihail și Gavriil",
+   "theme": "sfinti",
+   "text": "Tema acestei icoane este Sărbătoarea Sfinților Arhangheli Mihail („puterea lui Dumnezeu”) și Gavriil („bărbat-Dumnezeu”), fixată în calendarul bizantin pe 8 noiembrie, iar în cel latin pe 29 septembrie. Acești sfinți sunt patronii multor biserici, fiind cunoscuți drept conducătorii cetelor de îngeri, păzitorii oamenilor de la naștere până la moarte și călăuzele sufletelor în drumul lor spre Rai.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v10-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Maierii (Alba Iulia), prima jumătate a sec. XIX",
+   "dimensiuni": "21 × 29 cm",
+   "sarbatoare": "8 noiembrie"
+  },
+  {
+   "id": "v1",
+   "date": "2019-08-09",
+   "title": "Nașterea Domnului",
+   "theme": "praznice",
+   "text": "Tema acestei icoane (Nicula, sfârșitul secolului al XVIII-lea) este Nașterea Domnului.\n\nLa 25 decembrie creștinii din întreaga lume celebrează Crăciunul – Sărbătoarea Nașterii Domnului. Acum mai bine de două mii de ani, Fecioara Maria (prin puterea Duhului Sfânt) a născut în Betleemul Iudeii, într-o iesle săracă, pe Pruncul Iisus. Atunci, cei trei magi de la Răsărit au văzut o stea luminoasă pe cer și, străbătând cale lungă pentru a o urma, au ajuns la Betleem, aducându-I Mântuitorului în dar aur, smirnă și tămâie. Crăciunul, în accepțiunea de astăzi, datează din anul 325; până atunci, religiile precreștine marcau în aceeași perioadă a anului solstițiul de iarnă.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v1-1.jpg"
+   ],
+   "archive": true,
+   "izvod": "Nicula, sfârșitul sec. XVIII",
+   "dimensiuni": "21 × 29 cm",
+   "sarbatoare": "25 decembrie"
+  },
+  {
+   "id": "v21",
+   "date": "2019-08-07",
+   "title": "Adam și Eva în Rai",
+   "theme": "praznice",
+   "text": "Adam și Eva au fost, după Cartea Facerii (prima carte a Vechiului Testament și a Bibliei), primul bărbat și prima femeie create de Dumnezeu. Momentul în care cei doi încalcă porunca divină și gustă din Pomul Cunoașterii este o temă frecventă în iconografie. Această temă i-a atras și pe iconarii transilvăneni, care au pictat pe sticlă faimoasa scenă din Vechiul Testament.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v21-1.jpg"
+   ],
+   "archive": true,
+   "date_approx": true,
+   "izvod": "Nicula, a doua jumătate a sec. XIX"
+  },
+  {
+   "id": "v20",
+   "date": "2019-08-07",
+   "title": "Iisus Hristos – Vița de vie",
+   "theme": "praznice",
+   "text": "Iisus – Vița de vie este o temă care se regăsește în icoanele țărănești transilvănene, evocând taina Sfintei Împărtășanii. Icoana ilustrează pilda viței de vie: „Eu sunt vița, voi sunteți mlădițele”. Iisus S-a înfățișat pe Sine ca vița cea adevărată, pe Tatăl Său ca viticultorul care a sădit-o, iar pe ucenicii Săi ca mlădițele acestei vițe. Este vorba despre un arhetip potrivit căruia din jertfa primordială au crescut elementele esențiale ale vieții: hrana, vindecarea și cultul.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v20-1.jpg"
+   ],
+   "archive": true,
+   "date_approx": true,
+   "izvod": "Șcheii Brașovului, mijlocul sec. XIX"
+  },
+  {
+   "id": "v19",
+   "date": "2019-08-07",
+   "title": "Sfinții Apostoli Petru și Pavel",
+   "theme": "sfinti",
+   "text": "În iconografia ortodoxă, Sfinții Petru și Pavel (primul și ultimul între Apostoli) reprezintă Biserica, sau comuniunea lui Israel (Petru) cu toate popoarele lumii (Pavel). Modelul Bisericii susținut de cei doi sfinți ilustrează cuvintele lui Iisus: „Tu ești Petru și pe această piatră voi construi Biserica Mea”.\n\nPictată manual pe sticlă, în tempera și foiță de aur, pe un desen realizat cu penița și tușul după izvod original. Rama, din lemn de brad băițuit, este lucrată tot manual.",
+   "images": [
+    "v19-1.jpg"
+   ],
+   "archive": true,
+   "date_approx": true,
+   "izvod": "Nicula, începutul sec. XIX",
+   "sarbatoare": "29 iunie"
   }
  ]
 }
