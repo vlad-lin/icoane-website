@@ -96,7 +96,17 @@ FINISHED_BW = {921}
 # A merged icon can be named by any of its posts.
 CHURCH = {'p744', 'p777', 'p779', 'p755', 'p883', 'p893', 'p937', 'p938', 'p870', 'p842', 'p1068',
           'p1031', 'p786', 'p1091', 'p1105', 'p1110', 'p1129', 'p1130', 'p1123', 'p1164', 'p1165',
-          'p1179', 'p1199', 'p971'}
+          'p1179', 'p1199', 'p971',
+          # added 4 Nov 2026, found when the church places were restored
+          'p763', 'p764', 'p840', 'p852', 'p853', 'p857', 'p877', 'p948', 'p949', 'p953', 'p975',
+          'p1035', 'p1135', 'p1161',
+          # Radio Trinitas belongs to the Romanian Orthodox Church (user: include it)
+          'p1094'}
+# "Destinație" set by hand, for public places that are not churches (user, 4 Nov 2026).
+DESTINATION = {'p1094': 'Radio Trinitas'}
+# The place of a church in a caption: "Biserică (Ortodoxă) din Dobrogea / jud Brașov / vestul României".
+CHURCH_PLACE = re.compile(r'(?:[Bb]iseric|[Mm]ănăstir)\w*(?:\s+[Oo]rtodox\w*)?\s+din\s+'
+                          r'((?:jud\.?\s+)?(?!România\b)[A-ZĂÂÎȘȚ]\w+(?:-[A-ZĂÂÎȘȚ]\w+)*|vestul României)')
 
 MONTHS = ('ianuarie februarie martie aprilie mai iunie iulie august septembrie '
           'octombrie noiembrie decembrie').split()
@@ -288,6 +298,13 @@ def norm(s):
 TOWNS = (r'(?:Brăila|Bacău|Constanța|Mangalia|Bra[sșş]ov|Bucure[sșş]ti|Timi[sșş]oara|Oradea|Arad|Sibiu|'
          r'Cluj|Râmnicu Vâlcea|Alba Iulia|Maramure[sșş]|Dobrogea|Măcin|continentul american)')
 PERSON = (r'(?:famili\w*|cuplu|tată|soț|preot|băiețel|copil|om|frățiori|doamn\w*|prieten\w*)')
+# Churches and monasteries are public institutions: where an icon went ("pentru o Sfântă
+# Biserică din Dobrogea", "din Măcin") is kept (user, 4 Nov 2026). Rules marked PLACE are
+# skipped in sentences about a church, unless the sentence also names a private person
+# ("comandată de un drag preot din Dobrogea" is still cleaned).
+PLACE = 'place'
+CHURCH_CLIENT = re.compile(r'[Bb]iseric|[Mm]ănăstir')
+PRIVATE_CLIENT = re.compile(r'preot|famili|doamn|prieten|client|cuplu|\bsoț', re.I)
 CUT = [
     (r'\s*\(\s*la cererea clientului\s*\)', ''),
     (r'\(\s*La cererea clientului\s+', '('),
@@ -302,13 +319,10 @@ CUT = [
     # "se află în colecția unei familii..., deci nu este disponibilă"
     (r'se află în colecția unei[^,.!?\n]*,\s*deci nu este disponibilă', 'nu este disponibilă'),
     (r'\s*(?:aflat[ăa]\s+)?în colecția unei[^.!?\n]*', ''),
-    # "nu este disponibilă, a plecat spre Constanța..."
-    (r'(disponibil[ăa])\s*,\s*(?:a plecat|va pleca)[^.!?\n]*', r'\1'),
-    # "pentru o Sfântă Biserică din Dobrogea" -> keep the church, drop the town
-    (r'((?:pentru|unei|o)\s+(?:\w+\s+){0,3}(?:[Bb]iseric|[Mm]ănăstir)\w*(?:\s+[Oo]rtodox\w*)?(?:\s+\([^)]*\))?)'
-     r'\s*,?\s*din\s+(?:jud\.?\s+|vestul\s+)?[A-ZĂÂÎȘȚ]\w+', r'\1'),
-    # "comandată la Brăila", "comandată în Bacău" -> "comandată"
-    (r'(comandat[ăa]|pictat[ăa]|lucrat[ăa])\s+(?:în|la|din)\s+' + TOWNS, r'\1'),
+    # "nu este disponibilă, a plecat spre Constanța..." (PLACE: kept when it goes to a church)
+    (r'(disponibil[ăa])\s*,\s*(?:a plecat|va pleca)[^.!?\n]*', r'\1', PLACE),
+    # "comandată la Brăila", "comandată în Bacău" -> "comandată" (kept for a church)
+    (r'(comandat[ăa]|pictat[ăa]|lucrat[ăa])\s+(?:în|la|din)\s+' + TOWNS, r'\1', PLACE),
     # "...pentru a fi dăruită (cu bucurie) unui om minunat, ..." -> "..."
     (r',?\s*pentru a fi (?:dăruit|oferit)\w*\s+(?:[^.!?\n)]{0,25}?\s)?(?:lui|unui|unei|prietenului|tinerei)\b[^.!?\n)]*', ''),
     # "(a fost comandată/pictată) pentru o frumoasă familie din Arad" -> "(...)"
@@ -316,7 +330,7 @@ CUT = [
      r'(?:\s+(?:de\s+(?:tineri\s+)?români|(?!din\b|care\b|ce\b)[a-zăâîșț]+))?(?:\s*,?\s*numit\s+\w+)?'
      r'(?:\s*,?\s*din\s+(?:[A-ZĂÂÎȘȚ]\w+(?:-\w+)*\s*)+)?(?:\s*,?\s+(?:care|ce)\b[^.!?\n)]*)?', ''),
 ]
-CUT = [(re.compile(rx), rep) for rx, rep in CUT]
+CUT = [(re.compile(c[0]), c[1], len(c) > 2) for c in CUT]
 DROP = re.compile(
     r'(?i:client|câștigător|concurs)|@\w|casa unei|^\W*(?:Și\s+)?[Dd]e aceas?t[aă] dată,?\s+(?:din|la|în|pentru)\b|[Ff]amili(?:a|ei|i)\s+(?:a hotărât|din)|minunatei famili|'
     r'[Aa]semenea a procedat|soți(?:a|ei)|\bsoț\b|frățiori|om (?:minunat|deosebit)|'
@@ -342,8 +356,10 @@ def clean_customers(text):
             sent = parts[k]
             sep = parts[k + 1] if k + 1 < len(parts) else ''
             new = sent
-            for rx, rep in CUT:
-                new = rx.sub(rep, new)
+            church = bool(CHURCH_CLIENT.search(sent)) and not PRIVATE_CLIENT.search(sent)
+            for rx, rep, place in CUT:
+                if not (place and church):
+                    new = rx.sub(rep, new)
             if new != sent:
                 new = re.sub(r'\s+([,.!?…)])', r'\1', new)
                 new = re.sub(r',\s*([.!?…])', r'\1', new)
@@ -356,7 +372,7 @@ def clean_customers(text):
                 words = re.findall(r'\w+', new)
                 if len(words) < 4 or (len(words) < 7 and re.match(r'\W*(?:Și\s+)?[Dd]e aceas?t[aă] dată\b', new)):
                     new = ''
-            if new and DROP.search(new) and not HISTORY.search(new):
+            if new and DROP.search(new) and not HISTORY.search(new) and not church:
                 new = ''
             if new:
                 kept.append(new + sep)
@@ -613,8 +629,17 @@ def main():
             church_photos.append(c['name'])
         entries.sort(key=lambda e: (e['date'], e['id']), reverse=True)
     for e in entries:
+        for pid in [e['id']] + e.get('aliases', []):
+            if pid in DESTINATION:
+                e['destinatie'] = DESTINATION[pid]
         if CHURCH & set([e['id']] + e.get('aliases', [])):
             e['biserica'] = True
+            # Where the church is, when a caption says ("... Biserică din Dobrogea").
+            # Merged posts naming different places (p842: Măcin, Arad...) show no place.
+            texts = [e['text']] + [h['text'] for h in e.get('history', [])]
+            places = {re.sub(r'^jud\.?\s+', 'jud. ', m.group(1)) for t in texts for m in CHURCH_PLACE.finditer(t)}
+            if len(places) == 1:
+                e['biserica_loc'] = places.pop()
 
     profile = load(os.path.join(EXPORT, 'profile_information', 'profile_information', 'profile_information.json'))['profile_v2']
     site = {

@@ -517,12 +517,14 @@
    "date": "2025-11-20",
    "title": "Intrarea în Biserică a Maicii Domnului",
    "theme": "maica",
-   "text": "⚜️«Intrarea în Biserică a Maicii Domnului» (21 noiembrie)\n\n✧ „Astăzi, Fecioara Maria a fost adusă la Ierusalim în biserica Domnului, să se roage, să vorbească cu Dumnezeu şi cu îngerii, să se îndumnezeiască, să se facă biserică vie a Duhului Sfânt, să se pregătească pentru a naşte pe pământ pe Iisus Hristos, Mântuitorul lumii\" - fragment dintr-o predică a Părintelui Cleopa, (21 noiembrie,1999).\n\n✧ În așteptarea prăznuirii acestei mari sărbători (prima din Postul Naşterii Domnului) vă prezentăm una dintre icoanele care abordează această temă, icoană pe care am pictat-o pe sticlă (izvod Savu Moga,1860) pentru o sfântă Biserică.",
+   "text": "⚜️«Intrarea în Biserică a Maicii Domnului» (21 noiembrie)\n\n✧ „Astăzi, Fecioara Maria a fost adusă la Ierusalim în biserica Domnului, să se roage, să vorbească cu Dumnezeu şi cu îngerii, să se îndumnezeiască, să se facă biserică vie a Duhului Sfânt, să se pregătească pentru a naşte pe pământ pe Iisus Hristos, Mântuitorul lumii\" - fragment dintr-o predică a Părintelui Cleopa, (21 noiembrie,1999).\n\n✧ În așteptarea prăznuirii acestei mari sărbători (prima din Postul Naşterii Domnului) vă prezentăm una dintre icoanele care abordează această temă, icoană pe care am pictat-o pe sticlă (izvod Savu Moga,1860) pentru o sfântă Biserică din Dobrogea.",
    "images": [
     "p764-1.jpg"
    ],
    "izvod": "Savu Moga,1860",
-   "sarbatoare": "21 noiembrie"
+   "sarbatoare": "21 noiembrie",
+   "biserica": true,
+   "biserica_loc": "Dobrogea"
   },
   {
    "id": "p768",
@@ -595,7 +597,7 @@
    "date": "2025-09-28",
    "title": "Adormirea Maicii Domnului",
    "theme": "maica",
-   "text": "• «Adormirea Maicii Domnului» - studiu după o valoroasă icoană, din patrimoniul Muzeului de Artă Vasile Grigore – pictor și colecționar. Este vorba despre o icoană pe sticlă (Țara Oltului, secolul al XIX-lea) clasată în Tezaur.\n\n• Icoana pe care v-o prezint astăzi (realizată în atelierul nostru) nu este disponibilă, a fost comandată pentru o Sfântă Biserică.",
+   "text": "• «Adormirea Maicii Domnului» - studiu după o valoroasă icoană, din patrimoniul Muzeului de Artă Vasile Grigore – pictor și colecționar. Este vorba despre o icoană pe sticlă (Țara Oltului, secolul al XIX-lea) clasată în Tezaur.\n\n• Icoana pe care v-o prezint astăzi (realizată în atelierul nostru) nu este disponibilă, a fost comandată pentru o Sfântă Biserică din jud Brașov.",
    "images": [
     "p777-1.jpg"
    ],
@@ -609,14 +611,15 @@
      ]
     }
    ],
-   "biserica": true
+   "biserica": true,
+   "biserica_loc": "jud. Brașov"
   },
   {
    "id": "p779",
    "date": "2025-09-17",
    "title": "Sfinții Arhangheli Mihail și Gavriil",
    "theme": "sfinti",
-   "text": "✤„Sfinţii Arhangheli Mihail şi Gavriil, conducătorii cetelor de îngeri şi călăuzele sufletelor spre Rai” într-o nouă icoană pe sticlă; De această dată, comanda este pentru o sfântă Biserică Ortodoxă.",
+   "text": "✤„Sfinţii Arhangheli Mihail şi Gavriil, conducătorii cetelor de îngeri şi călăuzele sufletelor spre Rai” într-o  nouă icoană pe sticlă; De această dată, comanda este pentru o sfântă Biserică Ortodoxă din Transilvania.",
    "images": [
     "p779-1.jpg"
    ],
@@ -630,7 +633,8 @@
      ]
     }
    ],
-   "biserica": true
+   "biserica": true,
+   "biserica_loc": "Transilvania"
   },
   {
    "id": "p780",
@@ -1973,7 +1977,7 @@
    "date": "2024-01-03",
    "title": "Sfântul Nichifor Leprosul",
    "theme": "sfinti",
-   "text": "⚜️Sfântul Nichifor Leprosul, făcătorul de minuni (4 ianuarie)\n\nÎntâmpinăm prăznuirea Sfântului Nichifor cel Lepros cu o icoană pe sticlă care a fost comandată pentru o Sfântă Biserică.\nIcoana îl reprezintă pe Sfântul Nichifor cu scene din viața sa (sticlă 42x30 cm).\n\nCâteva cuvinte despre acest sfânt mai puțin cunoscut (Fragmente din «Dreptii in veci vor fi vii» de Simon Monahul):\n\n„Cuviosul Nichifor Leprosul s-a născut în insula Creta într-o familie de țărani evlavioși și a rămas orfan de mic. La vârsta de treisprezece ani s-au arătat pe trupul lui primele semne ale ,,bolii sfinte\\\" cum este numită lepra în Biserica lui Hristos. Ca să scape de izolarea definitivă care îl aștepta, s-a adăpostit pentru o vreme în Egipt.\n\nLa douăzeci și patru de ani a ajuns la leprozeria din Hios aflată în grija Sfântului Antim din Hios, unde a fost tuns monah. Aici, vreme de patruzeci și unu de ani, deși era din ce în ce mai schilodit de boală, s-a dăruit cu răbdare muceniceasca nevoințelor mai presus de fire, aratandu-se pilda de urmat pentru frații lui de suferință.\n\nDupă descoperirea leacului leprei în anul 1947, leprozeria din Hios s-a închis și Cuviosul a fost mutat la Spitalul Sfânta Varvara din Atena. Orb și țintuit pe patul de suferință, însă înzestrat cu multe harisme dumnezeiești, și-a petrecut ultimii ani din viață insuflând nădejde deznădăjduiților, mângâiere suferinzilor, râvnă tinerilor.\n\nLa vârstă de șaptezeci și patru de ani sfântul lepros a plecat din lumea aceasta, iar mai târziu descoperirea sfintelor sale moaște și nenumăratele vindecări pe care le face și astăzi l-au arătat a fi unul dintre cei mai mari mijlocitori ai vremurilor noastre.\nÎn anul 2012 Patriarhia Ecumenică a săvârșit proslăvirea Sfântului Nichifor Leprosul, cu zi de prăznuire pe 4 ianuarie, ziua adormirii sale.”",
+   "text": "⚜️Sfântul Nichifor Leprosul, făcătorul de minuni (4 ianuarie)\n\nÎntâmpinăm prăznuirea  Sfântului Nichifor cel Lepros  cu o icoană pe sticlă care a fost  comandată pentru o Sfântă Biserică din Dobrogea.\nIcoana îl reprezintă pe Sfântul Nichifor cu scene din viața sa (sticlă 42x30 cm).\n\nCâteva cuvinte despre acest sfânt mai puțin cunoscut (Fragmente din «Dreptii in veci vor fi vii» de Simon Monahul):\n\n„Cuviosul Nichifor Leprosul s-a născut în insula Creta într-o familie de țărani evlavioși și a rămas orfan de mic. La vârsta de treisprezece ani s-au arătat pe trupul lui primele semne ale ,,bolii sfinte\\\" cum este numită lepra în Biserica lui Hristos. Ca să scape de izolarea definitivă care îl aștepta, s-a adăpostit pentru o vreme în Egipt.\n\nLa douăzeci și patru de ani a ajuns la leprozeria din Hios aflată în grija Sfântului Antim din Hios, unde a fost tuns monah. Aici, vreme de patruzeci și unu de ani, deși era din ce în ce mai schilodit de boală, s-a dăruit cu răbdare muceniceasca nevoințelor mai presus de fire, aratandu-se pilda de urmat pentru frații lui de suferință.\n\nDupă descoperirea leacului leprei în anul 1947, leprozeria din Hios s-a închis și Cuviosul a fost mutat la Spitalul Sfânta Varvara din Atena. Orb și țintuit pe patul de suferință, însă înzestrat cu multe harisme dumnezeiești, și-a petrecut ultimii ani din viață insuflând nădejde deznădăjduiților, mângâiere suferinzilor, râvnă tinerilor.\n\nLa vârstă de șaptezeci și patru de ani sfântul lepros a plecat din lumea aceasta, iar mai târziu descoperirea sfintelor sale moaște și nenumăratele vindecări pe care le face și astăzi l-au arătat a fi unul dintre cei mai mari mijlocitori ai vremurilor noastre.\nÎn anul 2012 Patriarhia Ecumenică a săvârșit proslăvirea Sfântului Nichifor Leprosul, cu zi de prăznuire pe 4 ianuarie, ziua adormirii sale.”",
    "images": [
     "p937-1.jpg"
    ],
@@ -1983,13 +1987,14 @@
    "history": [
     {
      "date": "2025-01-03",
-     "text": "✤ 4 ianuarie - «Sfântul Nichifor Leprosul», sfânt vindecător și făcător de minuni.\n\n• Întâmpinăm prăznuirea Sfântului Nichifor cel Lepros cu o icoană pe sticlă, care a fost comandată pentru o Sfântă Biserică.\n\n• Icoana îl reprezintă pe Sfântul Nichifor cu scene din viața sa, un sfânt  vindecător care a cunoscut o popularitate deosebită, mai ales în timpul pandemiei de Covid-19.\n\n• „A suferit de lepră și a fost răbdător și milostiv și smerit, iar Dumnezeu i-a dat darul vindecării celor bolnavi” (Părintele Patriarh Daniel)"
+     "text": "✤ 4 ianuarie - «Sfântul Nichifor Leprosul», sfânt vindecător și făcător de minuni.\n\n• Întâmpinăm prăznuirea Sfântului Nichifor cel Lepros cu o icoană pe sticlă, care a fost comandată pentru o Sfântă Biserică din Dobrogea.\n\n• Icoana îl reprezintă pe Sfântul Nichifor cu scene din viața sa, un sfânt  vindecător care a cunoscut o popularitate deosebită, mai ales în timpul pandemiei de Covid-19.\n\n• „A suferit de lepră și a fost răbdător și milostiv și smerit, iar Dumnezeu i-a dat darul vindecării celor bolnavi” (Părintele Patriarh Daniel)"
     }
    ],
    "aliases": [
     "p840"
    ],
-   "biserica": true
+   "biserica": true,
+   "biserica_loc": "Dobrogea"
   },
   {
    "id": "p938",
@@ -2214,7 +2219,7 @@
    "date": "2023-09-07",
    "title": "Nașterea Maicii Domnului",
    "theme": "maica",
-   "text": "Acatistul Nașterii Maicii Domnului:\n„Astăzi ușa vieții se deschide, astăzi raza Soarelui celui înțelegător răsare, astăzi Maica bucuriei se naște spre mântuirea a toată lumea.\nVeseliți-vă popoare și vă bucurați și cu credință, din inimă lăudați-o așa: Bucură-te, dumnezeiască Pruncă Maria, care astăzi te-ai născut spre bucuria și mântuirea a toată lumea!”\n\nIcoana cu aceasta temă (izvod Nicula, începutul sec.XIX) pe care v-o prezentăm astăzi, a fost pictată pentru o sfântă și frumoasă Biserică Ortodoxă.\n\nDescriere icoană (Institutul Național al Patrimoniului):\n\"Aşezată pe un pat deasupra căruia atârnă o perdea bogată, Sf. Ana are prunca la picioare. Ioachim o îndeamnă să mănânce din vasele pe care le aduce. Un chenar cu motivul funiei înconjoară compoziţia. Ineditul imaginii constă în modul de orientare a pavimentului, redat ca un acoperiş de olane, care concentrează toată atenţia pe gestul lui Ioachim.\"\n\n❀«La mulți ani!» tuturor celor dintre dumneavoastră care poartă numele Sfintei Fecioarei Maria.",
+   "text": "Acatistul Nașterii Maicii Domnului:\n„Astăzi ușa vieții se deschide, astăzi raza Soarelui celui înțelegător răsare, astăzi Maica bucuriei se naște spre mântuirea a toată lumea.\nVeseliți-vă popoare și vă bucurați și cu credință, din inimă lăudați-o așa: Bucură-te, dumnezeiască Pruncă Maria, care astăzi te-ai născut spre bucuria și mântuirea a toată lumea!”\n\nIcoana cu aceasta temă (izvod Nicula, începutul sec.XIX) pe care v-o prezentăm astăzi, a fost pictată pentru o sfântă și frumoasă Biserică Ortodoxă din  Dobrogea.\n\nDescriere icoană (Institutul Național al Patrimoniului):\n\"Aşezată pe un pat deasupra căruia atârnă o perdea bogată, Sf. Ana are prunca la picioare. Ioachim o îndeamnă să mănânce din vasele pe care le aduce. Un chenar cu motivul funiei înconjoară compoziţia. Ineditul imaginii constă în modul de orientare a pavimentului, redat ca un acoperiş de olane, care concentrează toată atenţia pe gestul lui Ioachim.\"\n\n❀«La mulți ani!» tuturor celor dintre dumneavoastră care poartă numele Sfintei Fecioarei Maria.",
    "images": [
     "p870-1.jpg"
    ],
@@ -2230,7 +2235,8 @@
    "aliases": [
     "p967"
    ],
-   "biserica": true
+   "biserica": true,
+   "biserica_loc": "Dobrogea"
   },
   {
    "id": "p968",
@@ -2702,7 +2708,7 @@
    "date": "2023-02-04",
    "title": "Sfântul Ierarh Nectarie",
    "theme": "sfinti",
-   "text": "Dragi prieteni,\n\nÎn urmă cu trei ani am inaugurat această pagină, dedicată icoanelor pe sticlă pictate în atelierul nostru.\nPrima icoană pe care v-am prezentat-o în acea zi, a fost cea a sfântului Nectarie, icoană lucrată pentru o Sfântă Biserică.\n\nAstăzi, după 3 ani, vă prezentăm o altă icoană a sfântului Nectarie, lucrată  tot pentru o Biserică.\n\nVă mulțumim pentru toate comenzile primite. Vă mulțumim de asemenea pentru susținere, apreciindu-ne postările dar și pentru comentariile dumneavoastră și distribuirile postărilor în listele de prieteni și în grupuri.\n\nAstăzi, la 3 ani, vă dorim dumneavoastră și familiilor dumneavoastră să aveți un an nou cu realizări, sănătate, pace și bucurii iar atelierului nostru cât mai multe și frumoase icoane pictate pe sticlă.\n\nLa mulți ani 2025!",
+   "text": "Dragi prieteni,\n\nÎn urmă cu trei ani am inaugurat această pagină, dedicată icoanelor pe sticlă pictate în atelierul nostru.\nPrima icoană pe care v-am prezentat-o în acea zi, a fost cea a sfântului Nectarie, icoană lucrată pentru o Sfântă Biserică din Măcin.\n\nAstăzi, după 3 ani, vă prezentăm o altă icoană a sfântului Nectarie, lucrată  tot pentru o Biserică.\n\nVă mulțumim pentru toate comenzile primite. Vă mulțumim de asemenea pentru susținere, apreciindu-ne postările dar și pentru comentariile dumneavoastră și distribuirile postărilor în listele de prieteni și în grupuri.\n\nAstăzi, la 3 ani, vă dorim dumneavoastră și familiilor dumneavoastră să aveți un an nou cu realizări, sănătate, pace și bucurii iar atelierului nostru cât mai multe și frumoase icoane pictate pe sticlă.\n\nLa mulți ani 2025!",
    "images": [
     "p842-1.jpg"
    ],
@@ -2722,15 +2728,15 @@
    "history": [
     {
      "date": "2024-11-08",
-     "text": "9 noiembrie: «Sfântul Ierarh Nectarie Taumaturgul de la Eghina»\n\n• „Dumnezeu nu îți va da oamenii pe care îi vrei, ci oamenii de care ai nevoie pentru a te ajuta, pentru a te răni, pentru a te părăsi, pentru a te iubi și pentru a te transforma în omul care ți-a fost dat să fii.\"(Sfântul Ierarh Nectarie din Eghina)\n\n• Icoana pictată pe sticlă pe care v-o prezint astăzi, a fost comandată pentru a fi donată unei Sfinte Biserici, deci nu este disponibilă. Dacă doriți o icoană asemănătoare, contactați-mă și vom stabili detaliile."
+     "text": "9 noiembrie: «Sfântul Ierarh Nectarie Taumaturgul de la Eghina»\n\n• „Dumnezeu nu îți va da oamenii pe care îi vrei, ci oamenii de care ai nevoie pentru a te ajuta, pentru a te răni, pentru a te părăsi, pentru a te iubi și pentru a te transforma în omul care ți-a fost dat să fii.\"(Sfântul Ierarh Nectarie din Eghina)\n\n• Icoana pictată pe sticlă pe care v-o prezint astăzi, a fost comandată pentru a fi donată unei Sfinte Biserici din Arad, deci nu este disponibilă. Dacă doriți o icoană asemănătoare, contactați-mă și vom stabili detaliile."
     },
     {
      "date": "2023-11-08",
-     "text": "⚜️9 noiembrie: «Sfântul Ierarh Nectarie Taumaturgul de la Eghina»\n\n◘ „Dumnezeu nu îți va da oamenii pe care îi vrei, ci oamenii de care ai nevoie pentru a te ajuta, pentru a te răni, pentru a te părăsi, pentru a te iubi și pentru a te transforma în omul care ți-a fost dat să fii\" (Sfântul Ierarh Nectarie din Eghina)\n\n◘ Icoana pictată pe sticlă (pe care v-o prezint astăzi în așteptarea prăznuirii Sfântului Nectarie) a fost comandată pentru a fi donată unei Sfinte Biserici, deci nu este disponibilă. Dacă doriți o icoană asemănătoare contactați-mă și vom stabili detaliile."
+     "text": "⚜️9 noiembrie: «Sfântul Ierarh Nectarie Taumaturgul de la Eghina»\n\n◘ „Dumnezeu nu îți va da oamenii pe care îi vrei, ci oamenii de care ai nevoie pentru a te ajuta, pentru a te răni, pentru a te părăsi, pentru a te iubi și pentru a te transforma în omul care ți-a fost dat să fii\" (Sfântul Ierarh Nectarie din Eghina)\n\n◘ Icoana pictată pe sticlă (pe care v-o prezint astăzi în așteptarea prăznuirii Sfântului Nectarie) a fost comandată pentru a fi donată unei Sfinte Biserici din vestul României, deci nu este disponibilă. Dacă doriți o icoană asemănătoare contactați-mă și vom stabili detaliile."
     },
     {
      "date": "2023-02-04",
-     "text": "⚜️Sfântul Nectarie din Eghina - Icoană pictată pe sticlă (30x42 cm)\n◘ Sfântul Nectarie a fost cărturar și înțelept ierarh, teolog erudit și dascal al Bisericii, dăruit fiind de Dumnezeu cu  harul tămăduirii bolilor fară leac\n◘ Icoana a fost comandată pentru a fi donată unei Sfinte Biserici\n◘ Așadar, nici această  icoană nu este disponibilă. Dacă doriți o icoană asemănătoare contactați-mă și vom stabili detaliile"
+     "text": "⚜️Sfântul Nectarie din Eghina - Icoană pictată pe sticlă (30x42 cm)\n◘ Sfântul Nectarie a fost cărturar și înțelept ierarh, teolog erudit și dascal al Bisericii, dăruit fiind de Dumnezeu cu  harul tămăduirii bolilor fară leac\n◘ Icoana a fost comandată pentru a fi donată unei Sfinte Biserici din vestul României\n◘ Așadar, nici această  icoană nu este disponibilă. Dacă doriți o icoană asemănătoare contactați-mă și vom stabili detaliile"
     }
    ],
    "aliases": [
@@ -2897,12 +2903,14 @@
    "history": [
     {
      "date": "2024-11-20",
-     "text": "✧21 noiembrie: «Intrarea Maicii Domnului în Biserică»\n\n✧„Astăzi Fecioara Maria a fost adusă la Ierusalim, în biserica Domnului să se roage, să vorbească cu Dumnezeu şi cu îngerii, să se îndumnezeiască, să se facă biserică vie a Duhului Sfînt, să se pregătească pentru a naşte pe pămînt pe Iisus Hristos, Mîntuitorul lumii. Amin.\" (Pr. Cleopa Ilie)\n\n✧ În așteptarea prăznuirii acestei mari sărbători, prima din Postul Naşterii Domnului, vă prezint o icoană cu această temă, pe care am pictat-o pe sticlă pentru o sfântă Biserică.(izvod Savu Moga,1860)"
+     "text": "✧21 noiembrie: «Intrarea Maicii Domnului în Biserică»\n\n✧„Astăzi Fecioara Maria a fost adusă la Ierusalim, în biserica Domnului să se roage, să vorbească cu Dumnezeu şi cu îngerii, să se îndumnezeiască, să se facă biserică vie a Duhului Sfînt, să se pregătească pentru a naşte pe pămînt pe Iisus Hristos, Mîntuitorul lumii. Amin.\" (Pr. Cleopa Ilie)\n\n✧ În așteptarea prăznuirii acestei mari sărbători, prima din Postul Naşterii Domnului, vă prezint o icoană cu această temă,  pe care am pictat-o pe sticlă pentru o sfântă Biserică din Dobrogea.(izvod Savu Moga,1860)"
     }
    ],
    "aliases": [
     "p853"
-   ]
+   ],
+   "biserica": true,
+   "biserica_loc": "Dobrogea"
   },
   {
    "id": "p1055",
@@ -3097,7 +3105,7 @@
    "date": "2022-08-19",
    "title": "Sfinții Martiri Brâncoveni",
    "theme": "eroi",
-   "text": "◘ Pe 18 februarie se împlinesc 71 de ani de la despărțirea de viața lumească a stâlpului de foc al spiritualității creștine din închisorile comuniste, Valeriu Gafencu ( pe care Nicolae Steinhardt l-a numit „Sfântul Închisorilor”)\n◘ Valeriu Gafencu s-a născut la 24 ianuarie 1921 în localitatea Sângerei- Basarabia, fiind unul dintre tinerii intelectuali care au murit în închisorile regimului  comunist din România acelor vremuri\n◘ În această icoană pictată pe sticlă (comandată pentru a fi donată unei sfinte Biserici) Sfântul Valeriu Gafencu este reprezentat alături de Sfinții Martiri Brâncoveni",
+   "text": "◘ Pe 18 februarie se împlinesc 71 de ani de la despărțirea de viața lumească a stâlpului de foc al spiritualității creștine din închisorile comuniste, Valeriu Gafencu ( pe care Nicolae Steinhardt l-a numit „Sfântul Închisorilor”)\n◘ Valeriu Gafencu s-a născut la 24 ianuarie 1921 în localitatea Sângerei- Basarabia, fiind unul dintre tinerii intelectuali care au murit în închisorile regimului  comunist din România acelor vremuri\n◘ În această icoană pictată pe sticlă (comandată pentru a fi donată unei sfinte Biserici din vestul României) Sfântul Valeriu Gafencu este reprezentat alături de Sfinții Martiri Brâncoveni",
    "images": [
     "p1031-1.jpg"
    ],
@@ -3122,7 +3130,8 @@
    "aliases": [
     "p1071"
    ],
-   "biserica": true
+   "biserica": true,
+   "biserica_loc": "vestul României"
   },
   {
    "id": "p786",
@@ -3138,7 +3147,7 @@
    "history": [
     {
      "date": "2024-08-14",
-     "text": "«Adormirea Maicii Domnului» - 15 august\n\nÎntâmpinăm această zi sfântă cu o icoană pictată pe sticlă, pentru o Sfântă Biserică.\n\n,,Astăzi nu este praznic de sfinți, nici de îngeri. Astăzi este praznic împărătesc, pentru că Împărăteasa a toată făptura se mută astăzi de la noi.” (Arhim. Cleopa Ilie)"
+     "text": "«Adormirea Maicii Domnului» - 15 august\n\nÎntâmpinăm această zi sfântă cu o icoană pictată pe sticlă,  pentru o Sfântă Biserică din Dobrogea.\n\n,,Astăzi nu este praznic de sfinți, nici de îngeri. Astăzi este praznic împărătesc, pentru că Împărăteasa a toată făptura se mută astăzi de la noi.” (Arhim. Cleopa Ilie)"
     },
     {
      "date": "2023-08-14",
@@ -3154,7 +3163,8 @@
     "p974",
     "p877"
    ],
-   "biserica": true
+   "biserica": true,
+   "biserica_loc": "Dobrogea"
   },
   {
    "id": "p1074",
@@ -3396,14 +3406,16 @@
    ],
    "aliases": [
     "p898"
-   ]
+   ],
+   "destinatie": "Radio Trinitas",
+   "biserica": true
   },
   {
    "id": "p949",
    "date": "2022-05-13",
    "title": "Intrarea în Biserică a Maicii Domnului",
    "theme": "maica",
-   "text": "⚜️ «Intrarea în Biserică a Maicii Domnului» (21 noiembrie)\n\n✧ „Astăzi Fecioara Maria a fost adusă la Ierusalim în biserica Domnului, să se roage, să vorbească cu Dumnezeu şi cu îngerii, să se îndumnezeiască, să se facă biserică vie a Duhului Sfânt, să se pregătească pentru a naşte pe pământ pe Iisus Hristos, Mântuitorul lumii\" (fragment dintr-o predică a Părintelui Cleopa)\n\n✧ În așteptarea prăznuirii acestei mari sărbători (prima din Postul Naşterii Domnului) vă prezentăm una dintre icoanele care abordează această temă, icoană pe care am pictat-o pe sticlă (izvod Savu Moga,1860) pentru o sfântă Biserică",
+   "text": "⚜️ «Intrarea în Biserică a Maicii Domnului» (21 noiembrie)\n\n✧ „Astăzi Fecioara Maria a fost adusă la Ierusalim în biserica Domnului, să se roage, să vorbească cu Dumnezeu şi cu îngerii, să se îndumnezeiască, să se facă biserică vie a Duhului Sfânt, să se pregătească pentru a naşte pe pământ pe Iisus Hristos, Mântuitorul lumii\" (fragment dintr-o predică a Părintelui Cleopa)\n\n✧ În așteptarea prăznuirii acestei mari sărbători (prima  din Postul Naşterii Domnului) vă prezentăm una dintre icoanele care abordează această temă, icoană pe care am  pictat-o pe sticlă (izvod Savu Moga,1860) pentru o sfântă Biserică din Dobrogea",
    "images": [
     "p949-1.jpg"
    ],
@@ -3419,7 +3431,9 @@
    ],
    "aliases": [
     "p1096"
-   ]
+   ],
+   "biserica": true,
+   "biserica_loc": "Dobrogea"
   },
   {
    "id": "p1097",
@@ -3554,7 +3568,7 @@
    "date": "2022-04-07",
    "title": "Nașterea Maicii Domnului",
    "theme": "maica",
-   "text": "~ Nașterea Maicii Domnului ~ Icoană pe sticlă ( izvod Nicula, începutul sec. XIX )🌸\n Descriere icoană :\n\" Aşezată pe un pat deasupra căruia atârnă o perdea bogată, Sf. Ana are prunca la picioare. Ioachim o îndeamnă să mănânce din vasele pe care le aduce. Un chenar cu motivul funiei înconjoară compoziţia. Ineditul imaginii constă în modul de orientare a pavimentului, redat ca un acoperiş de olane, care concentrează toată atenţia pe gestul lui Ioachim.\"( Sursa descrierii : Institutul Național al Patrimoniului )\n\n° Icoana nu este disponibilă, a fost pictată pentru o Sfânta și Frumoasă Biserica Ortodoxă",
+   "text": "~ Nașterea Maicii Domnului ~ Icoană pe sticlă ( izvod Nicula, începutul sec. XIX )🌸\n Descriere icoană :\n\" Aşezată pe un pat deasupra căruia atârnă o perdea bogată, Sf. Ana are prunca la picioare. Ioachim o îndeamnă să mănânce din vasele pe care le aduce. Un chenar cu motivul funiei înconjoară compoziţia. Ineditul imaginii constă în modul de orientare a pavimentului, redat ca un acoperiş de olane, care concentrează toată atenţia pe gestul lui Ioachim.\"( Sursa descrierii : Institutul Național al Patrimoniului )\n\n° Icoana nu este disponibilă, a fost pictată pentru o Sfânta și Frumoasă Biserica Ortodoxă din România",
    "images": [
     "p1110-1.jpg"
    ],
@@ -3792,14 +3806,15 @@
     },
     {
      "date": "2022-02-14",
-     "text": "Sfântul Mare Mucenic Gheorghe - Icoană pictată pe sticlă\n[Izvod: Arpașu de Sus, Sibiu (Savu Moga) - inceput sec.XIX]\n\nDescriere:\nScena îl reprezintă pe Sfântul militar Gheorghe (născut în Beirut- a fost comandant de oaste în timpul lui Diocleţian, a luat apărarea creştinilor, a fost martirizat în 303 d.Hr.), unul dintre cei mai veneraţi sfinţi.\nCălare pe un cal alb, îmbrăcat în armură şi mantie, cu lancea ce are la un capăt crucea, iar sub cal balaurul străpuns de lance. În spatele sfântului (pe crupa calului) stă copilul Leon din Amira( cu o cană în mână pe care o ducea stăpânului său la câmp), moment în care Sf. Gheorghe l-a izbăvit din robia bulgarilor. În plan indepărtat apar fata de împărat salvată din ghearele  balaurului şi împăratul ce-I aruncă cheile cetăţii.\n~ Icoana nu este disponibilă. O voi picta din nou doar în urma unei comenzi. ~"
+     "text": "Sfântul Mare Mucenic Gheorghe - Icoană pictată pe sticlă\n[Izvod: Arpașu de Sus, Sibiu (Savu Moga) - inceput sec.XIX]\n\nDescriere:\nScena îl reprezintă pe Sfântul militar Gheorghe (născut în Beirut- a fost comandant de oaste în timpul lui Diocleţian, a luat apărarea creştinilor, a fost martirizat în 303 d.Hr.), unul dintre cei mai veneraţi sfinţi.\nCălare pe un cal alb, îmbrăcat în armură şi mantie, cu lancea ce are la un capăt crucea, iar sub cal balaurul străpuns de lance. În spatele sfântului (pe crupa calului) stă copilul Leon din Amira( cu o cană în mână pe care o ducea stăpânului său la câmp), moment în care Sf. Gheorghe l-a izbăvit din robia bulgarilor. În plan indepărtat apar fata de împărat salvată din ghearele  balaurului şi împăratul ce-I aruncă cheile cetăţii.\n~ Icoana nu este disponibilă, va pleca in curând spre o Sfânta Biserică. O voi picta din nou doar în urma unei comenzi. ~"
     }
    ],
    "aliases": [
     "p1135",
     "p1103",
     "p1004"
-   ]
+   ],
+   "biserica": true
   },
   {
    "id": "p926",
@@ -3932,7 +3947,7 @@
    "history": [
     {
      "date": "2022-01-27",
-     "text": "\"Sfinții Arhangheli Mihail și Gavriil\"\n\n~Icoană pictată pe sticlă(izvod:Maierii-Alba Iulia,sec.XVIII)~\n\n-Acum într-o Sfântă și Frumoasă Biserică Ortodoxă-"
+     "text": "\"Sfinții Arhangheli Mihail și Gavriil\"\n\n~Icoană pictată pe sticlă(izvod:Maierii-Alba Iulia,sec.XVIII)~\n\n-Acum într-o Sfântă și Frumoasă Biserică Ortodoxă din România-"
     }
    ],
    "aliases": [
@@ -4143,15 +4158,15 @@
    "history": [
     {
      "date": "2025-11-25",
-     "text": "⚜️Sf. Cuv. Stelian Paflagonul⚜️\n\n✧ Unul dintre sfinţii cei mai apropiaţi copiilor, este prăznuit în luna noiembrie, pe data de 26. Este vorba despre Sfântul Stelian Paflagonul, considerat ocrotitor al pruncilor şi al familiei creştine. Viaţa sa de rugăciune şi iubirea de Dumnezeu l-au învrednicit cu darul de-a face minuni, tămăduindu-i mai ales pe copiii bolnavi.\n\n✧ Icoana pe care v-o prezint astăzi -împodobită cu flori la hramul unei sfinte și frumoase biserici- a fost pictată în atelierul nostru, în tehnica tradițională."
+     "text": "⚜️Sf. Cuv. Stelian Paflagonul⚜️\n\n✧ Unul dintre sfinţii cei mai apropiaţi copiilor, este prăznuit în luna noiembrie, pe data de 26. Este vorba despre Sfântul Stelian Paflagonul, considerat ocrotitor al pruncilor şi al familiei creştine. Viaţa sa de rugăciune şi iubirea de Dumnezeu l-au învrednicit cu darul de-a face minuni, tămăduindu-i mai ales pe copiii bolnavi.\n\n✧ Icoana pe care v-o prezint astăzi -împodobită cu flori la hramul unei sfinte și frumoase biserici din Dobrogea- a fost pictată în atelierul nostru, în tehnica tradițională."
     },
     {
      "date": "2024-11-25",
-     "text": "◘«Sfântul Stelian  Paflagonul» - 26 noiembrie\n\n◘În aceste zile, în care trăim cu emoție istoria, vă prezint icoana «Sfântului Stelian», pictată în atelierul nostru pentru o sfântă biserică.\n\n◘«Sfântul Stelian», unul dintre sfinţii cei mai apropiaţi copiilor, a fost un călugăr pustnic din provincia Paflagonia, canonizat ca sfânt. El este considerat sfântul patron al copiilor şi al familiei creştine. Viaţa sa de rugăciune şi iubirea de Dumnezeu l-au învrednicit cu darul de-a face minuni, tămăduindu-i mai ales pe copiii bolnavi. În calendarul sfinților, ziua lui de prăznuire este 26 noiembrie.\n\n◘La Mulți Ani Sărbătoriților!"
+     "text": "◘«Sfântul Stelian  Paflagonul» - 26 noiembrie\n\n◘În aceste zile, în care trăim cu emoție istoria, vă prezint  icoana «Sfântului  Stelian», pictată în atelierul nostru pentru o sfântă biserică din Dobrogea.\n\n◘«Sfântul Stelian», unul dintre sfinţii cei mai apropiaţi copiilor, a fost un călugăr pustnic din provincia Paflagonia, canonizat ca sfânt. El este considerat sfântul patron al copiilor şi al familiei creştine. Viaţa sa de rugăciune şi iubirea de Dumnezeu l-au învrednicit cu darul de-a face minuni, tămăduindu-i mai ales pe copiii bolnavi. În calendarul sfinților, ziua lui de prăznuire este 26 noiembrie.\n\n◘La Mulți Ani Sărbătoriților!"
     },
     {
      "date": "2023-11-25",
-     "text": "✠ Sf. Cuv. Stelian Paflagonul (26 noiembrie)\n\n◘ Sfântul Stelian, considerat ocrotitor al pruncilor şi al familiei creştine este prăznuit în luna noiembrie, pe data de 26. Viaţa Sa de rugăciune  şi iubirea de Dumnezeu L-au învrednicit cu darul de-a face minuni, tămăduindu-i mai ales pe copiii bolnavi\n\n◘ Icoana pe care v-o prezentăm astăzi am pictat-o pe sticlă pentru o Sfântă Biserică\n\n◘ Foto: Icoana împodobită cu flori  la hramul acestei Sfinte Biserici\n\n◘ La Mulți Ani Sărbătoriților!"
+     "text": "✠ Sf. Cuv. Stelian Paflagonul (26 noiembrie)\n\n◘ Sfântul Stelian, considerat ocrotitor al pruncilor şi al familiei creştine este prăznuit în luna noiembrie, pe data de 26. Viaţa Sa de rugăciune  şi iubirea de Dumnezeu L-au învrednicit cu darul de-a face minuni, tămăduindu-i mai ales pe copiii bolnavi\n\n◘ Icoana pe care  v-o prezentăm astăzi  am pictat-o pe sticlă pentru o Sfântă Biserică din Dobrogea\n\n◘ Foto: Icoana împodobită cu flori  la hramul acestei Sfinte Biserici\n\n◘ La Mulți Ani Sărbătoriților!"
     },
     {
      "date": "2022-11-25",
@@ -4163,7 +4178,9 @@
     "p948",
     "p852",
     "p763"
-   ]
+   ],
+   "biserica": true,
+   "biserica_loc": "Dobrogea"
   },
   {
    "id": "p1179",

@@ -15,7 +15,7 @@ Open `public/index.html` in any browser (double-click). No server, internet conn
   - `todo-en.json` / `todo-fr.json` list what is still untranslated. Romanian is shown meanwhile.
 - `new-posts/`: posts published after the Facebook export (`posts.json` plus the original photos). See "Adding a new Facebook post" below.
 - `old-works/`: what the site takes from the private 2019–2020 archive (see below).
-- `data/lucrari.json`: the works, generated from the Facebook export (a one-time import) and `new-posts/`.
+- `data/lucrari.json`: the works, generated from the Facebook export (a one-time import), `new-posts/` and `old-works/`.
 - `tools/`: the scripts below.
 
 ## Rebuilding
@@ -26,7 +26,7 @@ After changing text in `content/` or `translations/`, or the showcase choices at
 python site\tools\build_site.py
 ```
 
-After adding a post to `new-posts/` (or changing the curation lists in `tools/build_data.py`), run everything. The Facebook export in `..\facebook-export\` stays on this PC only and is still read as the main source:
+After adding a post to `new-posts/` (or changing the curation lists in `tools/build_data.py`), run everything. The Facebook export in `..\facebook-export\` and the archive in `..\poze vechi\` stay on this PC only and are still read as sources:
 
 ```
 powershell -ExecutionPolicy Bypass -File site\tools\prepare_old_photos.ps1
@@ -57,7 +57,10 @@ Icons from before the Facebook page, taken from the folder `..\poze vechi\` (pho
 
 ## Icons for churches
 
-`CHURCH` in `tools/build_data.py` lists the icons whose captions say they were painted for a church or stand in one. They get a "Pentru biserici" filter in the gallery, a "Destinație" line on their page, and the church section on the home page (its four icons: `CHURCH_ART` in `tools/build_site.py`).
+`CHURCH` in `tools/build_data.py` lists the icons whose captions say they were painted for a church or stand in one (Radio Trinitas, which belongs to the Church, is included). They get a "Pentru biserici" filter in the gallery, a "Destinație" line on their page, and the church section on the home page (its four icons: `CHURCH_ART` in `tools/build_site.py`).
+
+- The "Destinație" line shows the church's place when a caption gives one ("O sfântă biserică din Dobrogea"). Her captions name regions or towns, never the church itself. The places are translated in `translations/<lang>/terms.json`.
+- `DESTINATION` in `tools/build_data.py` sets a destination by hand (`p1094`: "Radio Trinitas").
 
 ## Adding a new Facebook post (without a new export)
 
@@ -89,7 +92,7 @@ The caption is cleaned of customer references and its facts are read the same wa
 - `TITLES`: titles for posts whose caption doesn't name the icon.
 - `FINISHED_BW`: black-and-white pieces that are finished works, not drawings.
 - `SUBJECTS`: the vocabulary that turns captions into consistent titles and themes.
-- **Customer clean-up** (`CUT`, `DROP`, `TOWNS`): captions are cleaned automatically, so the site names no customers (names, towns, families, dedications). A church is kept ("pentru o Sfântă Biserică") but not its town.
+- **Customer clean-up** (`CUT`, `DROP`, `TOWNS`): captions are cleaned automatically, so the site names no private customers (names, towns, families, dedications, priests ordering for themselves). Churches and monasteries are public clients: where they are is kept ("pentru o Sfântă Biserică din Dobrogea"), and shown on the icon page's "Destinație" line (`CHURCH_PLACE`; no place when merged posts disagree).
 
 Keys are the post's position in `profile_posts_1.json`, the number after `p` in page names.
 
@@ -98,7 +101,9 @@ Keys are the post's position in `profile_posts_1.json`, the number after `p` in 
 - The site's address is `SITE_URL = 'https://icoane.biz'` at the top of `tools/build_site.py`.
   - It produces canonical links, language alternates, social previews, `public/sitemap.xml` and `public/robots.txt`.
   - If the site ends up at `www.icoane.biz` instead, change it and rebuild.
-- **E-mail:** `EMAIL = 'contact@icoane.biz'` at the top of `tools/build_site.py`. It forwards to the painter's own inbox. It is shown in the footer, on the orders and Available pages, and in the privacy page.
+- **E-mail:** `EMAIL = 'contact@icoane.biz'` at the top of `tools/build_site.py`. Railway's Email Forwarding sends it on (to the user's Gmail for now). It is shown in the footer, on the orders and Available pages, and in the privacy page.
+- **Messenger:** the buttons ("Trimite un mesaj pe Messenger") open the page's chat inside facebook.com on computers, and the Messenger app (`m.me`) on phones (`messenger_btn()` in `build_site.py`, plus the switch in `site.js`).
+- **WhatsApp:** `WHATSAPP` at the top of `tools/build_site.py` (her public number). Its button sits next to Messenger on the icon pages, the Available page and the orders card. On an icon page it opens WhatsApp with a first message naming the icon and its link.
 
 ## Statistics and privacy
 

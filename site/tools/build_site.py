@@ -451,8 +451,12 @@ def work_page(L, e, works, by_title, path, prev, nxt):
         if e['disponibilitate'] == AVAILABLE:
             value = f'<a href="{esc(rel(L.page("available"), path))}">{value}</a>'
         rows.append((L.t('fact_availability'), value))
-    if e.get('biserica'):
-        rows.append((L.t('fact_church'), f'<a href="{esc(rel(L.page("gallery"), path))}#theme=biserici">{esc(L.t("church_value"))}</a>'))
+    if e.get('destinatie'):
+        rows.append((L.t('fact_church'), esc(e['destinatie'])))
+    elif e.get('biserica'):
+        where =(L.t('church_value_at', loc=L.tr.term(e['biserica_loc'])) if e.get('biserica_loc')
+                 else L.t('church_value'))
+        rows.append((L.t('fact_church'), f'<a href="{esc(rel(L.page("gallery"), path))}#theme=biserici">{esc(where)}</a>'))
     facts = ''.join(f'<tr><th scope="row">{esc(a)}</th><td>{b}</td></tr>' for a, b in rows)
 
     if e.get('archive'):

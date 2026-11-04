@@ -124,6 +124,7 @@
   "church_chip": "Pentru biserici",
   "fact_church": "Destinație",
   "church_value": "O sfântă biserică",
+  "church_value_at": "O sfântă biserică din {loc}",
   "church_eyebrow": "În sfintele biserici",
   "church_title": "Icoane pentru sfintele biserici",
   "church_text": [
@@ -382,6 +383,7 @@
   "church_chip": "For churches",
   "fact_church": "Painted for",
   "church_value": "A church",
+  "church_value_at": "A church in {loc}",
   "church_eyebrow": "In churches",
   "church_title": "Icons for churches",
   "church_text": [
@@ -640,6 +642,7 @@
   "church_chip": "Pour les églises",
   "fact_church": "Destination",
   "church_value": "Une église",
+  "church_value_at": "Une église ({loc})",
   "church_eyebrow": "Dans les églises",
   "church_title": "Des icônes pour les églises",
   "church_text": [
