@@ -35,8 +35,13 @@ EMAIL = 'contact@icoane.biz'
 # the cookie banner, and never when the site is opened from disk (file://).
 # Set to '' to switch statistics off (the banner then disappears too).
 GA_ID = 'G-1WBC279E6L'
+# TEMPORARY (user, 4 Nov 2026): False = Analytics loads on every visit, with no cookie
+# banner, so the user can see which pages the painter opens while she reviews the site.
+# The privacy page then shows a "temporary note" saying so. Set back to True (and update
+# PRIVACY_UPDATED) right after her review: see CLAUDE.md, "Next steps".
+GA_ASK_CONSENT = False
 # Date shown on the privacy page; change it whenever that text changes.
-PRIVACY_UPDATED = '2026-11-03'
+PRIVACY_UPDATED = '2026-11-04'
 
 # Showcase choices (post ids; a merged icon can be named by any of its posts).
 HERO = ['p705', 'p808', 'p906']
@@ -182,7 +187,7 @@ def layout(L, path, alternates, title, description, body, active='', image=''):
             head_extra += f'<meta property="og:image" content="{SITE_URL}/{esc(image)}">\n'
     # Cookie banner for the statistics; hidden until site.js decides to show it.
     cookie_link, banner = '', ''
-    if GA_ID:
+    if GA_ID and GA_ASK_CONSENT:
         cookie_link = f' · <button type="button" class="linklike" id="cookie-settings">{esc(L.t("footer_cookies"))}</button>'
         banner = (f'<div class="consent" id="consent" role="region" aria-label="{esc(L.t("consent_label"))}" hidden>'
                   f'<p>{esc(L.t("consent_text"))} <a href="{link(L.page("privacy"))}">{esc(L.t("consent_more"))}</a></p>'
@@ -201,7 +206,7 @@ def layout(L, path, alternates, title, description, body, active='', image=''):
 <link rel="stylesheet" href="{link('assets/style.css')}">
 <script>document.documentElement.classList.add('js')</script>
 </head>
-<body{f' data-ga="{esc(GA_ID)}"' if GA_ID else ''}>
+<body{f' data-ga="{esc(GA_ID)}"' if GA_ID else ''}{'' if GA_ASK_CONSENT or not GA_ID else ' data-ga-always="1"'}>
 
 <header class="topbar">
   <div class="wrap topbar-inner">
@@ -583,10 +588,11 @@ def orders_page(L, path):
 
 def privacy_page(L, path):
     def para(s):
-        h = text_html(s.replace('{ga_cookie}', '_ga_' + GA_ID.split('-', 1)[-1]))
+        h = text_html(s)
         return h.replace('{email}', f'<a href="mailto:{EMAIL}">{EMAIL}</a>')
     sections = ''.join(f'<h2 class="h3">{esc(head)}</h2>' + para('\n\n'.join(paras))
                        for head, paras in L.ui['privacy_sections'])
+    temp_note = '' if GA_ASK_CONSENT else f'<p class="temp-note">{esc(L.t("privacy_temp_note"))}</p>'
     return f'''<section class="section privacy">
   <div class="wrap">
     <div class="section-head">
@@ -594,7 +600,7 @@ def privacy_page(L, path):
       <h1 class="h2">{esc(L.t('privacy_title'))}</h1>
       <p>{esc(L.t('privacy_updated', d=L.date(PRIVACY_UPDATED)))}</p>
     </div>
-    <div class="prose privacy-text">{sections}</div>
+    <div class="prose privacy-text">{temp_note}{sections}</div>
   </div>
 </section>'''
 

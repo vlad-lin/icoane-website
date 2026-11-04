@@ -155,6 +155,21 @@
   // disk (file://), the banner works but Analytics is never loaded.
   var GA = document.body.dataset.ga;
   var banner = $('consent');
+  // TEMPORARY mode (GA_ASK_CONSENT = False in build_site.py): no banner, Analytics on
+  // every visit (still never from disk). The code below is unchanged for when it returns.
+  if (GA && document.body.dataset.gaAlways && location.protocol !== 'file:') {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', {
+      analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+    });
+    window.gtag('js', new Date());
+    window.gtag('config', GA);
+    var ga = document.createElement('script');
+    ga.async = true;
+    ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA);
+    document.head.appendChild(ga);
+  }
   if (GA && banner) {
     var KEY = 'icoane-consent';
     var loaded = false;

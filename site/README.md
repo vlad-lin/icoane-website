@@ -103,7 +103,8 @@ Keys are the post's position in `profile_posts_1.json`, the number after `p` in 
 ## Statistics and privacy
 
 - **Google Analytics 4:** `GA_ID` at the top of `tools/build_site.py`. Set it to `''` to switch statistics off; the cookie banner then disappears too.
-- **When Analytics loads:** `assets/site.js` adds it only after a visitor presses "Accept" on the cookie banner. It never loads when the site is opened from disk. "Setări cookie" in the footer reopens the banner.
+- **TEMPORARY (since 4 Nov 2026):** `GA_ASK_CONSENT = False` in `tools/build_site.py` loads Analytics on every visit, with no banner, while the painter reviews the site. The privacy page says so in a note. **Set it back to `True` (and update `PRIVACY_UPDATED`) right after her review**, then rebuild and publish.
+- **When Analytics loads (normally):** `assets/site.js` adds it only after a visitor presses "Accept" on the cookie banner. It never loads when the site is opened from disk. "Setări cookie" in the footer reopens the banner.
 - **Privacy page:** its texts are `privacy_sections` in `content/ui.json` (ro/en/fr). When you change them, also update `PRIVACY_UPDATED` in `build_site.py`.
 - The page promises 2 months of data retention and no advertising features. Keep the Google Analytics settings matching.
 

@@ -209,6 +209,7 @@
   "privacy_eyebrow": "Datele dumneavoastră",
   "privacy_title": "Politica de confidențialitate",
   "privacy_updated": "Ultima actualizare: {d}",
+  "privacy_temp_note": "Notă temporară: site-ul este încă în pregătire. În această perioadă, statisticile Google Analytics descrise mai jos se colectează la fiecare vizită, fără să vă cerem acordul, iar bannerul de cookie-uri nu este afișat. El va reveni înainte de lansarea oficială a site-ului.",
   "privacy_sections": [
    [
     "Cine suntem",
@@ -227,7 +228,7 @@
    [
     "Cookie-uri",
     [
-     "Doar după ce apăsați „Accept”, Google Analytics salvează în browser cookie-urile _ga și {ga_cookie}, care deosebesc vizitele noi de cele repetate. Ele expiră după cel mult 2 ani. Dacă refuzați, nu se salvează niciun cookie de statistică.",
+     "Doar după ce apăsați „Accept”, Google Analytics salvează în browser cookie-uri ale căror nume încep cu _ga, care deosebesc vizitele noi de cele repetate. Ele expiră după cel mult 2 ani. Dacă refuzați, nu se salvează niciun cookie de statistică.",
      "Alegerea dumneavoastră se păstrează în browser, ca să nu vă întrebăm la fiecare pagină."
     ]
    ],
@@ -463,6 +464,7 @@
   "privacy_eyebrow": "Your data",
   "privacy_title": "Privacy policy",
   "privacy_updated": "Last updated: {d}",
+  "privacy_temp_note": "Temporary note: this site is still being prepared. During this period, the Google Analytics statistics described below are collected on every visit without asking for your consent, and the cookie banner is not shown. It will return before the site’s official launch.",
   "privacy_sections": [
    [
     "Who we are",
@@ -481,7 +483,7 @@
    [
     "Cookies",
     [
-     "Only after you press “Accept” does Google Analytics store the cookies _ga and {ga_cookie} in your browser, to tell new visits from returning ones. They expire after at most 2 years. If you decline, no statistics cookie is stored.",
+     "Only after you press “Accept” does Google Analytics store cookies whose names start with _ga in your browser, to tell new visits from returning ones. They expire after at most 2 years. If you decline, no statistics cookie is stored.",
      "Your choice is kept in your browser so that we do not ask on every page."
     ]
    ],
@@ -717,6 +719,7 @@
   "privacy_eyebrow": "Vos données",
   "privacy_title": "Politique de confidentialité",
   "privacy_updated": "Dernière mise à jour : {d}",
+  "privacy_temp_note": "Note temporaire : ce site est encore en préparation. Pendant cette période, les statistiques Google Analytics décrites ci-dessous sont collectées à chaque visite sans vous demander votre accord, et la bannière de cookies n’est pas affichée. Elle reviendra avant le lancement officiel du site.",
   "privacy_sections": [
    [
     "Qui sommes-nous",
@@ -735,7 +738,7 @@
    [
     "Cookies",
     [
-     "Ce n’est qu’après avoir cliqué sur « Accepter » que Google Analytics enregistre dans votre navigateur les cookies _ga et {ga_cookie}, qui distinguent les nouvelles visites des visites répétées. Ils expirent au bout de 2 ans au maximum. Si vous refusez, aucun cookie de statistiques n’est enregistré.",
+     "Ce n’est qu’après avoir cliqué sur « Accepter » que Google Analytics enregistre dans votre navigateur des cookies dont le nom commence par _ga, qui distinguent les nouvelles visites des visites répétées. Ils expirent au bout de 2 ans au maximum. Si vous refusez, aucun cookie de statistiques n’est enregistré.",
      "Votre choix est conservé dans votre navigateur, afin de ne pas vous le demander à chaque page."
     ]
    ],
