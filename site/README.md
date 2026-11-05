@@ -9,7 +9,7 @@ Open `public/index.html` in any browser (double-click). No server, internet conn
   - `img/full` (photos up to 1600 px) and `img/thumb` (560 px), shared by all languages.
 - `assets/`: `style.css` and `site.js`, copied into `public/assets/` by the build.
 - `content/ui.json`: all interface and page text (menus, technique, orders…) in ro/en/fr, side by side.
-- `translations/en/`, `translations/fr/`: machine translations.
+- `translations/en/`, `translations/fr/`: English and French translations.
   - `terms.json` holds titles and izvod.
   - The other files hold captions, keyed by a code computed from the Romanian text.
   - `todo-en.json` / `todo-fr.json` list what is still untranslated. Romanian is shown meanwhile.
@@ -92,9 +92,14 @@ The caption is cleaned of customer references and its facts are read the same wa
 - `TITLES`: titles for posts whose caption doesn't name the icon.
 - `FINISHED_BW`: black-and-white pieces that are finished works, not drawings.
 - `SUBJECTS`: the vocabulary that turns captions into consistent titles and themes.
-- **Customer clean-up** (`CUT`, `DROP`, `TOWNS`): captions are cleaned automatically, so the site names no private customers (names, towns, families, dedications, priests ordering for themselves). Churches and monasteries are public clients: where they are is kept ("pentru o Sfântă Biserică din Dobrogea"), and shown on the icon page's "Destinație" line (`CHURCH_PLACE`; no place when merged posts disagree).
+- **Customer clean-up** (`CUT`, `DROP`): the site shows no customer names and no photos of customers. Everything else about a customer may stay (a town, a family, a priest, a gift). `CUT` removes the names a caption states; `DROP` removes sentences about a named person (and the contest posts). Where a church is ("pentru o Sfântă Biserică din Dobrogea") is shown on the icon page's "Destinație" line (`CHURCH_PLACE`; no place when merged posts disagree).
+- **Reposts:** a merged page shows the most recent post's caption and facts. Its address and main photo stay with the id listed in `tools/page_ids.txt` (the published pages); add new page ids there after publishing, never remove or rename any.
+
+- `REWORD`: exact phrases of the captions and their replacements, for old "in progress" wording ("icoană în lucru", "voi picta", "vă voi prezenta în curând"). Those icons are long finished. Offers to paint an icon again stay. The build prints any phrase that no longer matches. Rewording never changes a page address (see `tools/page_ids.txt`).
 
 Keys are the post's position in `profile_posts_1.json`, the number after `p` in page names.
+
+**Translations:** `translations/<lang>/texts-NNN.json` are keyed by a code computed from the final Romanian caption. If a caption changes (a correction, or a new `REWORD` entry), its translation no longer matches and the caption shows up again in `todo-<lang>.json`. Translate it into a new `texts-NNN.json` file.
 
 ## Domain and contact
 

@@ -295,52 +295,34 @@ def norm(s):
 
 
 # --- Customer references -----------------------------------------------------
-# The site names no customers: no first names, towns, families or dedications.
-# Captions are cleaned sentence by sentence: CUT removes the customer part of a
-# sentence, DROP removes sentences that are only about a customer.
-TOWNS = (r'(?:Brăila|Bacău|Constanța|Mangalia|Bra[sșş]ov|Bucure[sșş]ti|Timi[sșş]oara|Oradea|Arad|Sibiu|'
-         r'Cluj|Râmnicu Vâlcea|Alba Iulia|Maramure[sșş]|Dobrogea|Măcin|continentul american)')
-PERSON = (r'(?:famili\w*|cuplu|tată|soț|preot|băiețel|copil|om|frățiori|doamn\w*|prieten\w*)')
-# Churches and monasteries are public institutions: where an icon went ("pentru o Sfântă
-# Biserică din Dobrogea", "din Măcin") is kept (user, 4 Nov 2026). Rules marked PLACE are
-# skipped in sentences about a church, unless the sentence also names a private person
-# ("comandată de un drag preot din Dobrogea" is still cleaned).
+# Rule (user, 6 Nov 2026): no customer names and no photos of customers. Anything else
+# about a customer (a town, "a lovely family", "a special lady", a priest, a gift) may stay.
+# Captions are cleaned sentence by sentence: CUT removes a name from a sentence, DROP
+# removes a sentence that is about a named person. (Until 6 Nov 2026 towns, families
+# and dedications were removed too: backups/2026-11-06-before-relaxing-customer-rules/.)
 PLACE = 'place'
 CHURCH_CLIENT = re.compile(r'[Bb]iseric|[Mm]ănăstir')
 PRIVATE_CLIENT = re.compile(r'preot|famili|doamn|prieten|client|cuplu|\bsoț', re.I)
 CUT = [
-    (r'\s*\(\s*la cererea clientului\s*\)', ''),
-    (r'\(\s*La cererea clientului\s+', '('),
-    (r'^La cererea clientului\s*,\s*', ''),
-    (r',?\s*la cererea clientului(?: care a dorit o icoană personalizată)?', ''),
-    (r'clientul\s+dorește icoana', 'icoana este'),
-    (r'Dorin[țţ]a clientului a fost ca în această icoană să-l reprezentăm', 'În această icoană l-am reprezentat'),
-    (r'\s*\(\s*prin bunăvoința[^)]*\)', ''),
-    (r'\s*pentru prietena noastră\s*@\w+', ''),
-    (r',\s*un prieten al atelierului[^.!?\n]*', ''),
-    (r'\s*datorită unei[^.!?\n]*famili[^.!?\n]*', ''),
-    # "se află în colecția unei familii..., deci nu este disponibilă"
-    (r'se află în colecția unei[^,.!?\n]*,\s*deci nu este disponibilă', 'nu este disponibilă'),
-    (r'\s*(?:aflat[ăa]\s+)?în colecția unei[^.!?\n]*', ''),
-    # "nu este disponibilă, a plecat spre Constanța..." (PLACE: kept when it goes to a church)
-    (r'(disponibil[ăa])\s*,\s*(?:a plecat|va pleca)[^.!?\n]*', r'\1', PLACE),
-    # "comandată la Brăila", "comandată în Bacău" -> "comandată" (kept for a church)
-    (r'(comandat[ăa]|pictat[ăa]|lucrat[ăa])\s+(?:în|la|din)\s+' + TOWNS, r'\1', PLACE),
-    # "...pentru a fi dăruită (cu bucurie) unui om minunat, ..." -> "..."
-    (r',?\s*pentru a fi (?:dăruit|oferit)\w*\s+(?:[^.!?\n)]{0,25}?\s)?(?:lui|unui|unei|prietenului|tinerei)\b[^.!?\n)]*', ''),
-    # "(a fost comandată/pictată) pentru o frumoasă familie din Arad" -> "(...)"
-    (r',?\s*(?:pentru|de)\s+(?:o|un|doi)\s+(?:[\w-]+\s+){0,3}?' + PERSON +
-     r'(?:\s+(?:de\s+(?:tineri\s+)?români|(?!din\b|care\b|ce\b)[a-zăâîșț]+))?(?:\s*,?\s*numit\s+\w+)?'
-     r'(?:\s*,?\s*din\s+(?:[A-ZĂÂÎȘȚ]\w+(?:-\w+)*\s*)+)?(?:\s*,?\s+(?:care|ce)\b[^.!?\n)]*)?', ''),
+    (r'\s*pentru prietena noastră\s*@\w+', ''),   # Facebook tag of a person
+    # a name stated outright ("numit Elias", "cu numele Martin", "soției sale, Irina")
+    (r'(adorabil|om minunat|unei persoane),?\s*(?:numit|cu numele)\s+[A-ZĂÂÎȘȚ]\w+', r'\1'),
+    (r'(soției sale),\s*[A-ZĂÂÎȘȚ]\w+', r'\1'),
+    (r'(copil botezat),\s*[A-ZĂÂÎȘȚ]\w+', r'\1'),
+    (r'prietenului nostru Andrei,', 'unui prieten al nostru,'),
+    (r'lui Andrei, unul dintre', 'unuia dintre'),
+    (r'lui Andrei, un deosebit', 'unui deosebit'),
+    # a name given through the saint ("care poartă numele Sfântului Filip")
+    (r'(doamne|din Cluj|copil),?\s*(?:care|ce)\s+poartă\s+numele\s+«?Sf\w+\s+«?\w+»?', r'\1'),
+    (r',?\s*care au primit la botez numele celor doi sfinți', ''),
+    (r'\s*care au fost botezați cu numele celor doi sfinți', ''),
+    (r'de ziua numelui său «Zoe»,\s+care se tâlcuiește a fi «viață»', 'de ziua numelui său'),
 ]
 CUT = [(re.compile(c[0]), c[1], len(c) > 2) for c in CUT]
 DROP = re.compile(
-    r'(?i:client|câștigător|concurs)|@\w|casa unei|^\W*(?:Și\s+)?[Dd]e aceas?t[aă] dată,?\s+(?:din|la|în|pentru)\b|[Ff]amili(?:a|ei|i)\s+(?:a hotărât|din)|minunatei famili|'
-    r'[Aa]semenea a procedat|soți(?:a|ei)|\bsoț\b|frățiori|om (?:minunat|deosebit)|'
-    r'doamn\w*\s+(?:deosebit|special|căreia|\(religie)|religie (?:ortodox|catolic)|[Pp]oșt\w* român|'
+    r'(?i:câștigător|concurs)|@\w|'                 # the contest (its winner) and Facebook tags
     r'[A-ZĂÂÎȘȚ][a-zăâîșț]+, unul dintre prietenii|'
-    r'(?i:la mulți ani)\W*,\s*(?!tuturor|celor|prietenilor|sărbători)[A-ZĂÂÎȘȚ][a-zăâîșț]+\b[^!\n]{0,80}!|'
-    r'(?:plecat|pleca|merge|ajuns|ajunge|așteptat|comandat|dăruit|casa|căsuț|cadou)[^.!?\n]*\b(?:la|în|din|spre|de)\s+' + TOWNS)
+    r'(?i:la mulți ani)\W*,\s*(?!tuturor|celor|prietenilor|sărbători)[A-ZĂÂÎȘȚ][a-zăâîșț]+\b[^!\n]{0,80}!')
 # Sentences about historical places (the Antim Monastery icon, museums) are never customer references.
 HISTORY = re.compile(r'Mănăstir|Antim|Muzeu|moaște')
 # Sentence boundary: after . ! ? … (and any emoji), before a capital or bullet.
@@ -386,6 +368,143 @@ def clean_customers(text):
     return re.sub(r'\n{3,}', '\n\n', '\n'.join(out)).strip()
 
 
+# --- Old "in progress" wording (user, 5 Nov 2026) ----------------------------
+# Posts written while an icon was still being painted ("icoană în lucru", "voi picta",
+# "vă voi prezenta în curând") are long finished now. Each pair is an exact phrase of
+# the cleaned caption and its replacement ('' removes it). Offers to paint an icon
+# again ("va fi pictată din nou la comandă") are not in-progress notes and stay.
+# A phrase that no longer matches anything is reported by the build.
+REWORD = [
+    # stages (drawings and half-painted icons shown under "Etapele lucrării")
+    ('nostru, este din nou încă în lucru (297', 'nostru (297'),
+    ('»  În lucru, încă o  iconiță', '» – încă o iconiță'),
+    (' - Din nou, în lucru o iconiță pe sticlă', ' - Din nou, o iconiță pe sticlă'),
+    (' - o nouă iconiță în lucru', ' - o nouă iconiță'),
+    ('❈ Icoană în lucru: «Iisus Hristos – Vița de vie», izvod', '❈ «Iisus Hristos – Vița de vie», izvod'),
+    ('Icoană  în lucru: «Iisus Hristos – Vița de vie»', '«Iisus Hristos – Vița de vie»'),
+    ('icoană pe sticlă (în lucru)', 'icoană pe sticlă'),
+    ('icoană pe sticlă, în lucru.', 'icoană pe sticlă.'),
+    ('cu bucurie lucrăm o icoană', 'cu bucurie am pictat o icoană'),
+    ('O nouă icoană în lucru, prima etapă în tuș cu penița.', 'Prima etapă: desenul în tuș cu penița.'),
+    ('Gavriil» - icoană în lucru', 'Gavriil»'),
+    ('este realizată la comandă, deci nu va fi disponibilă', 'a fost realizată la comandă, deci nu este disponibilă'),
+    (' - icoană în lucru (izvod Șcheii', ' (izvod Șcheii'),
+    ('[13x18 cm], deocamdată în lucru.', '[13x18 cm].'),
+    ('Adam și Eva - icoană în lucru', 'Adam și Eva'),
+    ('de asemenea, în continuare pe „dosul”  sticlei  voi picta icoana, în tempera  cu emulsie de ou.',
+     'tot pe „dosul” sticlei am pictat apoi icoana, în tempera cu emulsie de ou.'),
+    ('❈ Icoană în lucru: «Sfântul Mare Mucenic Gheorghe»', '❈ «Sfântul Mare Mucenic Gheorghe» – desenul icoanei'),
+    ('Icoana pe sticlă al cărei desen vi-l prezint astăzi  urmează a fi pictată, în  tempera cu emulsie.\n'
+     'Va fi prima icoană lucrată în atelierul nostru, comandată din  continentul american.',
+     'Icoana a fost pictată apoi în tempera cu emulsie, la comandă, pentru continentul american.'),
+    ('care va fi realizată în atelierul nostru.', 'realizată în atelierul nostru.'),
+    ('împreună cu următoarele trei pe care vi le voi prezenta în aprilie-iunie, vor împodobi',
+     'împreună cu alte trei, împodobește'),
+    ('Trei dintre ele vor fi realizate de asemenea', 'Trei dintre ele au fost realizate de asemenea'),
+    ('deocamdată diferențiate doar prin detalii grafice; peste câteva zile și prin detalii cromatice...',
+     'diferențiate prin detalii grafice și, după pictare, prin detalii cromatice.'),
+    (' - Icoană în lucru (57x62 cm)', ' (57x62 cm)'),
+    ('într-o nouă icoană în curs de realizare în atelierul nostru, de această dată  lucrată pentru',
+     'într-o nouă icoană pictată în atelierul nostru, de această dată pentru'),
+    ('Sfântul Nectarie - din nou în lucru pentru o  sfântă Biserică', 'Sfântul Nectarie - din nou, pentru o sfântă Biserică'),
+    ('»  - icoană în lucru (22x26 cm)', '» (22x26 cm)'),
+    ('a  „ Rugului Aprins al Născătoarei de Dumnezeu ” se conturează...\n'
+     '• Deocamdată am finalizat desenul în tuș cu penița  (pe sticlă : 30x42 cm)',
+     'a „ Rugului Aprins al Născătoarei de Dumnezeu ”: desenul în tuș cu penița (pe sticlă: 30x42 cm)'),
+    ('Gavriil - Icoană în lucru', 'Gavriil'),
+    ('•  Icoană în lucru (15x21 cm)', '•  Icoană pe sticlă (15x21 cm)'),
+    ('O nouă icoană în lucru...', 'O nouă icoană...'),
+    ('\n• Icoană  în lucru ...', ''),
+    ('• În lucru pentru o Sfântă Biserică', '• Pentru o Sfântă Biserică'),
+    (')... Icoană în lucru...', ')...'),
+    ('într-o icoană pe sticlă în lucru.', 'într-o icoană pe sticlă.'),
+    ('În atelierul nostru va fi prima reprezentare', 'În atelierul nostru, este prima reprezentare'),
+    ('Icoană pe sticlă , din nou în lucru.', 'Icoană pe sticlă, pictată din nou.'),
+    ('Icoana se realizează după același izvod', 'Icoana a fost realizată după același izvod'),
+    (' ( în lucru,din nou)', ''),
+    (' În 2022 vor fi "Intrarea în Ierusalim" și "Rugul Aprins "...Deocamdată!', ''),
+    ('\n✧ În curând vă voi prezenta-o și pictată', ''),
+    (', etapă în care se află lucrarea   a cărei temă este inspirată', '. Tema lucrării este inspirată'),
+    (' Vă voi prezenta personajele ( pe care le-ați recunoscut, cu siguranță ) la finalizarea lucrării .', ''),
+    ('( pe spatele sticlei ), etapă aproape finalizată. Va urma apoi pictura',
+     '( pe spatele sticlei ); urmează pictura'),
+    ('Va fi o icoană mare ( 37 x 49 cm )', 'Este o icoană mare (37 x 49 cm)'),
+    (', probabil va fi prima icoană pe sticlă', ', probabil prima icoană pe sticlă'),
+    ('pe care am pictat-o pe sticlă în atelierul nostru o voi prezenta în zilele următoare fiindcă cinstirea',
+     'a fost pictată pe sticlă în atelierul nostru; cinstirea'),
+    # captions of finished icons that announce work still to come
+    (', foarte ușor accidentată, în curs de reparație.', '.'),
+    (' În perioada următoare vă voi prezenta o nouă icoană a sfântului.', ''),
+    ('Urmează încă o comandă pentru această temă, vă voi prezenta-o în martie, cu aproximație.', ''),
+    ('Tot ceea ce voi lucra în anul viitor vă voi prezenta aici (icoana în lucru și finalizată) cum am procedat '
+     'și în anul care va fi curând „anul trecut”.', ''),
+    ('! Tot ceea ce voi lucra în anul viitor vă voi prezenta aici, cum am procedat și în anul care va fi  curând '
+     '„anul trecut”', '!'),
+    ('◘ Două  lucrări cu  această temă iconografică (comandate cu ceva timp în urmă) urmează a fi realizate '
+     'curând, una dintre ele va fi realizată în varianta clasică, cealaltă va fi personalizată  (cu sfântul '
+     'Ioan Botezatorul în rombul Sfântului Nicolae, rombul sfintei Parascheva rămânând neschimbat)', ''),
+    ('• În curând (octombrie - noiembrie) încă o  frumoasă icoană  cu această temă, mult mai complexă, va fi '
+     'realizată în atelierul nostru, de asemenea pentru o  Sfântă Biserică.', ''),
+    (' În perioada următoare voi picta două icoane asemănătoare acesteia, una dintre ele în luna aprilie, '
+     'cealaltă în iulie-august ( conform programărilor ) . Mă-ntreb cum vă voi prezenta ( vouă, prietenilor '
+     'acestei pagini ) fiecare dintre aceste icoane... Pictată " după " ... sau " în timp de " ...război ?', ''),
+    ('• În curând vă voi prezenta și cea mai recentă variantă a acestei teme', ''),
+    ('♦ Încă nu am realizat în atelierul nostru icoana Sfântului Apostol Andrei , avem însă o comandă pe care '
+     'o vom onora în curând', ''),
+    ('✤ În perioada următoare vă voi prezenta această deosebită lucrare într-o ramă care va fi sculptată '
+     'special pentru ea', ''),
+    ('va pleca in curând spre o Sfânta Biserică.', 'a plecat spre o Sfântă Biserică.'),
+    (' Foarte  curând vom realiza din nou această temă, comandată în București, de această dată.', ''),
+    ('V-aș mulțumi foarte mult dacă ați aprecia printr-un „like” varianta care vă place. Opinia dumneavoastră  va  '
+     'fi importantă pentru îmbunătățirea aspectului următoarei icoane cu această temă, pe care o vom realiza curând.', ''),
+    ('• Următoarea icoană cu această temă va avea ca model doar una dintre cele patru, adică icoana  care în '
+     'această postare va primi cele mai multe inimioare de la dumneavoastră. Mulțumim!', ''),
+    ('voi realiza această icoană în stilul meu, dacă sfântul îmi va permite. Dacă nu-mi va permite, voi ști și  '
+     '(desigur) nu voi continua', 'am realizat această icoană în stilul meu.'),
+    ('• Credeți că hotărârea de-a picta această icoană catolică în stilul meu este corectă?  Toate aceste emoții '
+     'și întrebări vin din provocarea', '• Au fost multe emoții și întrebări, venite din provocarea'),
+    # Facebook-only references (comments, likes), meaningless on the site (user, 6 Nov 2026)
+    (', iar  în comentarii vă voi prezenta primele două icoane, împodobite cu flori într-o sfântă Biserică', '.'),
+    (' ( în comentarii :  icoana cu rama pictată)', ''),
+    ('Dacă veți aprecia , vom considera că vă place și o ramă pictată...', ''),
+    ('va fi  trimisă  la Paris, cu mare bucurie.', 'a fost trimisă la Paris, cu mare bucurie.'),
+    ('• Va fi a doua icoană a «Sfântului Efrem»', '• Este a doua icoană a «Sfântului Efrem»'),
+    ('• Va fi prima icoană a «Sfântului Efrem»', '• Este prima icoană a «Sfântului Efrem»'),
+    ('◘ Va fi prima icoană  a «Sfântului Apostol Andrei»', '◘ Este prima icoană a «Sfântului Apostol Andrei»'),
+    ('• A doua este așteptată într-o sfântă Biserică; va fi alături de alte câteva icoane pictate în atelierul nostru',
+     '• A doua a fost pictată pentru o sfântă Biserică, alături de alte câteva icoane pictate în atelierul nostru'),
+    ('O icoană cu această temă a fost comandată din nou, este programată în vară pentru a fi realizată după un alt '
+     'izvod țărănesc, probabil Savu Moga.', ''),
+    ('Icoană în "lucru"... Desenul', 'Cum se lucrează o icoană pe sticlă... Desenul'),
+    # restored with the relaxed customer rule (6 Nov 2026)
+    ('de această dată va ajunge curând la Brașov.', 'de această dată a ajuns la Brașov.'),
+    ('Urmează acum, identică, o a doua icoană cu această temă, care va merge la Oradea.',
+     'A urmat, identică, o a doua icoană cu această temă, care a mers la Oradea.'),
+    ('Icoana va pleca cu bucurie la Brăila, unde este așteptată.', 'Icoana a plecat cu bucurie la Brăila.'),
+    ('Peste câteva zile, iconița va fi dăruită  unui om minunat', 'Iconița a fost dăruită unui om minunat'),
+    (' pe care vi-l voi prezenta în zilele următoare', ''),
+    (' (foto în comentarii)', ''),
+    ('este al noii icoane care va ajunge întreagă la Arad.', 'este al noii icoane, care a ajuns întreagă la Arad.'),
+    ('pentru a fi cadoul perfect care va fi dăruit în 18 Decembrie la Râmnicu Vâlcea',
+     'pentru a fi cadoul perfect, dăruit pe 18 decembrie la Râmnicu Vâlcea'),
+    ('căreia i se va oferi această icoană', 'căreia i s-a oferit această icoană'),
+    ('• Prima dintre ele este așteptată la Arad; va fi un cadou deosebit pentru o doamnă specială',
+     '• Prima dintre ele a plecat la Arad, un cadou deosebit pentru o doamnă specială'),
+    ('pentru a fi dăruită  peste câteva zile unui om minunat', 'pentru a fi dăruită unui om minunat'),
+    ('va pleca în curând la Sibiu', 'a plecat la Sibiu'),
+    ('va pleca mâine dimineață spre Oradea unde va reprezenta', 'a plecat spre Oradea, unde a fost'),
+]
+REWORD_USED = set()
+
+
+def reword(text):
+    for k, (old, new) in enumerate(REWORD):
+        if old in text:
+            text = text.replace(old, new)
+            REWORD_USED.add(k)
+    return re.sub(r'\n{3,}', '\n\n', text).strip()
+
+
 # --- Reposts of the same icon -------------------------------------------------
 # The same icon was often re-posted in later years, on its feast day. Entries whose
 # main photos are near-identical (hash_images.ps1) become one entry; the other
@@ -393,6 +512,11 @@ def clean_customers(text):
 # re-cropped photos of one icon; two paintings of the same izvod differ more.
 SAME_ICON = 17
 GENERIC_TITLES = {'Maica Domnului', 'Iisus Hristos Mântuitorul', 'Icoană pe sticlă'}
+
+
+# Page addresses already published (tools/page_ids.txt): a merged page keeps the one listed.
+with open(os.path.join(HERE, 'page_ids.txt'), encoding='utf-8') as _f:
+    PAGE_IDS = {line.strip() for line in _f if line.strip() and not line.startswith('#')}
 
 
 def merge_reposts(entries):
@@ -433,7 +557,12 @@ def merge_reposts(entries):
         if len(members) == 1:
             continue
         members.sort(key=lambda e: e['date'])
-        main = max(members, key=lambda e: len(e['text']))
+        # The page address and main photo stay with the post chosen when the site went live
+        # (longest original caption): the addresses are indexed. What the page shows (caption
+        # and facts such as availability) comes from the most recent post (user, 6 Nov 2026).
+        published = [m for m in members if m['id'] in PAGE_IDS]
+        home = published[0] if published else max(members, key=lambda e: len(e['text']))
+        main = ([m for m in members if m['text']] or [home])[-1]
         named = [m for m in members if int(m['id'][1:]) in TITLES and m['id'][0] == 'p']
         specific = [m for m in members if m['title'] not in GENERIC_TITLES]
         if named:
@@ -442,14 +571,14 @@ def merge_reposts(entries):
             best = max(specific, key=lambda m: [s['title'] for s in specific].count(m['title']))
         else:
             best = main
-        e = dict(main, title=best['title'], theme=best['theme'], date=members[0]['date'])
+        e = dict(main, id=home['id'], title=best['title'], theme=best['theme'], date=members[0]['date'])
         if e['date'] != main['date']:
             e['text_date'] = main['date']
         if any(m.get('portfolio') for m in members) and members[0].get('portfolio'):
             e['portfolio'] = True
         else:
             e.pop('portfolio', None)
-        images = list(main['images'])
+        images = list(home['images'])
         for m in members:
             for img in m['images']:
                 if all(dist(img, x) > SAME_ICON for x in images):
@@ -466,7 +595,7 @@ def merge_reposts(entries):
                    if m is not main and m['text'] and norm(m['text']) != norm(main['text'])]
         if history:
             e['history'] = history
-        e['aliases'] = [m['id'] for m in members if m is not main]
+        e['aliases'] = [m['id'] for m in members if m is not home]
         for m in members:
             merged[m['id']] = e
     out, done = [], set()
@@ -530,7 +659,7 @@ def main():
             'title': title,
             'kind': kind,
             'theme': theme,
-            'text': '' if i in HIDE_TEXT else clean_customers(text),
+            'text': '' if i in HIDE_TEXT else reword(clean_customers(text)),
             'images': add_images(media, eid),
         }
         e.update(details(text))
@@ -570,7 +699,7 @@ def main():
                 'title': p.get('title') or subject or extract_title(text) or 'Icoană pe sticlă',
                 'kind': 'icoana',
                 'theme': theme,
-                'text': clean_customers(text),
+                'text': reword(clean_customers(text)),
                 'images': [],
             }
             for n, photo in enumerate(p['photos']):
@@ -674,6 +803,9 @@ def main():
             f.write(src + '\t' + name + '\t' + str(int(name in used)) + '\n')
 
     print(len(entries), 'entries,', len(used), 'of', len(images), 'photos used')
+    for k, (old, _) in enumerate(REWORD):
+        if k not in REWORD_USED:
+            print('REWORD phrase not found:', old[:70])
 
 
 if __name__ == '__main__':
