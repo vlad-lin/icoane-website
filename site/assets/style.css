@@ -303,6 +303,8 @@ details.history .post-text { font-size: .95rem; }
 .pager a span { display: block; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
 .pager-next { text-align: right; }
 .v-date { font: .85rem var(--sans); color: var(--muted); margin: -4px 0 20px; }
+.v-date a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+.v-date a:hover { color: var(--gold); text-decoration-color: var(--gold); }
 .facts-table { width: 100%; border-collapse: collapse; margin: 0 0 22px; font-size: .97rem; }
 .facts-table th { text-align: left; font: 600 .72rem var(--sans); text-transform: uppercase; letter-spacing: .12em; color: var(--gold); padding: 9px 12px 9px 0; vertical-align: top; width: 34%; border-bottom: 1px solid var(--line); }
 .facts-table td { padding: 9px 0; border-bottom: 1px solid var(--line); color: var(--ivory); }

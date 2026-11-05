@@ -461,12 +461,17 @@ def work_page(L, e, works, by_title, path, prev, nxt):
 
     if e.get('archive'):
         when = L.t('from_archive_undated') if e.get('date_approx') else L.t('from_archive', d=L.date(e['date']))
-    elif e.get('portfolio'):
-        when = L.t('from_portfolio', d=L.date(e['date']))
-    elif e.get('history') or e.get('text_date'):
-        when = L.t('first_shown', d=L.date(e['date']))
     else:
-        when = L.t('published_on', d=L.date(e['date']))
+        # Icons from Facebook: the date line links to the (first) post there.
+        key = ('from_portfolio' if e.get('portfolio') else
+               'first_shown' if e.get('history') or e.get('text_date') else 'published_on')
+        if e.get('facebook'):
+            key += '_fb'
+        when = L.t(key, d=L.date(e['date']))
+    when = esc(when)
+    if e.get('facebook') and not e.get('archive'):
+        when = (f'<a href="{esc(e["facebook"])}" target="_blank" rel="noopener nofollow" '
+                f'title="{esc(L.t("facebook_post_title"))}">{when} →</a>')
 
     def caption(text):
         s, translated = L.tr.text(text)
@@ -527,7 +532,7 @@ def work_page(L, e, works, by_title, path, prev, nxt):
       </div>
       <div class="work-info">
         <h1>{esc(title)}</h1>
-        <p class="v-date">{esc(when)}</p>
+        <p class="v-date">{when}</p>
         <table class="facts-table"><tbody>{facts}</tbody></table>
         {info}
         {pager}

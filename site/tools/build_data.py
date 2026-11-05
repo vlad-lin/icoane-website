@@ -57,6 +57,13 @@ SKIP = {813, 684, 685, 690, 691, 692, 697, 698, 1011, 674, 1136}
 # Icons shown without their caption: 932 is about parcels broken on the way to customers,
 # 1012 and 1014 announce a contest (the icon was its prize).
 HIDE_TEXT = {932, 1012, 1014}
+
+
+def facebook_link(media):
+    """Link to a post on Facebook. The export has no post links, but each photo file is
+    named with its Facebook photo id, and the photo's page shows the post's caption
+    (also to visitors who are not logged in)."""
+    return 'https://www.facebook.com/photo/?fbid=' + media['uri'].rsplit('/', 1)[1].split('.')[0]
 # Titles for posts whose caption does not name the icon (checked against the photo).
 TITLES = {
     755: 'Masa Raiului',
@@ -574,6 +581,11 @@ def merge_reposts(entries):
         e = dict(main, id=home['id'], title=best['title'], theme=best['theme'], date=members[0]['date'])
         if e['date'] != main['date']:
             e['text_date'] = main['date']
+        # The date line shows the first post's date, so it links to the first post.
+        if members[0].get('facebook'):
+            e['facebook'] = members[0]['facebook']
+        else:
+            e.pop('facebook', None)
         if any(m.get('portfolio') for m in members) and members[0].get('portfolio'):
             e['portfolio'] = True
         else:
@@ -662,6 +674,9 @@ def main():
             'text': '' if i in HIDE_TEXT else reword(clean_customers(text)),
             'images': add_images(media, eid),
         }
+        # Posts whose caption is hidden here are not linked either.
+        if i not in HIDE_TEXT:
+            e['facebook'] = facebook_link(media[0])
         e.update(details(text))
         if (kind == 'icoana' and i not in FINISHED_BW and e['images']
                 and all(saturation.get(n, 1) < 0.1 for n in e['images'])):
@@ -681,6 +696,7 @@ def main():
             'theme': theme,
             'text': '',
             'portfolio': True,
+            'facebook': facebook_link(ph),
             'images': add_images([ph], eid),
         })
 
@@ -706,6 +722,8 @@ def main():
                 name = f'{eid}-{n + 1}.jpg'
                 images.append((os.path.join(NEW_POSTS, photo), name))
                 e['images'].append(name)
+            if p.get('facebook'):
+                e['facebook'] = p['facebook']
             e.update(details(text))
             # Facts set by hand win over the ones read from the caption.
             for key in ('izvod', 'dimensiuni', 'sarbatoare', 'disponibilitate'):

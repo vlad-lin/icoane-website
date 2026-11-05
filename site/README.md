@@ -71,6 +71,7 @@ Posts published after the export go in `new-posts/`:
    - a new `id` (`n2`, `n3`, …; never reuse or renumber, because it is part of the page address)
    - the `date` (YYYY-MM-DD), the `photos` and the caption `text`, exactly as on Facebook
    - optionally `title`, `izvod`, `dimensiuni`, `sarbatoare` or `disponibilitate`, when the automatic reading of the caption gets them wrong
+   - optionally `facebook`: the post's link on Facebook (e.g. `https://www.facebook.com/photo/?fbid=…`). The date line under the icon's title then links to it.
 3. Run the full chain above. Only the new photos are created; the existing ones stay as they are.
 4. A new `izvod` also needs a line in `translations/en/terms.json` and `translations/fr/terms.json`.
 
