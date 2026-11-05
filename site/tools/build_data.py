@@ -48,7 +48,9 @@ def load(path):
 # by others (museums, churches, collections). Left out of the site.
 PATRIMONIU = {680, 683, 688, 696, 788, 741, 746, 781, 827, 833, 879, 917, 930,
               970, 976, 988, 993, 1026, 1087, 1095, 1099, 1101, 1131, 1141,
-              1148, 1150, 1185, 1011}
+              1148, 1150, 1185, 1011,
+              # Found by the painter in her review (5 Nov 2026):
+              891, 901, 997, 1005, 1008, 1030, 1041, 1106, 1111}
 # Posts that are not artwork, or are uncaptioned re-uploads of another post.
 # 1136 announces a contest winner (a private person).
 SKIP = {813, 684, 685, 690, 691, 692, 697, 698, 1011, 674, 1136}
@@ -118,6 +120,7 @@ THEMES = [
     ('masa', 'Masa Raiului'),
     ('eroi', 'Martiri și eroi'),
     ('altele', 'Alte lucrări'),
+    ('proiecte', 'Alte proiecte'),  # her side projects, not icons (Micul Prinț)
 ]
 
 # Iconographic subjects: (pattern on diacritic-free lowercase text, title, theme).
@@ -193,7 +196,7 @@ SUBJECTS = [
     (r'gafencu|sfantul inchisorilor', 'Valeriu Gafencu, „Sfântul Închisorilor”', 'eroi'),
     (r'temnitele comuniste|comunismul a umplut', 'Martirii din temnițele comuniste', 'eroi'),
     (r'avram iancu|horea|eroi ai (neamului|natiunii)|noi am facut din voi icoane', 'Martiri și eroi ai neamului românesc', 'eroi'),
-    (r'micul print', 'Micul Prinț', 'altele'),
+    (r'micul print', 'Micul Prinț', 'proiecte'),
     (r'maica domnului|fecioara maria', 'Maica Domnului', 'maica'),
     (r'mantuitorul', 'Iisus Hristos Mântuitorul', 'praznice'),
 ]

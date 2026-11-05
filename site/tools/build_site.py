@@ -504,9 +504,9 @@ def work_page(L, e, works, by_title, path, prev, nxt):
                  + '</div>')
 
     page_url = f'{SITE_URL}/{L.work(e)}' if SITE_URL else ''
-    info += (f'<div class="v-cta"><p>{esc(L.t("cta_text"))}</p><div class="cta-buttons">'
+    info += (f'<div class="v-cta"><p>{esc(L.t("cta_text_work" if e["theme"] == "proiecte" else "cta_text"))}</p><div class="cta-buttons">'
              f'{messenger_btn(L, "btn-primary")}'
-             f'{whatsapp_btn(L, "btn-ghost", L.t("whatsapp_text_icon", t=title, url=page_url).strip(" :"))}</div></div>')
+             f'{whatsapp_btn(L, "btn-ghost", L.t("whatsapp_text_work" if e["theme"] == "proiecte" else "whatsapp_text_icon", t=title, url=page_url).strip(" :"))}</div></div>')
 
     pager = '<nav class="pager">'
     pager += (f'<a class="pager-prev" rel="prev" href="{esc(rel(L.work(prev), path))}"><span>‹ {esc(L.t("prev"))}</span>{esc(L.title(prev))}</a>'
