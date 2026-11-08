@@ -64,7 +64,11 @@ Icons from before the Facebook page, taken from the folder `..\poze vechi\` (pho
 
 ## Adding a new Facebook post (without a new export)
 
-Posts published after the export go in `new-posts/`:
+Posts published after the export go in `new-posts/`.
+
+**The easy way (since 8 Nov 2026):** put the photo(s) of the new icon in the `new-images\` folder (at the top of the project, next to `site\`) and ask Claude to process them, saying the size and whether the icon is available (and the Facebook link, if it is already posted). Claude files the photo here without its hidden camera data, adds the post, rebuilds and checks the site, and empties `new-images\`. That folder is never committed.
+
+By hand:
 
 1. Save the photo(s) in `new-posts/`, named e.g. `2026-09-22-intrarea-domnului-in-ierusalim.jpg`.
 2. Add an entry to `new-posts/posts.json` with:
